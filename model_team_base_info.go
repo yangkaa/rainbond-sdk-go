@@ -9,6 +9,9 @@
  */
 
 package openapi
+import (
+	"time"
+)
 // TeamBaseInfo struct for TeamBaseInfo
 type TeamBaseInfo struct {
 	// 租户id
@@ -20,15 +23,15 @@ type TeamBaseInfo struct {
 	// 激活状态
 	IsActive bool `json:"is_active,omitempty"`
 	// 创建时间
-	CreateTime string `json:"create_time"`
+	CreateTime time.Time `json:"create_time"`
 	// 租户创建者
 	Creater int32 `json:"creater,omitempty"`
 	// 内存大小单位（M）
 	LimitMemory int32 `json:"limit_memory,omitempty"`
 	// 更新时间
-	UpdateTime string `json:"update_time"`
+	UpdateTime time.Time `json:"update_time"`
 	// 过期时间
-	ExpiredTime string `json:"expired_time"`
+	ExpiredTime time.Time `json:"expired_time"`
 	// 团队别名
 	TenantAlias *string `json:"tenant_alias,omitempty"`
 	// 企业id

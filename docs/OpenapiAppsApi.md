@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsDelete
 
-> TeamsRegionsAppsDelete(ctx, appId, regionName, teamId, optional)
+> TeamsRegionsAppsDelete(ctx, regionName, teamId, appId, optional)
 
 
 
@@ -183,9 +183,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
  **optional** | ***TeamsRegionsAppsDeleteOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsOperationsCreate
 
-> Success TeamsRegionsAppsOperationsCreate(ctx, appId, regionName, teamId, data)
+> Success TeamsRegionsAppsOperationsCreate(ctx, regionName, teamId, appId, data)
 
 
 
@@ -353,9 +353,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 **data** | [**ServiceGroupOperations**](ServiceGroupOperations.md)|  | 
 
 ### Return type
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsRead
 
-> AppInfo TeamsRegionsAppsRead(ctx, appId, regionName, teamId)
+> AppInfo TeamsRegionsAppsRead(ctx, regionName, teamId, appId)
 
 
 
@@ -390,9 +390,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 
 ### Return type
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsServicesDelete
 
-> TeamsRegionsAppsServicesDelete(ctx, appId, regionName, serviceId, teamId, optional)
+> TeamsRegionsAppsServicesDelete(ctx, regionName, serviceId, teamId, appId, optional)
 
 
 
@@ -426,10 +426,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
  **optional** | ***TeamsRegionsAppsServicesDeleteOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsServicesEventsList
 
-> ListServiceEventsResponse TeamsRegionsAppsServicesEventsList(ctx, appId, regionName, serviceId, teamId, optional)
+> ListServiceEventsResponse TeamsRegionsAppsServicesEventsList(ctx, regionName, serviceId, teamId, appId, optional)
 
 
 
@@ -477,10 +477,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
  **optional** | ***TeamsRegionsAppsServicesEventsListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsServicesList
 
-> []ServiceBaseInfo TeamsRegionsAppsServicesList(ctx, appId, regionName, teamId)
+> []ServiceBaseInfo TeamsRegionsAppsServicesList(ctx, regionName, teamId, appId)
 
 
 
@@ -529,9 +529,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 
 ### Return type
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsServicesRead
 
-> ServiceBaseInfo TeamsRegionsAppsServicesRead(ctx, appId, regionName, serviceId, teamId)
+> ServiceBaseInfo TeamsRegionsAppsServicesRead(ctx, regionName, serviceId, teamId, appId)
 
 
 
@@ -565,10 +565,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 
 ### Return type
 
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsServicesTelescopicHorizontalCreate
 
-> AppServiceTelescopicHorizontal TeamsRegionsAppsServicesTelescopicHorizontalCreate(ctx, appId, regionName, serviceId, teamId, data)
+> AppServiceTelescopicHorizontal TeamsRegionsAppsServicesTelescopicHorizontalCreate(ctx, regionName, serviceId, teamId, appId, data)
 
 
 
@@ -602,10 +602,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 **data** | [**AppServiceTelescopicHorizontal**](AppServiceTelescopicHorizontal.md)|  | 
 
 ### Return type
@@ -628,7 +628,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsServicesTelescopicVerticalCreate
 
-> AppServiceTelescopicVertical TeamsRegionsAppsServicesTelescopicVerticalCreate(ctx, appId, regionName, serviceId, teamId, data)
+> AppServiceTelescopicVertical TeamsRegionsAppsServicesTelescopicVerticalCreate(ctx, regionName, serviceId, teamId, appId, data)
 
 
 
@@ -640,10 +640,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 **data** | [**AppServiceTelescopicVertical**](AppServiceTelescopicVertical.md)|  | 
 
 ### Return type

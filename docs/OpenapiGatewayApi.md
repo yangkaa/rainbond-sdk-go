@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsHttpdomainsList
 
-> []HttpGatewayRule TeamsRegionsAppsHttpdomainsList(ctx, appId, regionName, teamId)
+> []HttpGatewayRule TeamsRegionsAppsHttpdomainsList(ctx, regionName, teamId, appId)
 
 
 
@@ -105,9 +105,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 
 ### Return type
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsHttpdomainsUpdate
 
-> HttpGatewayRule TeamsRegionsAppsHttpdomainsUpdate(ctx, appId, regionName, ruleId, teamId, data)
+> HttpGatewayRule TeamsRegionsAppsHttpdomainsUpdate(ctx, regionName, ruleId, teamId, appId, data)
 
 
 
@@ -141,10 +141,10 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **ruleId** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
 **data** | [**UpdatePostHttpGatewayRule**](UpdatePostHttpGatewayRule.md)|  | 
 
 ### Return type

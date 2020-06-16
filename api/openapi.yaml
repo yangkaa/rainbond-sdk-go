@@ -622,11 +622,6 @@ paths:
       operationId: teams_regions_apps_delete
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -644,6 +639,12 @@ paths:
           - 0
           - 1
           type: integer
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "204":
           content: {}
@@ -655,11 +656,6 @@ paths:
       operationId: teams_regions_apps_read
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -669,6 +665,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "200":
           content:
@@ -750,11 +752,6 @@ paths:
       operationId: teams_regions_apps_httpdomains_list
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -764,6 +761,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "200":
           content:
@@ -849,11 +852,6 @@ paths:
       operationId: teams_regions_apps_httpdomains_update
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -868,6 +866,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       requestBody:
         content:
           application/json:
@@ -927,11 +931,6 @@ paths:
       operationId: teams_regions_apps_operations_create
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -941,6 +940,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       requestBody:
         content:
           application/json:
@@ -975,11 +980,6 @@ paths:
       operationId: teams_regions_apps_services_list
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -989,6 +989,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "200":
           content:
@@ -1005,11 +1011,6 @@ paths:
       description: 删除组件
       operationId: teams_regions_apps_services_delete
       parameters:
-      - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
       - in: path
         name: region_name
         required: true
@@ -1033,6 +1034,12 @@ paths:
           - 0
           - 1
           type: integer
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "204":
           content: {}
@@ -1043,11 +1050,6 @@ paths:
       description: 查询组件信息
       operationId: teams_regions_apps_services_read
       parameters:
-      - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
       - in: path
         name: region_name
         required: true
@@ -1063,6 +1065,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "200":
           content:
@@ -1077,11 +1085,6 @@ paths:
       description: 查询组件事件信息
       operationId: teams_regions_apps_services_events_list
       parameters:
-      - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
       - in: path
         name: region_name
         required: true
@@ -1107,6 +1110,12 @@ paths:
         name: page_size
         schema:
           type: integer
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       responses:
         "200":
           content:
@@ -1122,11 +1131,6 @@ paths:
       operationId: teams_regions_apps_services_telescopic_horizontal_create
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -1141,6 +1145,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       requestBody:
         content:
           application/json:
@@ -1163,11 +1173,6 @@ paths:
       operationId: teams_regions_apps_services_telescopic_vertical_create
       parameters:
       - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
         name: region_name
         required: true
         schema:
@@ -1182,6 +1187,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
       requestBody:
         content:
           application/json:
@@ -2426,12 +2437,12 @@ components:
       example:
         tenant_id: tenant_id
         tenant_name: tenant_name
-        update_time: update_time
+        update_time: 2000-01-23T04:56:07.000+00:00
         is_active: true
-        create_time: create_time
+        create_time: 2000-01-23T04:56:07.000+00:00
         limit_memory: 6
         creater: 0
-        expired_time: expired_time
+        expired_time: 2000-01-23T04:56:07.000+00:00
         tenant_alias: tenant_alias
         region: region
         enterprise_id: enterprise_id
@@ -2462,8 +2473,7 @@ components:
           type: boolean
         create_time:
           description: 创建时间
-          maxLength: 64
-          minLength: 1
+          format: date-time
           title: Create time
           type: string
         creater:
@@ -2476,14 +2486,12 @@ components:
           type: integer
         update_time:
           description: 更新时间
-          maxLength: 64
-          minLength: 1
+          format: date-time
           title: Update time
           type: string
         expired_time:
           description: 过期时间
-          maxLength: 64
-          minLength: 1
+          format: date-time
           title: Expired time
           type: string
         tenant_alias:

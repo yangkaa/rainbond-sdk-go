@@ -423,13 +423,13 @@ type TeamsRegionsAppsDeleteOpts struct {
 TeamsRegionsAppsDelete Method for TeamsRegionsAppsDelete
 删除应用
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param teamId
+ * @param appId 应用组id
  * @param optional nil or *TeamsRegionsAppsDeleteOpts - Optional Parameters:
  * @param "Force" (optional.Int32) -  强制删除
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsDelete(ctx _context.Context, appId string, regionName string, teamId string, localVarOptionals *TeamsRegionsAppsDeleteOpts) (*_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsDelete(ctx _context.Context, regionName string, teamId string, appId int32, localVarOptionals *TeamsRegionsAppsDeleteOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -440,11 +440,11 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsDelete(ctx _context.Context, app
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -814,13 +814,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsList(ctx _context.Context, regio
 TeamsRegionsAppsOperationsCreate Method for TeamsRegionsAppsOperationsCreate
 操作应用
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param teamId
+ * @param appId 应用组id
  * @param data
 @return Success
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsOperationsCreate(ctx _context.Context, appId string, regionName string, teamId string, data ServiceGroupOperations) (Success, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsOperationsCreate(ctx _context.Context, regionName string, teamId string, appId int32, data ServiceGroupOperations) (Success, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -832,11 +832,11 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsOperationsCreate(ctx _context.Co
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/operations"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -932,12 +932,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsOperationsCreate(ctx _context.Co
 TeamsRegionsAppsRead Method for TeamsRegionsAppsRead
 应用详情
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param teamId
+ * @param appId 应用组id
 @return AppInfo
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsRead(ctx _context.Context, appId string, regionName string, teamId string) (AppInfo, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsRead(ctx _context.Context, regionName string, teamId string, appId int32) (AppInfo, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -949,11 +949,11 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsRead(ctx _context.Context, appId
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1033,14 +1033,14 @@ type TeamsRegionsAppsServicesDeleteOpts struct {
 TeamsRegionsAppsServicesDelete Method for TeamsRegionsAppsServicesDelete
 删除组件
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param serviceId
  * @param teamId
+ * @param appId 应用组id
  * @param optional nil or *TeamsRegionsAppsServicesDeleteOpts - Optional Parameters:
  * @param "Force" (optional.Int32) -  强制删除
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesDelete(ctx _context.Context, appId string, regionName string, serviceId string, teamId string, localVarOptionals *TeamsRegionsAppsServicesDeleteOpts) (*_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesDelete(ctx _context.Context, regionName string, serviceId string, teamId string, appId int32, localVarOptionals *TeamsRegionsAppsServicesDeleteOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -1051,13 +1051,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesDelete(ctx _context.Cont
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1132,16 +1132,16 @@ type TeamsRegionsAppsServicesEventsListOpts struct {
 TeamsRegionsAppsServicesEventsList Method for TeamsRegionsAppsServicesEventsList
 查询组件事件信息
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param serviceId
  * @param teamId
+ * @param appId 应用组id
  * @param optional nil or *TeamsRegionsAppsServicesEventsListOpts - Optional Parameters:
  * @param "Page" (optional.Int32) -  页码
  * @param "PageSize" (optional.Int32) -  每页数量
 @return ListServiceEventsResponse
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesEventsList(ctx _context.Context, appId string, regionName string, serviceId string, teamId string, localVarOptionals *TeamsRegionsAppsServicesEventsListOpts) (ListServiceEventsResponse, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesEventsList(ctx _context.Context, regionName string, serviceId string, teamId string, appId int32, localVarOptionals *TeamsRegionsAppsServicesEventsListOpts) (ListServiceEventsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1153,13 +1153,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesEventsList(ctx _context.
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1240,12 +1240,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesEventsList(ctx _context.
 TeamsRegionsAppsServicesList Method for TeamsRegionsAppsServicesList
 查询应用下组件列表
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param teamId
+ * @param appId 应用组id
 @return []ServiceBaseInfo
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesList(ctx _context.Context, appId string, regionName string, teamId string) ([]ServiceBaseInfo, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesList(ctx _context.Context, regionName string, teamId string, appId int32) ([]ServiceBaseInfo, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1257,11 +1257,11 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesList(ctx _context.Contex
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1336,13 +1336,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesList(ctx _context.Contex
 TeamsRegionsAppsServicesRead Method for TeamsRegionsAppsServicesRead
 查询组件信息
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param serviceId
  * @param teamId
+ * @param appId 应用组id
 @return ServiceBaseInfo
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesRead(ctx _context.Context, appId string, regionName string, serviceId string, teamId string) (ServiceBaseInfo, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesRead(ctx _context.Context, regionName string, serviceId string, teamId string, appId int32) (ServiceBaseInfo, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -1354,13 +1354,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesRead(ctx _context.Contex
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1435,14 +1435,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesRead(ctx _context.Contex
 TeamsRegionsAppsServicesTelescopicHorizontalCreate Method for TeamsRegionsAppsServicesTelescopicHorizontalCreate
 组件水平伸缩
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param serviceId
  * @param teamId
+ * @param appId 应用组id
  * @param data
 @return AppServiceTelescopicHorizontal
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicHorizontalCreate(ctx _context.Context, appId string, regionName string, serviceId string, teamId string, data AppServiceTelescopicHorizontal) (AppServiceTelescopicHorizontal, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicHorizontalCreate(ctx _context.Context, regionName string, serviceId string, teamId string, appId int32, data AppServiceTelescopicHorizontal) (AppServiceTelescopicHorizontal, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1454,13 +1454,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicHorizontalCrea
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1537,14 +1537,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicHorizontalCrea
 TeamsRegionsAppsServicesTelescopicVerticalCreate Method for TeamsRegionsAppsServicesTelescopicVerticalCreate
 组件垂直伸缩
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param serviceId
  * @param teamId
+ * @param appId 应用组id
  * @param data
 @return AppServiceTelescopicVertical
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicVerticalCreate(ctx _context.Context, appId string, regionName string, serviceId string, teamId string, data AppServiceTelescopicVertical) (AppServiceTelescopicVertical, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicVerticalCreate(ctx _context.Context, regionName string, serviceId string, teamId string, appId int32, data AppServiceTelescopicVertical) (AppServiceTelescopicVertical, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1556,13 +1556,13 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicVerticalCreate
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
