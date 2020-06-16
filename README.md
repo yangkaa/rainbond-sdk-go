@@ -46,6 +46,8 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesEventsList**](docs/OpenapiAppsApi.md#teamsregionsappsserviceseventslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesList**](docs/OpenapiAppsApi.md#teamsregionsappsserviceslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesRead**](docs/OpenapiAppsApi.md#teamsregionsappsservicesread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsServicesTelescopicHorizontalCreate**](docs/OpenapiAppsApi.md#teamsregionsappsservicestelescopichorizontalcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsServicesTelescopicVerticalCreate**](docs/OpenapiAppsApi.md#teamsregionsappsservicestelescopicverticalcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
 *OpenapiAppsApi* | [**TeamsRegionsResourceList**](docs/OpenapiAppsApi.md#teamsregionsresourcelist) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 *OpenapiEntrepriseApi* | [**ConfigsList**](docs/OpenapiEntrepriseApi.md#configslist) | **Get** /configs | 
 *OpenapiGatewayApi* | [**HttpdomainsList**](docs/OpenapiGatewayApi.md#httpdomainslist) | **Get** /httpdomains | 
@@ -64,6 +66,18 @@ Class | Method | HTTP request | Description
 *OpenapiTeamApi* | [**TeamsList**](docs/OpenapiTeamApi.md#teamslist) | **Get** /teams | 
 *OpenapiTeamApi* | [**TeamsRead**](docs/OpenapiTeamApi.md#teamsread) | **Get** /teams/{team_id} | 
 *OpenapiTeamApi* | [**TeamsUpdate**](docs/OpenapiTeamApi.md#teamsupdate) | **Put** /teams/{team_id} | 
+*OpenapiTeamRegionApi* | [**TeamsRegionsCreate**](docs/OpenapiTeamRegionApi.md#teamsregionscreate) | **Post** /teams/{team_id}/regions | 
+*OpenapiTeamRegionApi* | [**TeamsRegionsList**](docs/OpenapiTeamRegionApi.md#teamsregionslist) | **Get** /teams/{team_id}/regions | 
+*OpenapiUserApi* | [**AdministratorsCreate**](docs/OpenapiUserApi.md#administratorscreate) | **Post** /administrators | 
+*OpenapiUserApi* | [**AdministratorsDelete**](docs/OpenapiUserApi.md#administratorsdelete) | **Delete** /administrators/{user_id} | 
+*OpenapiUserApi* | [**AdministratorsList**](docs/OpenapiUserApi.md#administratorslist) | **Get** /administrators | 
+*OpenapiUserApi* | [**ChangepwdUpdate**](docs/OpenapiUserApi.md#changepwdupdate) | **Put** /changepwd | 
+*OpenapiUserApi* | [**UsersChangepwdUpdate**](docs/OpenapiUserApi.md#userschangepwdupdate) | **Put** /users/{user_id}/changepwd | 
+*OpenapiUserApi* | [**UsersCreate**](docs/OpenapiUserApi.md#userscreate) | **Post** /users | 
+*OpenapiUserApi* | [**UsersDelete**](docs/OpenapiUserApi.md#usersdelete) | **Delete** /users/{user_id} | 
+*OpenapiUserApi* | [**UsersList**](docs/OpenapiUserApi.md#userslist) | **Get** /users | 
+*OpenapiUserApi* | [**UsersRead**](docs/OpenapiUserApi.md#usersread) | **Get** /users/{user_id} | 
+*OpenapiUserApi* | [**UsersUpdate**](docs/OpenapiUserApi.md#usersupdate) | **Put** /users/{user_id} | 
 
 
 ## Documentation For Models
@@ -77,12 +91,18 @@ Class | Method | HTTP request | Description
  - [AppInfo](docs/AppInfo.md)
  - [AppPostInfo](docs/AppPostInfo.md)
  - [AppServiceEvents](docs/AppServiceEvents.md)
+ - [AppServiceTelescopicHorizontal](docs/AppServiceTelescopicHorizontal.md)
+ - [AppServiceTelescopicVertical](docs/AppServiceTelescopicVertical.md)
  - [AppStoreImageHubBaseResp](docs/AppStoreImageHubBaseResp.md)
  - [AppStoreImageHubResp](docs/AppStoreImageHubResp.md)
  - [AutoSsl](docs/AutoSsl.md)
  - [CertificatesR](docs/CertificatesR.md)
+ - [ChangePassWd](docs/ChangePassWd.md)
+ - [ChangePassWdUser](docs/ChangePassWdUser.md)
  - [CloudMarketBaseResp](docs/CloudMarketBaseResp.md)
+ - [CreateAdminUserReq](docs/CreateAdminUserReq.md)
  - [CreateTeamReq](docs/CreateTeamReq.md)
+ - [CreateUser](docs/CreateUser.md)
  - [EnterpriseConfigSeralizer](docs/EnterpriseConfigSeralizer.md)
  - [EnterpriseHttpGatewayRule](docs/EnterpriseHttpGatewayRule.md)
  - [ExportAppBaseResp](docs/ExportAppBaseResp.md)
@@ -90,7 +110,9 @@ Class | Method | HTTP request | Description
  - [HttpGatewayRule](docs/HttpGatewayRule.md)
  - [Install](docs/Install.md)
  - [ListServiceEventsResponse](docs/ListServiceEventsResponse.md)
+ - [ListTeamRegionsResp](docs/ListTeamRegionsResp.md)
  - [ListTeamResp](docs/ListTeamResp.md)
+ - [ListUsersRespView](docs/ListUsersRespView.md)
  - [NewBieGuideBaseResp](docs/NewBieGuideBaseResp.md)
  - [OauthServicesBaseResp](docs/OauthServicesBaseResp.md)
  - [OauthServicesResp](docs/OauthServicesResp.md)
@@ -110,8 +132,12 @@ Class | Method | HTTP request | Description
  - [TeamCertificatesL](docs/TeamCertificatesL.md)
  - [TeamCertificatesR](docs/TeamCertificatesR.md)
  - [TeamInfo](docs/TeamInfo.md)
+ - [TeamRegionReq](docs/TeamRegionReq.md)
+ - [TeamRegionsResp](docs/TeamRegionsResp.md)
  - [UpdatePostHttpGatewayRule](docs/UpdatePostHttpGatewayRule.md)
  - [UpdateTeamInfoReq](docs/UpdateTeamInfoReq.md)
+ - [UpdateUser](docs/UpdateUser.md)
+ - [UserInfo](docs/UserInfo.md)
 
 
 ## Documentation For Authorization

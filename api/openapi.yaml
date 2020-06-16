@@ -13,6 +13,102 @@ servers:
 security:
 - Bearer: []
 paths:
+  /administrators:
+    get:
+      description: 获取企业管理员列表
+      operationId: administrators_list
+      parameters:
+      - description: 企业ID
+        in: query
+        name: eid
+        schema:
+          type: string
+      - description: 页码
+        in: query
+        name: page
+        schema:
+          type: string
+      - description: 每页数量
+        in: query
+        name: page_size
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUsersRespView'
+          description: ""
+      tags:
+      - openapi-user
+    post:
+      description: 添加企业用户
+      operationId: administrators_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAdminUserReq'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateAdminUserReq'
+          description: ""
+      tags:
+      - openapi-user
+      x-codegen-request-body-name: data
+  /administrators/{user_id}:
+    delete:
+      description: 删除企业管理员
+      operationId: administrators_delete
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "204":
+          content: {}
+          description: ""
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fail'
+          description: ""
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Fail'
+          description: ""
+      tags:
+      - openapi-user
+  /changepwd:
+    put:
+      description: 修改自己账号密码
+      operationId: changepwd_update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePassWd'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChangePassWd'
+          description: ""
+      tags:
+      - openapi-user
+      x-codegen-request-body-name: data
   /configs:
     get:
       description: 获取企业配置信息
@@ -368,6 +464,65 @@ paths:
           description: ""
       tags:
       - openapi-team
+      x-codegen-request-body-name: data
+  /teams/{team_id}/regions:
+    get:
+      description: 获取团队开通的数据中心列表
+      operationId: teams_regions_list
+      parameters:
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 根据数据中心名称搜索
+        in: query
+        name: query
+        schema:
+          type: string
+      - description: 页码
+        in: query
+        name: page
+        schema:
+          type: string
+      - description: 每页数量
+        in: query
+        name: page_size
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTeamRegionsResp'
+          description: ""
+      tags:
+      - openapi-team-region
+    post:
+      description: 开通数据中心
+      operationId: teams_regions_create
+      parameters:
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamRegionReq'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamBaseInfo'
+          description: ""
+      tags:
+      - openapi-team-region
       x-codegen-request-body-name: data
   /teams/{team_id}/regions/{region_name}/apps:
     get:
@@ -961,6 +1116,88 @@ paths:
           description: ""
       tags:
       - openapi-apps
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal:
+    post:
+      description: 组件水平伸缩
+      operationId: teams_regions_apps_services_telescopic_horizontal_create
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: service_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppServiceTelescopicHorizontal'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppServiceTelescopicHorizontal'
+          description: ""
+      tags:
+      - openapi-apps
+      x-codegen-request-body-name: data
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical:
+    post:
+      description: 组件垂直伸缩
+      operationId: teams_regions_apps_services_telescopic_vertical_create
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: service_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppServiceTelescopicVertical'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppServiceTelescopicVertical'
+          description: ""
+      tags:
+      - openapi-apps
+      x-codegen-request-body-name: data
   /teams/{team_id}/regions/{region_name}/resource:
     get:
       description: 获取团队资源统计
@@ -985,6 +1222,139 @@ paths:
           description: ""
       tags:
       - openapi-apps
+  /users:
+    get:
+      description: 获取用户列表
+      operationId: users_list
+      parameters:
+      - description: 用户名、邮箱、手机号搜索
+        in: query
+        name: query
+        schema:
+          type: string
+      - description: 页码
+        in: query
+        name: page
+        schema:
+          type: string
+      - description: 每页数量
+        in: query
+        name: page_size
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUsersRespView'
+          description: ""
+      tags:
+      - openapi-user
+    post:
+      description: 添加普通用户
+      operationId: users_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUser'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateUser'
+          description: ""
+      tags:
+      - openapi-user
+      x-codegen-request-body-name: data
+  /users/{user_id}:
+    delete:
+      description: 删除用户
+      operationId: users_delete
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "204":
+          content: {}
+          description: ""
+      tags:
+      - openapi-user
+    get:
+      description: 根据用户ID获取用户信息
+      operationId: users_read
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserInfo'
+          description: ""
+      tags:
+      - openapi-user
+    put:
+      description: 更新用户信息
+      operationId: users_update
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUser'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateUser'
+          description: ""
+      tags:
+      - openapi-user
+      x-codegen-request-body-name: data
+  /users/{user_id}/changepwd:
+    put:
+      description: 修改用户密码
+      operationId: users_changepwd_update
+      parameters:
+      - in: path
+        name: user_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePassWdUser'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChangePassWdUser'
+          description: ""
+      tags:
+      - openapi-user
+      x-codegen-request-body-name: data
 components:
   requestBodies:
     AddRegionRequest:
@@ -994,6 +1364,155 @@ components:
             $ref: '#/components/schemas/AddRegionRequest'
       required: true
   schemas:
+    UserInfo:
+      example:
+        is_active: true
+        origion: origion
+        create_time: 2000-01-23T04:56:07.000+00:00
+        user_id: 0
+        phone: phone
+        nick_name: nick_name
+        client_ip: client_ip
+        enterprise_id: enterprise_id
+        email: email
+      properties:
+        user_id:
+          title: User id
+          type: integer
+        email:
+          description: 邮件地址
+          maxLength: 35
+          nullable: true
+          title: Email
+          type: string
+        nick_name:
+          description: 用户昵称
+          maxLength: 24
+          minLength: 1
+          title: Nick name
+          type: string
+        phone:
+          description: 手机号码
+          maxLength: 11
+          nullable: true
+          title: Phone
+          type: string
+        is_active:
+          description: 激活状态
+          title: Is active
+          type: boolean
+        origion:
+          description: 用户来源
+          maxLength: 12
+          nullable: true
+          title: Origion
+          type: string
+        create_time:
+          description: 创建时间
+          format: date-time
+          title: Create time
+          type: string
+        client_ip:
+          description: 注册ip
+          maxLength: 20
+          nullable: true
+          title: Client ip
+          type: string
+        enterprise_id:
+          description: enterprise_id
+          maxLength: 32
+          minLength: 1
+          title: Enterprise id
+          type: string
+      required:
+      - user_id
+      type: object
+    ListUsersRespView:
+      example:
+        total: 6
+        users:
+        - is_active: true
+          origion: origion
+          create_time: 2000-01-23T04:56:07.000+00:00
+          user_id: 0
+          phone: phone
+          nick_name: nick_name
+          client_ip: client_ip
+          enterprise_id: enterprise_id
+          email: email
+        - is_active: true
+          origion: origion
+          create_time: 2000-01-23T04:56:07.000+00:00
+          user_id: 0
+          phone: phone
+          nick_name: nick_name
+          client_ip: client_ip
+          enterprise_id: enterprise_id
+          email: email
+      properties:
+        users:
+          items:
+            $ref: '#/components/schemas/UserInfo'
+          type: array
+        total:
+          title: Total
+          type: integer
+      required:
+      - total
+      - users
+      type: object
+    CreateAdminUserReq:
+      example:
+        eid: eid
+        user_id: user_id
+      properties:
+        user_id:
+          description: 用户ID
+          maxLength: 32
+          minLength: 1
+          title: User id
+          type: string
+        eid:
+          description: 企业ID
+          maxLength: 32
+          minLength: 1
+          title: Eid
+          type: string
+      required:
+      - eid
+      - user_id
+      type: object
+    Fail:
+      properties:
+        msg:
+          maxLength: 300
+          minLength: 1
+          title: Msg
+          type: string
+      required:
+      - msg
+      type: object
+    ChangePassWd:
+      example:
+        password: password
+        password1: password1
+      properties:
+        password:
+          description: 新密码
+          maxLength: 16
+          minLength: 8
+          title: Password
+          type: string
+        password1:
+          description: 再次确认新密码
+          maxLength: 16
+          minLength: 8
+          title: Password1
+          type: string
+      required:
+      - password
+      - password1
+      type: object
     ExportAppBaseResp:
       example:
         enable: false
@@ -1634,16 +2153,6 @@ components:
       - status
       - url
       type: object
-    Fail:
-      properties:
-        msg:
-          maxLength: 300
-          minLength: 1
-          title: Msg
-          type: string
-      required:
-      - msg
-      type: object
     RegionInfo:
       example:
         tcpdomain: tcpdomain
@@ -1917,24 +2426,19 @@ components:
       example:
         tenant_id: tenant_id
         tenant_name: tenant_name
-        update_time: 2000-01-23T04:56:07.000+00:00
+        update_time: update_time
         is_active: true
-        create_time: 2000-01-23T04:56:07.000+00:00
-        limit_memory: -1517921766
-        creater: 441289069
-        expired_time: 2000-01-23T04:56:07.000+00:00
-        ID: 0
+        create_time: create_time
+        limit_memory: 6
+        creater: 0
+        expired_time: expired_time
         tenant_alias: tenant_alias
         region: region
         enterprise_id: enterprise_id
       properties:
-        ID:
-          readOnly: true
-          title: ID
-          type: integer
         tenant_id:
           description: 租户id
-          maxLength: 33
+          maxLength: 64
           minLength: 1
           title: Tenant id
           type: string
@@ -1945,59 +2449,65 @@ components:
           title: Tenant name
           type: string
         region:
+          default: ""
           description: 区域中心,弃用
           maxLength: 64
           minLength: 1
           title: Region
           type: string
         is_active:
+          default: true
           description: 激活状态
           title: Is active
           type: boolean
         create_time:
           description: 创建时间
-          format: date-time
-          readOnly: true
+          maxLength: 64
+          minLength: 1
           title: Create time
           type: string
         creater:
           description: 租户创建者
-          maximum: 2147483647
-          minimum: -2147483648
           title: Creater
           type: integer
         limit_memory:
           description: 内存大小单位（M）
-          maximum: 2147483647
-          minimum: -2147483648
           title: Limit memory
           type: integer
         update_time:
           description: 更新时间
-          format: date-time
-          readOnly: true
+          maxLength: 64
+          minLength: 1
           title: Update time
           type: string
         expired_time:
           description: 过期时间
-          format: date-time
-          nullable: true
+          maxLength: 64
+          minLength: 1
           title: Expired time
           type: string
         tenant_alias:
+          default: ""
           description: 团队别名
           maxLength: 64
+          minLength: 1
           nullable: true
           title: Tenant alias
           type: string
         enterprise_id:
+          default: ""
           description: 企业id
           maxLength: 32
+          minLength: 1
           nullable: true
           title: Enterprise id
           type: string
       required:
+      - create_time
+      - expired_time
+      - tenant_id
       - tenant_name
+      - update_time
       type: object
     UpdateTeamInfoReq:
       example:
@@ -2214,6 +2724,157 @@ components:
       - certificate_type
       - id
       - private_key
+      type: object
+    TeamRegionsResp:
+      example:
+        wsurl: wsurl
+        tcpdomain: tcpdomain
+        tenant_name: tenant_name
+        httpdomain: httpdomain
+        scope: private
+        region_id: region_id
+        region_name: region_name
+        url: url
+        region_alias: region_alias
+        token: token
+        status: status
+        desc: desc
+      properties:
+        region_id:
+          description: region id
+          maxLength: 36
+          minLength: 1
+          title: Region id
+          type: string
+        region_name:
+          description: 数据中心名称
+          maxLength: 32
+          minLength: 1
+          title: Region name
+          type: string
+        region_alias:
+          description: 数据中心别名
+          maxLength: 32
+          minLength: 1
+          title: Region alias
+          type: string
+        tenant_name:
+          description: 租户名称
+          maxLength: 32
+          minLength: 1
+          title: Tenant name
+          type: string
+        url:
+          description: 数据中心API url
+          maxLength: 256
+          minLength: 1
+          title: Url
+          type: string
+        wsurl:
+          description: 数据中心Websocket url
+          maxLength: 256
+          minLength: 1
+          title: Wsurl
+          type: string
+        httpdomain:
+          description: 数据中心http应用访问根域名
+          maxLength: 256
+          minLength: 1
+          title: Httpdomain
+          type: string
+        tcpdomain:
+          description: 数据中心tcp应用访问根域名
+          maxLength: 256
+          minLength: 1
+          title: Tcpdomain
+          type: string
+        token:
+          default: ""
+          description: 数据中心token
+          maxLength: 127
+          nullable: true
+          title: Token
+          type: string
+        status:
+          description: 数据中心状态 0：编辑中 1:启用 2：停用 3:维护中
+          maxLength: 2
+          minLength: 1
+          title: Status
+          type: string
+        desc:
+          description: 数据中心描述
+          maxLength: 128
+          title: Desc
+          type: string
+        scope:
+          default: private
+          description: 数据中心范围 private|public
+          maxLength: 10
+          minLength: 1
+          title: Scope
+          type: string
+      required:
+      - desc
+      - httpdomain
+      - region_alias
+      - region_id
+      - region_name
+      - status
+      - tcpdomain
+      - tenant_name
+      - url
+      - wsurl
+      type: object
+    ListTeamRegionsResp:
+      example:
+        total: 0
+        regions:
+        - wsurl: wsurl
+          tcpdomain: tcpdomain
+          tenant_name: tenant_name
+          httpdomain: httpdomain
+          scope: private
+          region_id: region_id
+          region_name: region_name
+          url: url
+          region_alias: region_alias
+          token: token
+          status: status
+          desc: desc
+        - wsurl: wsurl
+          tcpdomain: tcpdomain
+          tenant_name: tenant_name
+          httpdomain: httpdomain
+          scope: private
+          region_id: region_id
+          region_name: region_name
+          url: url
+          region_alias: region_alias
+          token: token
+          status: status
+          desc: desc
+      properties:
+        total:
+          title: Total
+          type: integer
+        regions:
+          items:
+            $ref: '#/components/schemas/TeamRegionsResp'
+          type: array
+      required:
+      - regions
+      - total
+      type: object
+    TeamRegionReq:
+      example:
+        region: region
+      properties:
+        region:
+          description: 数据中心名称
+          maxLength: 24
+          minLength: 1
+          title: Region
+          type: string
       type: object
     AppBaseInfo:
       example:
@@ -3501,6 +4162,28 @@ components:
       - page_size
       - total
       type: object
+    AppServiceTelescopicHorizontal:
+      example:
+        new_node: 0
+      properties:
+        new_node:
+          description: 组件节点
+          title: New node
+          type: integer
+      required:
+      - new_node
+      type: object
+    AppServiceTelescopicVertical:
+      example:
+        new_memory: 0
+      properties:
+        new_memory:
+          description: 组件内存
+          title: New memory
+          type: integer
+      required:
+      - new_memory
+      type: object
     TeamAppsResource:
       example:
         total_cpu: 0
@@ -3559,6 +4242,128 @@ components:
       - team_alias
       - team_id
       - team_name
+      type: object
+    CreateUser:
+      example:
+        password: password
+        is_active: true
+        origion: origion
+        phone: phone
+        nick_name: nick_name
+        enterprise_id: enterprise_id
+        email: email
+      properties:
+        nick_name:
+          description: 用户昵称
+          maxLength: 24
+          minLength: 1
+          title: Nick name
+          type: string
+        password:
+          description: 用户昵称
+          maxLength: 16
+          minLength: 8
+          title: Password
+          type: string
+        enterprise_id:
+          description: enterprise_id
+          maxLength: 32
+          minLength: 1
+          title: Enterprise id
+          type: string
+        email:
+          description: 邮件地址
+          format: email
+          maxLength: 35
+          minLength: 1
+          title: Email
+          type: string
+        phone:
+          description: 手机号码
+          maxLength: 11
+          minLength: 1
+          title: Phone
+          type: string
+        is_active:
+          default: true
+          description: 激活状态
+          title: Is active
+          type: boolean
+        origion:
+          description: 用户来源
+          maxLength: 12
+          minLength: 1
+          title: Origion
+          type: string
+      required:
+      - enterprise_id
+      - nick_name
+      - password
+      type: object
+    UpdateUser:
+      example:
+        password: password
+        is_active: true
+        phone: phone
+        enterprise_id: enterprise_id
+        email: email
+      properties:
+        password:
+          description: 用户昵称
+          maxLength: 16
+          minLength: 8
+          title: Password
+          type: string
+        enterprise_id:
+          description: enterprise_id
+          maxLength: 32
+          minLength: 1
+          title: Enterprise id
+          type: string
+        email:
+          description: 邮件地址
+          format: email
+          maxLength: 35
+          minLength: 1
+          title: Email
+          type: string
+        phone:
+          description: 手机号码
+          maxLength: 11
+          title: Phone
+          type: string
+        is_active:
+          description: 激活状态
+          nullable: true
+          title: Is active
+          type: boolean
+      type: object
+    ChangePassWdUser:
+      example:
+        password: password
+        user_id: 0
+        password1: password1
+      properties:
+        user_id:
+          description: user_id
+          title: User id
+          type: integer
+        password:
+          description: 新密码
+          maxLength: 16
+          minLength: 8
+          title: Password
+          type: string
+        password1:
+          description: 再次确认新密码
+          maxLength: 16
+          minLength: 8
+          title: Password1
+          type: string
+      required:
+      - password
+      - password1
+      - user_id
       type: object
     AddRegionRequest:
       example:

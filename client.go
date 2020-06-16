@@ -58,6 +58,10 @@ type APIClient struct {
 	OpenapiRegionApi *OpenapiRegionApiService
 
 	OpenapiTeamApi *OpenapiTeamApiService
+
+	OpenapiTeamRegionApi *OpenapiTeamRegionApiService
+
+	OpenapiUserApi *OpenapiUserApiService
 }
 
 type service struct {
@@ -81,6 +85,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.OpenapiGatewayApi = (*OpenapiGatewayApiService)(&c.common)
 	c.OpenapiRegionApi = (*OpenapiRegionApiService)(&c.common)
 	c.OpenapiTeamApi = (*OpenapiTeamApiService)(&c.common)
+	c.OpenapiTeamRegionApi = (*OpenapiTeamRegionApiService)(&c.common)
+	c.OpenapiUserApi = (*OpenapiUserApiService)(&c.common)
 
 	return c
 }

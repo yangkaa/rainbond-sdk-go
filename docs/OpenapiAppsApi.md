@@ -18,6 +18,8 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsServicesEventsList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEventsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events | 
 [**TeamsRegionsAppsServicesList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services | 
 [**TeamsRegionsAppsServicesRead**](OpenapiAppsApi.md#TeamsRegionsAppsServicesRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
+[**TeamsRegionsAppsServicesTelescopicHorizontalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicHorizontalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal | 
+[**TeamsRegionsAppsServicesTelescopicVerticalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicVerticalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
 [**TeamsRegionsResourceList**](OpenapiAppsApi.md#TeamsRegionsResourceList) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 
 
@@ -579,6 +581,82 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsServicesTelescopicHorizontalCreate
+
+> AppServiceTelescopicHorizontal TeamsRegionsAppsServicesTelescopicHorizontalCreate(ctx, appId, regionName, serviceId, teamId, data)
+
+
+
+组件水平伸缩
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**appId** | **string**|  | 
+**regionName** | **string**|  | 
+**serviceId** | **string**|  | 
+**teamId** | **string**|  | 
+**data** | [**AppServiceTelescopicHorizontal**](AppServiceTelescopicHorizontal.md)|  | 
+
+### Return type
+
+[**AppServiceTelescopicHorizontal**](AppServiceTelescopicHorizontal.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsServicesTelescopicVerticalCreate
+
+> AppServiceTelescopicVertical TeamsRegionsAppsServicesTelescopicVerticalCreate(ctx, appId, regionName, serviceId, teamId, data)
+
+
+
+组件垂直伸缩
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**appId** | **string**|  | 
+**regionName** | **string**|  | 
+**serviceId** | **string**|  | 
+**teamId** | **string**|  | 
+**data** | [**AppServiceTelescopicVertical**](AppServiceTelescopicVertical.md)|  | 
+
+### Return type
+
+[**AppServiceTelescopicVertical**](AppServiceTelescopicVertical.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
