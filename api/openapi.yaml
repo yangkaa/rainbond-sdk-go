@@ -2437,9 +2437,12 @@ components:
       example:
         tenant_id: tenant_id
         tenant_name: tenant_name
+        update_time: 2000-01-23T04:56:07.000+00:00
         is_active: true
+        create_time: 2000-01-23T04:56:07.000+00:00
         limit_memory: 6
         creater: 0
+        expired_time: 2000-01-23T04:56:07.000+00:00
         tenant_alias: tenant_alias
         region: region
         enterprise_id: enterprise_id
@@ -2468,6 +2471,11 @@ components:
           description: 激活状态
           title: Is active
           type: boolean
+        create_time:
+          description: 创建时间
+          format: date-time
+          title: Create time
+          type: string
         creater:
           description: 租户创建者
           title: Creater
@@ -2476,6 +2484,16 @@ components:
           description: 内存大小单位（M）
           title: Limit memory
           type: integer
+        update_time:
+          description: 更新时间
+          format: date-time
+          title: Update time
+          type: string
+        expired_time:
+          description: 过期时间
+          format: date-time
+          title: Expired time
+          type: string
         tenant_alias:
           default: ""
           description: 团队别名
@@ -2493,8 +2511,11 @@ components:
           title: Enterprise id
           type: string
       required:
+      - create_time
+      - expired_time
       - tenant_id
       - tenant_name
+      - update_time
       type: object
     UpdateTeamInfoReq:
       example:
