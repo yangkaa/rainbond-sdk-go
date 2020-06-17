@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TenantName** | **string** | 团队名称 | 
+**EnterpriseId** | **string** | 团队所属企业ID,未提供时默认使用请求用户企业ID | 
 **Creater** | **int32** | 团队所属人，未提供时默认使用登录用户作为所属人 | [optional] 
 **Region** | **string** | 默认开通的数据中心，未指定则不开通 | [optional] 
 

@@ -920,7 +920,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AppInfo'
+                $ref: '#/components/schemas/MarketInstall'
           description: ""
       tags:
       - openapi-apps
@@ -1205,6 +1205,72 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppServiceTelescopicVertical'
+          description: ""
+      tags:
+      - openapi-apps
+      x-codegen-request-body-name: data
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade:
+    get:
+      description: 升级应用
+      operationId: teams_regions_apps_upgrade_list
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUpgrade'
+          description: ""
+      tags:
+      - openapi-apps
+    post:
+      description: 升级应用
+      operationId: teams_regions_apps_upgrade_create
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upgrade'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUpgrade'
           description: ""
       tags:
       - openapi-apps
@@ -2412,6 +2478,7 @@ components:
       example:
         tenant_name: tenant_name
         creater: 0
+        enterprise_id: enterprise_id
         region: region
       properties:
         tenant_name:
@@ -2419,6 +2486,12 @@ components:
           maxLength: 24
           minLength: 1
           title: Tenant name
+          type: string
+        enterprise_id:
+          description: 团队所属企业ID,未提供时默认使用请求用户企业ID
+          maxLength: 32
+          minLength: 1
+          title: Enterprise id
           type: string
         creater:
           description: 团队所属人，未提供时默认使用登录用户作为所属人
@@ -2431,18 +2504,19 @@ components:
           title: Region
           type: string
       required:
+      - enterprise_id
       - tenant_name
       type: object
     TeamBaseInfo:
       example:
         tenant_id: tenant_id
         tenant_name: tenant_name
-        update_time: 2000-01-23T04:56:07.000+00:00
+        update_time: update_time
         is_active: true
-        create_time: 2000-01-23T04:56:07.000+00:00
+        create_time: create_time
         limit_memory: 6
         creater: 0
-        expired_time: 2000-01-23T04:56:07.000+00:00
+        expired_time: expired_time
         tenant_alias: tenant_alias
         region: region
         enterprise_id: enterprise_id
@@ -2473,7 +2547,8 @@ components:
           type: boolean
         create_time:
           description: 创建时间
-          format: date-time
+          maxLength: 64
+          minLength: 1
           title: Create time
           type: string
         creater:
@@ -2486,12 +2561,14 @@ components:
           type: integer
         update_time:
           description: 更新时间
-          format: date-time
+          maxLength: 64
+          minLength: 1
           title: Update time
           type: string
         expired_time:
           description: 过期时间
-          format: date-time
+          maxLength: 64
+          minLength: 1
           title: Expired time
           type: string
         tenant_alias:
@@ -3940,6 +4017,137 @@ components:
       - market_type
       - market_url
       type: object
+    MarketInstall:
+      example:
+        note: note
+        region_name: region_name
+        service_list:
+        - tenant_id: tenant_id
+          service_region: service_region
+          service_key: service_key
+          extend_method: 不伸缩
+          service_alias: service_alias
+          min_memory: 413233370
+          check_event_id: check_event_id
+          service_cname: service_cname
+          expired_time: 2000-01-23T04:56:07.000+00:00
+          check_uuid: check_uuid
+          language: language
+          is_service: true
+          open_webhooks: true
+          update_time: 2000-01-23T04:56:07.000+00:00
+          is_upgrate: true
+          total_memory: 885365090
+          min_cpu: -1517921766
+          service_id: service_id
+          code_version: code_version
+          oauth_service_id: -594390510
+          git_url: git_url
+          image: image
+          service_source: service_source
+          docker_cmd: docker_cmd
+          create_time: 2000-01-23T04:56:07.000+00:00
+          git_project_id: 273751188
+          service_origin: service_origin
+          tenant_service_group_id: 1847456234
+          update_version: -1803530559
+          version: version
+          build_upgrade: true
+          code_from: code_from
+          service_type: service_type
+          creater: -1158723813
+          create_status: create_status
+          cmd: cmd
+          category: category
+          min_node: 441289069
+          status: status
+          desc: desc
+          server_type: server_type
+        - tenant_id: tenant_id
+          service_region: service_region
+          service_key: service_key
+          extend_method: 不伸缩
+          service_alias: service_alias
+          min_memory: 413233370
+          check_event_id: check_event_id
+          service_cname: service_cname
+          expired_time: 2000-01-23T04:56:07.000+00:00
+          check_uuid: check_uuid
+          language: language
+          is_service: true
+          open_webhooks: true
+          update_time: 2000-01-23T04:56:07.000+00:00
+          is_upgrate: true
+          total_memory: 885365090
+          min_cpu: -1517921766
+          service_id: service_id
+          code_version: code_version
+          oauth_service_id: -594390510
+          git_url: git_url
+          image: image
+          service_source: service_source
+          docker_cmd: docker_cmd
+          create_time: 2000-01-23T04:56:07.000+00:00
+          git_project_id: 273751188
+          service_origin: service_origin
+          tenant_service_group_id: 1847456234
+          update_version: -1803530559
+          version: version
+          build_upgrade: true
+          code_from: code_from
+          service_type: service_type
+          creater: -1158723813
+          create_status: create_status
+          cmd: cmd
+          category: category
+          min_node: 441289069
+          status: status
+          desc: desc
+          server_type: server_type
+        team_id: team_id
+        ID: 0
+        enterprise_id: enterprise_id
+      properties:
+        enterprise_id:
+          description: 企业ID(联合云ID)
+          maxLength: 32
+          minLength: 1
+          title: Enterprise id
+          type: string
+        team_id:
+          description: 团队id
+          maxLength: 32
+          minLength: 1
+          title: Team id
+          type: string
+        note:
+          description: 备注
+          maxLength: 1024
+          minLength: 1
+          title: Note
+          type: string
+        ID:
+          description: 应用id
+          title: Id
+          type: integer
+        region_name:
+          description: 数据中心名
+          maxLength: 64
+          minLength: 1
+          title: Region name
+          type: string
+        service_list:
+          items:
+            $ref: '#/components/schemas/ServiceBaseInfo'
+          type: array
+      required:
+      - ID
+      - enterprise_id
+      - note
+      - region_name
+      - service_list
+      - team_id
+      type: object
     ServiceGroupOperations:
       example:
         action: stop
@@ -4191,6 +4399,120 @@ components:
           type: integer
       required:
       - new_memory
+      type: object
+    ListUpgrade:
+      example:
+        app_model_id: app_model_id
+        app_model_name: app_model_name
+        current_version: current_version
+        can_upgrade: true
+        source: source
+        enterprise_id: enterprise_id
+        market_name: market_name
+        upgrade_versions:
+        - upgrade_versions
+        - upgrade_versions
+      properties:
+        market_name:
+          description: 应用商店名称
+          maxLength: 64
+          minLength: 1
+          title: Market name
+          type: string
+        app_model_id:
+          description: 应用模型id
+          maxLength: 32
+          minLength: 1
+          title: App model id
+          type: string
+        app_model_name:
+          description: 应用模型名称
+          maxLength: 64
+          minLength: 1
+          title: App model name
+          type: string
+        current_version:
+          description: 当前版本
+          maxLength: 64
+          minLength: 1
+          title: Current version
+          type: string
+        enterprise_id:
+          description: 企业id
+          maxLength: 64
+          minLength: 1
+          title: Enterprise id
+          type: string
+        can_upgrade:
+          description: 可升级
+          title: Can upgrade
+          type: boolean
+        upgrade_versions:
+          description: 可升级的版本列表
+          items:
+            type: string
+          type: array
+        source:
+          description: 应用模型来源
+          maxLength: 32
+          minLength: 1
+          title: Source
+          type: string
+      required:
+      - app_model_id
+      - app_model_name
+      - can_upgrade
+      - current_version
+      - enterprise_id
+      - market_name
+      - source
+      - upgrade_versions
+      type: object
+    UpgradeBase:
+      example:
+        app_model_id: app_model_id
+        app_model_version: app_model_version
+        market_name: market_name
+      properties:
+        market_name:
+          description: 应用商店名称
+          maxLength: 64
+          minLength: 1
+          title: Market name
+          type: string
+        app_model_id:
+          description: 应用模型id
+          maxLength: 32
+          minLength: 1
+          title: App model id
+          type: string
+        app_model_version:
+          description: 当前版本
+          maxLength: 64
+          minLength: 1
+          title: App model version
+          type: string
+      required:
+      - app_model_id
+      - app_model_version
+      - market_name
+      type: object
+    Upgrade:
+      example:
+        update_versions:
+        - app_model_id: app_model_id
+          app_model_version: app_model_version
+          market_name: market_name
+        - app_model_id: app_model_id
+          app_model_version: app_model_version
+          market_name: market_name
+      properties:
+        update_versions:
+          items:
+            $ref: '#/components/schemas/UpgradeBase'
+          type: array
+      required:
+      - update_versions
       type: object
     TeamAppsResource:
       example:

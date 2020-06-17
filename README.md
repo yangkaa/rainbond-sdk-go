@@ -48,6 +48,8 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesRead**](docs/OpenapiAppsApi.md#teamsregionsappsservicesread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesTelescopicHorizontalCreate**](docs/OpenapiAppsApi.md#teamsregionsappsservicestelescopichorizontalcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesTelescopicVerticalCreate**](docs/OpenapiAppsApi.md#teamsregionsappsservicestelescopicverticalcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsUpgradeCreate**](docs/OpenapiAppsApi.md#teamsregionsappsupgradecreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsUpgradeList**](docs/OpenapiAppsApi.md#teamsregionsappsupgradelist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
 *OpenapiAppsApi* | [**TeamsRegionsResourceList**](docs/OpenapiAppsApi.md#teamsregionsresourcelist) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 *OpenapiEntrepriseApi* | [**ConfigsList**](docs/OpenapiEntrepriseApi.md#configslist) | **Get** /configs | 
 *OpenapiGatewayApi* | [**HttpdomainsList**](docs/OpenapiGatewayApi.md#httpdomainslist) | **Get** /httpdomains | 
@@ -112,7 +114,9 @@ Class | Method | HTTP request | Description
  - [ListServiceEventsResponse](docs/ListServiceEventsResponse.md)
  - [ListTeamRegionsResp](docs/ListTeamRegionsResp.md)
  - [ListTeamResp](docs/ListTeamResp.md)
+ - [ListUpgrade](docs/ListUpgrade.md)
  - [ListUsersRespView](docs/ListUsersRespView.md)
+ - [MarketInstall](docs/MarketInstall.md)
  - [NewBieGuideBaseResp](docs/NewBieGuideBaseResp.md)
  - [OauthServicesBaseResp](docs/OauthServicesBaseResp.md)
  - [OauthServicesResp](docs/OauthServicesResp.md)
@@ -137,6 +141,8 @@ Class | Method | HTTP request | Description
  - [UpdatePostHttpGatewayRule](docs/UpdatePostHttpGatewayRule.md)
  - [UpdateTeamInfoReq](docs/UpdateTeamInfoReq.md)
  - [UpdateUser](docs/UpdateUser.md)
+ - [Upgrade](docs/Upgrade.md)
+ - [UpgradeBase](docs/UpgradeBase.md)
  - [UserInfo](docs/UserInfo.md)
 
 

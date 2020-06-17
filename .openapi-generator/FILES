@@ -41,7 +41,9 @@ docs/Install.md
 docs/ListServiceEventsResponse.md
 docs/ListTeamRegionsResp.md
 docs/ListTeamResp.md
+docs/ListUpgrade.md
 docs/ListUsersRespView.md
+docs/MarketInstall.md
 docs/NewBieGuideBaseResp.md
 docs/OauthServicesBaseResp.md
 docs/OauthServicesResp.md
@@ -73,6 +75,8 @@ docs/TeamRegionsResp.md
 docs/UpdatePostHttpGatewayRule.md
 docs/UpdateTeamInfoReq.md
 docs/UpdateUser.md
+docs/Upgrade.md
+docs/UpgradeBase.md
 docs/UserInfo.md
 git_push.sh
 go.mod
@@ -107,7 +111,9 @@ model_install.go
 model_list_service_events_response.go
 model_list_team_regions_resp.go
 model_list_team_resp.go
+model_list_upgrade.go
 model_list_users_resp_view.go
+model_market_install.go
 model_new_bie_guide_base_resp.go
 model_oauth_services_base_resp.go
 model_oauth_services_resp.go
@@ -132,5 +138,7 @@ model_team_regions_resp.go
 model_update_post_http_gateway_rule.go
 model_update_team_info_req.go
 model_update_user.go
+model_upgrade.go
+model_upgrade_base.go
 model_user_info.go
 response.go

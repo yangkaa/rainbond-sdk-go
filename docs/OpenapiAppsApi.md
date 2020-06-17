@@ -20,6 +20,8 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsServicesRead**](OpenapiAppsApi.md#TeamsRegionsAppsServicesRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
 [**TeamsRegionsAppsServicesTelescopicHorizontalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicHorizontalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal | 
 [**TeamsRegionsAppsServicesTelescopicVerticalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicVerticalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
+[**TeamsRegionsAppsUpgradeCreate**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
+[**TeamsRegionsAppsUpgradeList**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
 [**TeamsRegionsResourceList**](OpenapiAppsApi.md#TeamsRegionsResourceList) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 
 
@@ -257,7 +259,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsInstallCreate
 
-> AppInfo TeamsRegionsAppsInstallCreate(ctx, regionName, teamId, appId, data)
+> MarketInstall TeamsRegionsAppsInstallCreate(ctx, regionName, teamId, appId, data)
 
 
 
@@ -276,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AppInfo**](AppInfo.md)
+[**MarketInstall**](MarketInstall.md)
 
 ### Authorization
 
@@ -657,6 +659,79 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsUpgradeCreate
+
+> ListUpgrade TeamsRegionsAppsUpgradeCreate(ctx, regionName, teamId, appId, data)
+
+
+
+升级应用
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
+**data** | [**Upgrade**](Upgrade.md)|  | 
+
+### Return type
+
+[**ListUpgrade**](ListUpgrade.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsUpgradeList
+
+> ListUpgrade TeamsRegionsAppsUpgradeList(ctx, regionName, teamId, appId)
+
+
+
+升级应用
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
+
+### Return type
+
+[**ListUpgrade**](ListUpgrade.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
