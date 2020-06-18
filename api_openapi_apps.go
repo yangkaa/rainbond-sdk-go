@@ -519,7 +519,7 @@ TeamsRegionsAppsDomainsCreate Method for TeamsRegionsAppsDomainsCreate
  * @param data
 @return GatewayRule
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsDomainsCreate(ctx _context.Context, appId string, regionName string, teamId string, data PostHttpGatewayRule) (GatewayRule, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsDomainsCreate(ctx _context.Context, appId string, regionName string, teamId string, data PostGatewayRule) (GatewayRule, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}

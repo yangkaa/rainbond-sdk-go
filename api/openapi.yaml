@@ -801,7 +801,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PostHTTPGatewayRule'
+              $ref: '#/components/schemas/PostGatewayRule'
         required: true
       responses:
         "200":
@@ -4008,7 +4008,94 @@ components:
             $ref: '#/components/schemas/TCPGatewayRule'
           type: array
       type: object
+    PostTCPGatewayRuleExtensions:
+      description: 规则扩展
+      example:
+        value: value
+        key: key
+      properties:
+        key:
+          maxLength: 32
+          minLength: 1
+          title: Key
+          type: string
+        value:
+          maxLength: 32
+          minLength: 1
+          title: Value
+          type: string
+      required:
+      - key
+      - value
+      type: object
+    PostTCPGatewayRule:
+      example:
+        container_port: 0
+        rule_extensions:
+        - value: value
+          key: key
+        - value: value
+          key: key
+        default_port: 6
+        end_point: end_point
+        default_ip: default_ip
+        service_id: service_id
+      properties:
+        container_port:
+          description: 组件端口
+          title: Container port
+          type: integer
+        service_id:
+          description: 组件id
+          maxLength: 32
+          minLength: 1
+          title: Service id
+          type: string
+        end_point:
+          description: ip地址:端口
+          maxLength: 32
+          minLength: 1
+          title: End point
+          type: string
+        rule_extensions:
+          description: 规则扩展
+          items:
+            $ref: '#/components/schemas/PostTCPGatewayRuleExtensions'
+          type: array
+        default_port:
+          description: 映射端口
+          title: Default port
+          type: integer
+        default_ip:
+          description: 映射id地址
+          maxLength: 32
+          minLength: 1
+          title: Default ip
+          type: string
+      required:
+      - container_port
+      - default_ip
+      - default_port
+      - end_point
+      - service_id
+      title: Tcp
+      type: object
     PostHTTPGatewayRule:
+      example:
+        certificate_id: 5
+        container_port: 1
+        domain_name: domain_name
+        domain_cookie: domain_cookie
+        rule_extensions:
+        - rule_extensions
+        - rule_extensions
+        domain_path: /
+        service_id: service_id
+        domain_header: domain_header
+        the_weight: 5
+        auto_ssl: false
+        whether_open: false
+        auto_ssl_config: true
       properties:
         service_id:
           description: 应用组件id
@@ -4071,6 +4158,50 @@ components:
       - container_port
       - domain_name
       - service_id
+      title: Http
+      type: object
+    PostGatewayRule:
+      example:
+        tcp:
+          container_port: 0
+          rule_extensions:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          default_port: 6
+          end_point: end_point
+          default_ip: default_ip
+          service_id: service_id
+        protocol: protocol
+        http:
+          certificate_id: 5
+          container_port: 1
+          domain_name: domain_name
+          domain_cookie: domain_cookie
+          rule_extensions:
+          - rule_extensions
+          - rule_extensions
+          domain_path: /
+          service_id: service_id
+          domain_header: domain_header
+          the_weight: 5
+          auto_ssl: false
+          whether_open: false
+          auto_ssl_config: true
+      properties:
+        protocol:
+          description: 协议
+          maxLength: 32
+          minLength: 1
+          title: Protocol
+          type: string
+        tcp:
+          $ref: '#/components/schemas/PostTCPGatewayRule'
+        http:
+          $ref: '#/components/schemas/PostHTTPGatewayRule'
+      required:
+      - protocol
       type: object
     UpdatePostHTTPGatewayRule:
       properties:

@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 **appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**data** | [**PostHttpGatewayRule**](PostHttpGatewayRule.md)|  | 
+**data** | [**PostGatewayRule**](PostGatewayRule.md)|  | 
 
 ### Return type
 
