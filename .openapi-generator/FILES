@@ -36,6 +36,7 @@ docs/EnterpriseConfigSeralizer.md
 docs/EnterpriseHttpGatewayRule.md
 docs/ExportAppBaseResp.md
 docs/Fail.md
+docs/GatewayRule.md
 docs/HttpGatewayRule.md
 docs/Install.md
 docs/ListServiceEventsResponse.md
@@ -63,6 +64,7 @@ docs/RoleInfo.md
 docs/ServiceBaseInfo.md
 docs/ServiceGroupOperations.md
 docs/Success.md
+docs/TcpGatewayRule.md
 docs/TeamAppsCloseSerializers.md
 docs/TeamAppsResource.md
 docs/TeamBaseInfo.md
@@ -106,6 +108,7 @@ model_enterprise_config_seralizer.go
 model_enterprise_http_gateway_rule.go
 model_export_app_base_resp.go
 model_fail.go
+model_gateway_rule.go
 model_http_gateway_rule.go
 model_install.go
 model_list_service_events_response.go
@@ -126,6 +129,7 @@ model_role_info.go
 model_service_base_info.go
 model_service_group_operations.go
 model_success.go
+model_tcp_gateway_rule.go
 model_team_apps_close_serializers.go
 model_team_apps_resource.go
 model_team_base_info.go

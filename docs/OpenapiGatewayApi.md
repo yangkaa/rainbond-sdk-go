@@ -5,9 +5,9 @@ All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**HttpdomainsList**](OpenapiGatewayApi.md#HttpdomainsList) | **Get** /httpdomains | 
-[**TeamsRegionsAppsHttpdomainsDelete**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
-[**TeamsRegionsAppsHttpdomainsList**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
-[**TeamsRegionsAppsHttpdomainsUpdate**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsUpdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
+[**TeamsRegionsAppsDomainsDelete**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
+[**TeamsRegionsAppsDomainsList**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
+[**TeamsRegionsAppsDomainsUpdate**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsUpdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
 
 
 
@@ -54,9 +54,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TeamsRegionsAppsHttpdomainsDelete
+## TeamsRegionsAppsDomainsDelete
 
-> HttpGatewayRule TeamsRegionsAppsHttpdomainsDelete(ctx, appId, regionName, ruleId, teamId)
+> HttpGatewayRule TeamsRegionsAppsDomainsDelete(ctx, appId, regionName, ruleId, teamId)
 
 
 
@@ -91,13 +91,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TeamsRegionsAppsHttpdomainsList
+## TeamsRegionsAppsDomainsList
 
-> []HttpGatewayRule TeamsRegionsAppsHttpdomainsList(ctx, regionName, teamId, appId)
+> []GatewayRule TeamsRegionsAppsDomainsList(ctx, regionName, teamId, appId)
 
 
 
-获取应用http访问策略列表
+获取应用访问策略列表
 
 ### Required Parameters
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]HttpGatewayRule**](HTTPGatewayRule.md)
+[**[]GatewayRule**](GatewayRule.md)
 
 ### Authorization
 
@@ -127,13 +127,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TeamsRegionsAppsHttpdomainsUpdate
+## TeamsRegionsAppsDomainsUpdate
 
-> HttpGatewayRule TeamsRegionsAppsHttpdomainsUpdate(ctx, regionName, ruleId, teamId, appId, data)
+> HttpGatewayRule TeamsRegionsAppsDomainsUpdate(ctx, regionName, ruleId, teamId, appId, data)
 
 
 
-更新HTTP访问策略
+更新访问策略
 
 ### Required Parameters
 

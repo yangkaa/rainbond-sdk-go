@@ -37,7 +37,7 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsCopyList**](docs/OpenapiAppsApi.md#teamsregionsappscopylist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/copy | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsCreate**](docs/OpenapiAppsApi.md#teamsregionsappscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsDelete**](docs/OpenapiAppsApi.md#teamsregionsappsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
-*OpenapiAppsApi* | [**TeamsRegionsAppsHttpdomainsCreate**](docs/OpenapiAppsApi.md#teamsregionsappshttpdomainscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsDomainsCreate**](docs/OpenapiAppsApi.md#teamsregionsappsdomainscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsInstallCreate**](docs/OpenapiAppsApi.md#teamsregionsappsinstallcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsList**](docs/OpenapiAppsApi.md#teamsregionsappslist) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsOperationsCreate**](docs/OpenapiAppsApi.md#teamsregionsappsoperationscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
@@ -53,9 +53,9 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsResourceList**](docs/OpenapiAppsApi.md#teamsregionsresourcelist) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 *OpenapiEntrepriseApi* | [**ConfigsList**](docs/OpenapiEntrepriseApi.md#configslist) | **Get** /configs | 
 *OpenapiGatewayApi* | [**HttpdomainsList**](docs/OpenapiGatewayApi.md#httpdomainslist) | **Get** /httpdomains | 
-*OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsDelete**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
-*OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsList**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
-*OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsUpdate**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
+*OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsDelete**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
+*OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsList**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
+*OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsUpdate**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
 *OpenapiRegionApi* | [**RegionsCreate**](docs/OpenapiRegionApi.md#regionscreate) | **Post** /regions | 
 *OpenapiRegionApi* | [**RegionsList**](docs/OpenapiRegionApi.md#regionslist) | **Get** /regions | 
 *OpenapiTeamApi* | [**TeamsCertificatesCreate**](docs/OpenapiTeamApi.md#teamscertificatescreate) | **Post** /teams/{team_id}/certificates | 
@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
  - [EnterpriseHttpGatewayRule](docs/EnterpriseHttpGatewayRule.md)
  - [ExportAppBaseResp](docs/ExportAppBaseResp.md)
  - [Fail](docs/Fail.md)
+ - [GatewayRule](docs/GatewayRule.md)
  - [HttpGatewayRule](docs/HttpGatewayRule.md)
  - [Install](docs/Install.md)
  - [ListServiceEventsResponse](docs/ListServiceEventsResponse.md)
@@ -129,6 +130,7 @@ Class | Method | HTTP request | Description
  - [ServiceBaseInfo](docs/ServiceBaseInfo.md)
  - [ServiceGroupOperations](docs/ServiceGroupOperations.md)
  - [Success](docs/Success.md)
+ - [TcpGatewayRule](docs/TcpGatewayRule.md)
  - [TeamAppsCloseSerializers](docs/TeamAppsCloseSerializers.md)
  - [TeamAppsResource](docs/TeamAppsResource.md)
  - [TeamBaseInfo](docs/TeamBaseInfo.md)

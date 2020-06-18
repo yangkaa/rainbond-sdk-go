@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsCopyList**](OpenapiAppsApi.md#TeamsRegionsAppsCopyList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/copy | 
 [**TeamsRegionsAppsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps | 
 [**TeamsRegionsAppsDelete**](OpenapiAppsApi.md#TeamsRegionsAppsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
-[**TeamsRegionsAppsHttpdomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsHttpdomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
+[**TeamsRegionsAppsDomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsDomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
 [**TeamsRegionsAppsInstallCreate**](OpenapiAppsApi.md#TeamsRegionsAppsInstallCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 [**TeamsRegionsAppsList**](OpenapiAppsApi.md#TeamsRegionsAppsList) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
 [**TeamsRegionsAppsOperationsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsOperationsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
@@ -220,9 +220,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TeamsRegionsAppsHttpdomainsCreate
+## TeamsRegionsAppsDomainsCreate
 
-> HttpGatewayRule TeamsRegionsAppsHttpdomainsCreate(ctx, appId, regionName, teamId, data)
+> GatewayRule TeamsRegionsAppsDomainsCreate(ctx, appId, regionName, teamId, data)
 
 
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HttpGatewayRule**](HTTPGatewayRule.md)
+[**GatewayRule**](GatewayRule.md)
 
 ### Authorization
 

@@ -746,10 +746,10 @@ paths:
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
-  /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains:
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains:
     get:
-      description: 获取应用http访问策略列表
-      operationId: teams_regions_apps_httpdomains_list
+      description: 获取应用访问策略列表
+      operationId: teams_regions_apps_domains_list
       parameters:
       - in: path
         name: region_name
@@ -773,14 +773,14 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/HTTPGatewayRule'
+                  $ref: '#/components/schemas/GatewayRule'
                 type: array
           description: ""
       tags:
       - openapi-gateway
     post:
       description: 创建HTTP网关策略
-      operationId: teams_regions_apps_httpdomains_create
+      operationId: teams_regions_apps_domains_create
       parameters:
       - in: path
         name: app_id
@@ -808,15 +808,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPGatewayRule'
+                $ref: '#/components/schemas/GatewayRule'
           description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
-  /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id}:
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id}:
     delete:
       description: 删除HTTP访问策略
-      operationId: teams_regions_apps_httpdomains_delete
+      operationId: teams_regions_apps_domains_delete
       parameters:
       - in: path
         name: app_id
@@ -848,8 +848,8 @@ paths:
       tags:
       - openapi-gateway
     put:
-      description: 更新HTTP访问策略
-      operationId: teams_regions_apps_httpdomains_update
+      description: 更新访问策略
+      operationId: teams_regions_apps_domains_update
       parameters:
       - in: path
         name: region_name
@@ -2405,7 +2405,6 @@ components:
           type: boolean
         create_time:
           description: 创建时间
-          maxLength: 64
           minLength: 1
           title: Create time
           type: string
@@ -3844,6 +3843,197 @@ components:
       - service_id
       - service_name
       - tenant_id
+      type: object
+    TCPGatewayRule:
+      example:
+        tenant_id: tenant_id
+        container_port: 885365090
+        service_alias: service_alias
+        rule_extensions: rule_extensions
+        create_time: 2000-01-23T04:56:07.000+00:00
+        service_name: service_name
+        end_point: end_point
+        is_outer_service: true
+        region_id: region_id
+        type: 1847456234
+        protocol: protocol
+        tcp_rule_id: tcp_rule_id
+        service_id: service_id
+        ID: 2
+      properties:
+        ID:
+          readOnly: true
+          title: ID
+          type: integer
+        tcp_rule_id:
+          description: tcp_rule_id
+          maxLength: 128
+          minLength: 1
+          title: Tcp rule id
+          type: string
+        region_id:
+          description: region id
+          maxLength: 36
+          minLength: 1
+          title: Region id
+          type: string
+        tenant_id:
+          description: 租户id
+          maxLength: 32
+          minLength: 1
+          title: Tenant id
+          type: string
+        service_id:
+          description: 组件id
+          maxLength: 32
+          minLength: 1
+          title: Service id
+          type: string
+        service_name:
+          description: 组件名
+          maxLength: 64
+          minLength: 1
+          title: Service name
+          type: string
+        end_point:
+          description: ip+port
+          maxLength: 256
+          minLength: 1
+          title: End point
+          type: string
+        create_time:
+          description: 创建时间
+          format: date-time
+          readOnly: true
+          title: Create time
+          type: string
+        protocol:
+          description: 服务协议：tcp,udp
+          maxLength: 15
+          title: Protocol
+          type: string
+        container_port:
+          description: 容器端口
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Container port
+          type: integer
+        service_alias:
+          description: 组件别名
+          maxLength: 64
+          minLength: 1
+          title: Service alias
+          type: string
+        type:
+          description: 类型（默认：0， 自定义：1）
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Type
+          type: integer
+        rule_extensions:
+          description: 扩展功能
+          nullable: true
+          title: Rule extensions
+          type: string
+        is_outer_service:
+          description: 是否已开启对外端口
+          title: Is outer service
+          type: boolean
+      required:
+      - end_point
+      - region_id
+      - service_id
+      - service_name
+      - tcp_rule_id
+      - tenant_id
+      type: object
+    GatewayRule:
+      example:
+        tcp:
+        - tenant_id: tenant_id
+          container_port: 885365090
+          service_alias: service_alias
+          rule_extensions: rule_extensions
+          create_time: 2000-01-23T04:56:07.000+00:00
+          service_name: service_name
+          end_point: end_point
+          is_outer_service: true
+          region_id: region_id
+          type: 1847456234
+          protocol: protocol
+          tcp_rule_id: tcp_rule_id
+          service_id: service_id
+          ID: 2
+        - tenant_id: tenant_id
+          container_port: 885365090
+          service_alias: service_alias
+          rule_extensions: rule_extensions
+          create_time: 2000-01-23T04:56:07.000+00:00
+          service_name: service_name
+          end_point: end_point
+          is_outer_service: true
+          region_id: region_id
+          type: 1847456234
+          protocol: protocol
+          tcp_rule_id: tcp_rule_id
+          service_id: service_id
+          ID: 2
+        http:
+        - tenant_id: tenant_id
+          container_port: 441289069
+          domain_type: domain_type
+          service_alias: service_alias
+          rule_extensions: rule_extensions
+          create_time: 2000-01-23T04:56:07.000+00:00
+          http_rule_id: http_rule_id
+          service_name: service_name
+          is_outer_service: true
+          region_id: region_id
+          the_weight: 273751188
+          auto_ssl_config: auto_ssl_config
+          domain_heander: domain_heander
+          type: 413233370
+          is_senior: true
+          certificate_id: -1517921766
+          domain_name: domain_name
+          protocol: protocol
+          domain_cookie: domain_cookie
+          domain_path: domain_path
+          service_id: service_id
+          auto_ssl: true
+          ID: 0
+        - tenant_id: tenant_id
+          container_port: 441289069
+          domain_type: domain_type
+          service_alias: service_alias
+          rule_extensions: rule_extensions
+          create_time: 2000-01-23T04:56:07.000+00:00
+          http_rule_id: http_rule_id
+          service_name: service_name
+          is_outer_service: true
+          region_id: region_id
+          the_weight: 273751188
+          auto_ssl_config: auto_ssl_config
+          domain_heander: domain_heander
+          type: 413233370
+          is_senior: true
+          certificate_id: -1517921766
+          domain_name: domain_name
+          protocol: protocol
+          domain_cookie: domain_cookie
+          domain_path: domain_path
+          service_id: service_id
+          auto_ssl: true
+          ID: 0
+      properties:
+        http:
+          items:
+            $ref: '#/components/schemas/HTTPGatewayRule'
+          type: array
+        tcp:
+          items:
+            $ref: '#/components/schemas/TCPGatewayRule'
+          type: array
       type: object
     PostHTTPGatewayRule:
       properties:
