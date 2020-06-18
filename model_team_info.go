@@ -9,9 +9,6 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // TeamInfo struct for TeamInfo
 type TeamInfo struct {
 	// 团队ID
@@ -25,7 +22,7 @@ type TeamInfo struct {
 	// 是否激活
 	IsActive bool `json:"is_active,omitempty"`
 	// 创建时间
-	CreateTime time.Time `json:"create_time,omitempty"`
+	CreateTime string `json:"create_time,omitempty"`
 	// 团队拥有者用户
 	Creater string `json:"creater,omitempty"`
 	// 团队的组件数量

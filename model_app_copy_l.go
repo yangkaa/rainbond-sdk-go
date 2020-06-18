@@ -9,14 +9,11 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // AppCopyL struct for AppCopyL
 type AppCopyL struct {
 	BuildSource string `json:"build_source,omitempty"`
 	// 更新日期
-	UpdateTime time.Time `json:"update_time"`
+	UpdateTime string `json:"update_time"`
 	// 构建版本
 	DeployVersion string `json:"deploy_version"`
 	// 创建状态

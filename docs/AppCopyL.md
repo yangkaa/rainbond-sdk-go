@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BuildSource** | **string** |  | [optional] [readonly] 
-**UpdateTime** | [**time.Time**](time.Time.md) | 更新日期 | 
+**UpdateTime** | **string** | 更新日期 | 
 **DeployVersion** | **string** | 构建版本 | 
 **CreateStatus** | **string** | 创建状态 | 
 **ServiceAlias** | **string** | 组件昵称 | 

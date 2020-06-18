@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Phone** | Pointer to **string** | 手机号码 | [optional] 
 **IsActive** | **bool** | 激活状态 | [optional] 
 **Origion** | Pointer to **string** | 用户来源 | [optional] 
-**CreateTime** | [**time.Time**](time.Time.md) | 创建时间 | [optional] 
+**CreateTime** | **string** | 创建时间 | [optional] 
 **ClientIp** | Pointer to **string** | 注册ip | [optional] 
 **EnterpriseId** | **string** | enterprise_id | [optional] 
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **IssuedTo** | **[]string** | 域名列表 | 
 **Alias** | **string** | 证书名称 | 
 **CertificateType** | **string** | 证书类型 | 
-**EndData** | [**time.Time**](time.Time.md) | 过期时间 | 
+**EndData** | **string** | 过期时间 | 
 **Id** | **int32** | id | 
 **IssuedBy** | **string** | 证书来源 | 
 

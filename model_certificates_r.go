@@ -9,9 +9,6 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // CertificatesR struct for CertificatesR
 type CertificatesR struct {
 	// 是否过期
@@ -23,7 +20,7 @@ type CertificatesR struct {
 	// 证书类型
 	CertificateType string `json:"certificate_type"`
 	// 过期时间
-	EndData time.Time `json:"end_data"`
+	EndData string `json:"end_data"`
 	// id
 	Id int32 `json:"id"`
 	// 证书来源

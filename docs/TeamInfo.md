@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **TenantAlias** | **string** | 团队别名 | 
 **EnterpriseId** | **string** | 企业ID | 
 **IsActive** | **bool** | 是否激活 | [optional] 
-**CreateTime** | [**time.Time**](time.Time.md) | 创建时间 | [optional] 
+**CreateTime** | **string** | 创建时间 | [optional] 
 **Creater** | **string** | 团队拥有者用户 | [optional] 
 **ServiceNum** | **int32** | 团队的组件数量 | [optional] 
 **RegionNum** | **int32** | 团队开通的数据中心数量 | [optional] 

@@ -9,9 +9,6 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // UserInfo struct for UserInfo
 type UserInfo struct {
 	UserId int32 `json:"user_id"`
@@ -26,7 +23,7 @@ type UserInfo struct {
 	// 用户来源
 	Origion *string `json:"origion,omitempty"`
 	// 创建时间
-	CreateTime time.Time `json:"create_time,omitempty"`
+	CreateTime string `json:"create_time,omitempty"`
 	// 注册ip
 	ClientIp *string `json:"client_ip,omitempty"`
 	// enterprise_id
