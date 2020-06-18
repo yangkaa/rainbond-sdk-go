@@ -230,16 +230,16 @@ TeamsRegionsAppsDomainsList Method for TeamsRegionsAppsDomainsList
  * @param regionName
  * @param teamId
  * @param appId 应用组id
-@return []GatewayRule
+@return GatewayRule
 */
-func (a *OpenapiGatewayApiService) TeamsRegionsAppsDomainsList(ctx _context.Context, regionName string, teamId string, appId int32) ([]GatewayRule, *_nethttp.Response, error) {
+func (a *OpenapiGatewayApiService) TeamsRegionsAppsDomainsList(ctx _context.Context, regionName string, teamId string, appId int32) (GatewayRule, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []GatewayRule
+		localVarReturnValue  GatewayRule
 	)
 
 	// create path and map variables

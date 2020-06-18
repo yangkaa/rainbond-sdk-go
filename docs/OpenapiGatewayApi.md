@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsDomainsList
 
-> []GatewayRule TeamsRegionsAppsDomainsList(ctx, regionName, teamId, appId)
+> GatewayRule TeamsRegionsAppsDomainsList(ctx, regionName, teamId, appId)
 
 
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]GatewayRule**](GatewayRule.md)
+[**GatewayRule**](GatewayRule.md)
 
 ### Authorization
 

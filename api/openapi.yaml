@@ -772,9 +772,7 @@ paths:
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/GatewayRule'
-                type: array
+                $ref: '#/components/schemas/GatewayRule'
           description: ""
       tags:
       - openapi-gateway
