@@ -9,9 +9,6 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // ServiceBaseInfo struct for ServiceBaseInfo
 type ServiceBaseInfo struct {
 	// 组件状态
@@ -52,8 +49,6 @@ type ServiceBaseInfo struct {
 	CodeFrom *string `json:"code_from,omitempty"`
 	// code代码仓库
 	GitUrl *string `json:"git_url,omitempty"`
-	// 创建时间
-	CreateTime time.Time `json:"create_time,omitempty"`
 	// gitlab 中项目id
 	GitProjectId int32 `json:"git_project_id,omitempty"`
 	// 代码版本
@@ -70,8 +65,6 @@ type ServiceBaseInfo struct {
 	IsService bool `json:"is_service,omitempty"`
 	// 组件创建类型cloud云市组件,assistant云帮组件
 	ServiceOrigin string `json:"service_origin,omitempty"`
-	// 过期时间
-	ExpiredTime *time.Time `json:"expired_time,omitempty"`
 	// 组件归属的组件组id
 	TenantServiceGroupId int32 `json:"tenant_service_group_id,omitempty"`
 	// 是否开启自动触发部署功能（兼容老版本组件）
@@ -80,8 +73,6 @@ type ServiceBaseInfo struct {
 	ServiceSource *string `json:"service_source,omitempty"`
 	// 组件创建状态 creating|complete
 	CreateStatus *string `json:"create_status,omitempty"`
-	// 更新时间
-	UpdateTime time.Time `json:"update_time,omitempty"`
 	// 组件检测ID
 	CheckUuid *string `json:"check_uuid,omitempty"`
 	// 组件检测事件ID

@@ -3311,12 +3311,10 @@ components:
         min_memory: 413233370
         check_event_id: check_event_id
         service_cname: service_cname
-        expired_time: 2000-01-23T04:56:07.000+00:00
         check_uuid: check_uuid
         language: language
         is_service: true
         open_webhooks: true
-        update_time: 2000-01-23T04:56:07.000+00:00
         is_upgrate: true
         total_memory: 885365090
         min_cpu: -1517921766
@@ -3327,7 +3325,6 @@ components:
         image: image
         service_source: service_source
         docker_cmd: docker_cmd
-        create_time: 2000-01-23T04:56:07.000+00:00
         git_project_id: 273751188
         service_origin: service_origin
         tenant_service_group_id: 1847456234
@@ -3460,12 +3457,6 @@ components:
           nullable: true
           title: Git url
           type: string
-        create_time:
-          description: 创建时间
-          format: date-time
-          readOnly: true
-          title: Create time
-          type: string
         git_project_id:
           description: gitlab 中项目id
           maximum: 2147483647
@@ -3512,12 +3503,6 @@ components:
           minLength: 1
           title: Service origin
           type: string
-        expired_time:
-          description: 过期时间
-          format: date-time
-          nullable: true
-          title: Expired time
-          type: string
         tenant_service_group_id:
           description: 组件归属的组件组id
           maximum: 2147483647
@@ -3539,12 +3524,6 @@ components:
           maxLength: 15
           nullable: true
           title: Create status
-          type: string
-        update_time:
-          description: 更新时间
-          format: date-time
-          readOnly: true
-          title: Update time
           type: string
         check_uuid:
           description: 组件检测ID
@@ -3606,12 +3585,10 @@ components:
           min_memory: 413233370
           check_event_id: check_event_id
           service_cname: service_cname
-          expired_time: 2000-01-23T04:56:07.000+00:00
           check_uuid: check_uuid
           language: language
           is_service: true
           open_webhooks: true
-          update_time: 2000-01-23T04:56:07.000+00:00
           is_upgrate: true
           total_memory: 885365090
           min_cpu: -1517921766
@@ -3622,7 +3599,6 @@ components:
           image: image
           service_source: service_source
           docker_cmd: docker_cmd
-          create_time: 2000-01-23T04:56:07.000+00:00
           git_project_id: 273751188
           service_origin: service_origin
           tenant_service_group_id: 1847456234
@@ -3647,12 +3623,10 @@ components:
           min_memory: 413233370
           check_event_id: check_event_id
           service_cname: service_cname
-          expired_time: 2000-01-23T04:56:07.000+00:00
           check_uuid: check_uuid
           language: language
           is_service: true
           open_webhooks: true
-          update_time: 2000-01-23T04:56:07.000+00:00
           is_upgrate: true
           total_memory: 885365090
           min_cpu: -1517921766
@@ -3663,7 +3637,6 @@ components:
           image: image
           service_source: service_source
           docker_cmd: docker_cmd
-          create_time: 2000-01-23T04:56:07.000+00:00
           git_project_id: 273751188
           service_origin: service_origin
           tenant_service_group_id: 1847456234
@@ -4224,12 +4197,10 @@ components:
           min_memory: 413233370
           check_event_id: check_event_id
           service_cname: service_cname
-          expired_time: 2000-01-23T04:56:07.000+00:00
           check_uuid: check_uuid
           language: language
           is_service: true
           open_webhooks: true
-          update_time: 2000-01-23T04:56:07.000+00:00
           is_upgrate: true
           total_memory: 885365090
           min_cpu: -1517921766
@@ -4240,7 +4211,6 @@ components:
           image: image
           service_source: service_source
           docker_cmd: docker_cmd
-          create_time: 2000-01-23T04:56:07.000+00:00
           git_project_id: 273751188
           service_origin: service_origin
           tenant_service_group_id: 1847456234
@@ -4265,12 +4235,10 @@ components:
           min_memory: 413233370
           check_event_id: check_event_id
           service_cname: service_cname
-          expired_time: 2000-01-23T04:56:07.000+00:00
           check_uuid: check_uuid
           language: language
           is_service: true
           open_webhooks: true
-          update_time: 2000-01-23T04:56:07.000+00:00
           is_upgrate: true
           total_memory: 885365090
           min_cpu: -1517921766
@@ -4281,7 +4249,6 @@ components:
           image: image
           service_source: service_source
           docker_cmd: docker_cmd
-          create_time: 2000-01-23T04:56:07.000+00:00
           git_project_id: 273751188
           service_origin: service_origin
           tenant_service_group_id: 1847456234
