@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **ServiceId** | **string** | 组件id | 
 **ServiceName** | **string** | 组件名 | 
 **EndPoint** | **string** | ip+port | 
-**CreateTime** | [**time.Time**](time.Time.md) | 创建时间 | [optional] [readonly] 
 **Protocol** | **string** | 服务协议：tcp,udp | [optional] 
 **ContainerPort** | **int32** | 容器端口 | [optional] 
 **ServiceAlias** | **string** | 组件别名 | [optional] 

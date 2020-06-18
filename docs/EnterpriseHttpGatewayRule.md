@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **ServiceId** | **string** | 组件id | 
 **ServiceName** | **string** | 组件名 | 
 **DomainName** | **string** | 域名 | 
-**CreateTime** | [**time.Time**](time.Time.md) | 创建时间 | [optional] [readonly] 
 **ContainerPort** | **int32** | 容器端口 | [optional] 
 **Protocol** | **string** | 域名类型 http https httptphttps httpandhttps | [optional] 
 **CertificateId** | **int32** | 证书ID | [optional] 

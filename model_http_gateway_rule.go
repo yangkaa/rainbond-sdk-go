@@ -9,9 +9,6 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // HttpGatewayRule struct for HttpGatewayRule
 type HttpGatewayRule struct {
 	ID int32 `json:"ID,omitempty"`
@@ -27,8 +24,6 @@ type HttpGatewayRule struct {
 	ServiceName string `json:"service_name"`
 	// 域名
 	DomainName string `json:"domain_name"`
-	// 创建时间
-	CreateTime time.Time `json:"create_time,omitempty"`
 	// 容器端口
 	ContainerPort int32 `json:"container_port,omitempty"`
 	// 域名类型 http https httptphttps httpandhttps

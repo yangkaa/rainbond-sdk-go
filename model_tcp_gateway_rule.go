@@ -9,9 +9,6 @@
  */
 
 package openapi
-import (
-	"time"
-)
 // TcpGatewayRule struct for TcpGatewayRule
 type TcpGatewayRule struct {
 	ID int32 `json:"ID,omitempty"`
@@ -27,8 +24,6 @@ type TcpGatewayRule struct {
 	ServiceName string `json:"service_name"`
 	// ip+port
 	EndPoint string `json:"end_point"`
-	// 创建时间
-	CreateTime time.Time `json:"create_time,omitempty"`
 	// 服务协议：tcp,udp
 	Protocol string `json:"protocol,omitempty"`
 	// 容器端口

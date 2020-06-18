@@ -886,6 +886,148 @@ paths:
       tags:
       - openapi-gateway
       x-codegen-request-body-name: data
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains:
+    get:
+      description: 获取应用http访问策略列表
+      operationId: teams_regions_apps_httpdomains_list
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HTTPGatewayRule'
+                type: array
+          description: ""
+      tags:
+      - openapi-gateway
+    post:
+      description: 创建HTTP网关策略
+      operationId: teams_regions_apps_httpdomains_create
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostHTTPGatewayRule'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPGatewayRule'
+          description: ""
+      tags:
+      - openapi-apps
+      x-codegen-request-body-name: data
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id}:
+    delete:
+      description: 删除HTTP访问策略
+      operationId: teams_regions_apps_httpdomains_delete
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: rule_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPGatewayRule'
+          description: ""
+      tags:
+      - openapi-gateway
+    put:
+      description: 更新HTTP访问策略
+      operationId: teams_regions_apps_httpdomains_update
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: rule_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePostHTTPGatewayRule'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPGatewayRule'
+          description: ""
+      tags:
+      - openapi-gateway
+      x-codegen-request-body-name: data
   /teams/{team_id}/regions/{region_name}/apps/{app_id}/install:
     post:
       description: 安装云市应用
@@ -907,6 +1049,14 @@ paths:
         required: true
         schema:
           type: integer
+      - description: 是否构建
+        in: query
+        name: is_deploy
+        schema:
+          enum:
+          - "true"
+          - "false"
+          type: string
       requestBody:
         content:
           application/json:
@@ -1967,7 +2117,6 @@ components:
         ID: 0
         app_id: 6
         domain_type: domain_type
-        create_time: 2000-01-23T04:56:07.000+00:00
         http_rule_id: http_rule_id
         service_name: service_name
         region_id: region_id
@@ -2036,12 +2185,6 @@ components:
           maxLength: 128
           minLength: 1
           title: Domain name
-          type: string
-        create_time:
-          description: 创建时间
-          format: date-time
-          readOnly: true
-          title: Create time
           type: string
         container_port:
           description: 容器端口
@@ -3666,7 +3809,6 @@ components:
         domain_type: domain_type
         service_alias: service_alias
         rule_extensions: rule_extensions
-        create_time: 2000-01-23T04:56:07.000+00:00
         http_rule_id: http_rule_id
         service_name: service_name
         is_outer_service: true
@@ -3724,12 +3866,6 @@ components:
           maxLength: 128
           minLength: 1
           title: Domain name
-          type: string
-        create_time:
-          description: 创建时间
-          format: date-time
-          readOnly: true
-          title: Create time
           type: string
         container_port:
           description: 容器端口
@@ -3821,7 +3957,6 @@ components:
         container_port: 885365090
         service_alias: service_alias
         rule_extensions: rule_extensions
-        create_time: 2000-01-23T04:56:07.000+00:00
         service_name: service_name
         end_point: end_point
         is_outer_service: true
@@ -3872,12 +4007,6 @@ components:
           minLength: 1
           title: End point
           type: string
-        create_time:
-          description: 创建时间
-          format: date-time
-          readOnly: true
-          title: Create time
-          type: string
         protocol:
           description: 服务协议：tcp,udp
           maxLength: 15
@@ -3925,7 +4054,6 @@ components:
           container_port: 885365090
           service_alias: service_alias
           rule_extensions: rule_extensions
-          create_time: 2000-01-23T04:56:07.000+00:00
           service_name: service_name
           end_point: end_point
           is_outer_service: true
@@ -3939,7 +4067,6 @@ components:
           container_port: 885365090
           service_alias: service_alias
           rule_extensions: rule_extensions
-          create_time: 2000-01-23T04:56:07.000+00:00
           service_name: service_name
           end_point: end_point
           is_outer_service: true
@@ -3955,7 +4082,6 @@ components:
           domain_type: domain_type
           service_alias: service_alias
           rule_extensions: rule_extensions
-          create_time: 2000-01-23T04:56:07.000+00:00
           http_rule_id: http_rule_id
           service_name: service_name
           is_outer_service: true
@@ -3978,7 +4104,6 @@ components:
           domain_type: domain_type
           service_alias: service_alias
           rule_extensions: rule_extensions
-          create_time: 2000-01-23T04:56:07.000+00:00
           http_rule_id: http_rule_id
           service_name: service_name
           is_outer_service: true

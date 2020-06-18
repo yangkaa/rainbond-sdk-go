@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps | 
 [**TeamsRegionsAppsDelete**](OpenapiAppsApi.md#TeamsRegionsAppsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
 [**TeamsRegionsAppsDomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsDomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
+[**TeamsRegionsAppsHttpdomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsHttpdomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
 [**TeamsRegionsAppsInstallCreate**](OpenapiAppsApi.md#TeamsRegionsAppsInstallCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 [**TeamsRegionsAppsList**](OpenapiAppsApi.md#TeamsRegionsAppsList) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
 [**TeamsRegionsAppsOperationsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsOperationsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
@@ -257,9 +258,46 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## TeamsRegionsAppsHttpdomainsCreate
+
+> HttpGatewayRule TeamsRegionsAppsHttpdomainsCreate(ctx, appId, regionName, teamId, data)
+
+
+
+创建HTTP网关策略
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**appId** | **string**|  | 
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+**data** | [**PostHttpGatewayRule**](PostHttpGatewayRule.md)|  | 
+
+### Return type
+
+[**HttpGatewayRule**](HTTPGatewayRule.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## TeamsRegionsAppsInstallCreate
 
-> MarketInstall TeamsRegionsAppsInstallCreate(ctx, regionName, teamId, appId, data)
+> MarketInstall TeamsRegionsAppsInstallCreate(ctx, regionName, teamId, appId, data, optional)
 
 
 
@@ -275,6 +313,20 @@ Name | Type | Description  | Notes
 **teamId** | **string**|  | 
 **appId** | **int32**| 应用组id | 
 **data** | [**Install**](Install.md)|  | 
+ **optional** | ***TeamsRegionsAppsInstallCreateOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a TeamsRegionsAppsInstallCreateOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **isDeploy** | **optional.String**| 是否构建 | 
 
 ### Return type
 
