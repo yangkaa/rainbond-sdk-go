@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ## TeamsDelete
 
-> TeamsDelete(ctx, teamId)
+> TeamsDelete(ctx, teamId, optional)
 
 
 
@@ -253,6 +253,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **teamId** | **string**|  | 
+ **optional** | ***TeamsDeleteOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a TeamsDeleteOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **force** | **optional.String**| 团队名称搜索 | 
 
 ### Return type
 

@@ -9,6 +9,7 @@ api_openapi_region.go
 api_openapi_team.go
 api_openapi_team_region.go
 api_openapi_user.go
+api_teams.go
 client.go
 configuration.go
 docs/AddRegionRequest.md
@@ -29,6 +30,9 @@ docs/CertificatesR.md
 docs/ChangePassWd.md
 docs/ChangePassWdUser.md
 docs/CloudMarketBaseResp.md
+docs/ComponentMonitorBaseSerializers.md
+docs/ComponentMonitorItemsSerializers.md
+docs/ComponentMonitorSerializers.md
 docs/CreateAdminUserReq.md
 docs/CreateTeamReq.md
 docs/CreateUser.md
@@ -45,6 +49,7 @@ docs/ListTeamResp.md
 docs/ListUpgrade.md
 docs/ListUsersRespView.md
 docs/MarketInstall.md
+docs/MonitorDataSerializers.md
 docs/NewBieGuideBaseResp.md
 docs/OauthServicesBaseResp.md
 docs/OauthServicesResp.md
@@ -77,6 +82,7 @@ docs/TeamCertificatesR.md
 docs/TeamInfo.md
 docs/TeamRegionReq.md
 docs/TeamRegionsResp.md
+docs/TeamsApi.md
 docs/UpdatePostHttpGatewayRule.md
 docs/UpdateTeamInfoReq.md
 docs/UpdateUser.md
@@ -104,6 +110,9 @@ model_certificates_r.go
 model_change_pass_wd.go
 model_change_pass_wd_user.go
 model_cloud_market_base_resp.go
+model_component_monitor_base_serializers.go
+model_component_monitor_items_serializers.go
+model_component_monitor_serializers.go
 model_create_admin_user_req.go
 model_create_team_req.go
 model_create_user.go
@@ -120,6 +129,7 @@ model_list_team_resp.go
 model_list_upgrade.go
 model_list_users_resp_view.go
 model_market_install.go
+model_monitor_data_serializers.go
 model_new_bie_guide_base_resp.go
 model_oauth_services_base_resp.go
 model_oauth_services_resp.go

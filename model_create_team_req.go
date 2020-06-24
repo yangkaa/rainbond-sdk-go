@@ -13,10 +13,6 @@ package openapi
 type CreateTeamReq struct {
 	// 团队名称
 	TenantName string `json:"tenant_name"`
-	// 团队所属企业ID,未提供时默认使用请求用户企业ID
-	EnterpriseId string `json:"enterprise_id"`
-	// 团队所属人，未提供时默认使用登录用户作为所属人
-	Creater int32 `json:"creater,omitempty"`
 	// 默认开通的数据中心，未指定则不开通
 	Region string `json:"region,omitempty"`
 }

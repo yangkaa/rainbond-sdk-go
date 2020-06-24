@@ -586,13 +586,20 @@ func (a *OpenapiTeamApiService) TeamsCreate(ctx _context.Context, data CreateTea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+// TeamsDeleteOpts Optional parameters for the method 'TeamsDelete'
+type TeamsDeleteOpts struct {
+    Force optional.String
+}
+
 /*
 TeamsDelete Method for TeamsDelete
 删除团队
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamId
+ * @param optional nil or *TeamsDeleteOpts - Optional Parameters:
+ * @param "Force" (optional.String) -  团队名称搜索
 */
-func (a *OpenapiTeamApiService) TeamsDelete(ctx _context.Context, teamId string) (*_nethttp.Response, error) {
+func (a *OpenapiTeamApiService) TeamsDelete(ctx _context.Context, teamId string, localVarOptionals *TeamsDeleteOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -609,6 +616,9 @@ func (a *OpenapiTeamApiService) TeamsDelete(ctx _context.Context, teamId string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Force.IsSet() {
+		localVarQueryParams.Add("force", parameterToString(localVarOptionals.Force.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

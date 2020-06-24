@@ -41,6 +41,7 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsHttpdomainsCreate**](docs/OpenapiAppsApi.md#teamsregionsappshttpdomainscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsInstallCreate**](docs/OpenapiAppsApi.md#teamsregionsappsinstallcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsList**](docs/OpenapiAppsApi.md#teamsregionsappslist) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsMonitorQueryList**](docs/OpenapiAppsApi.md#teamsregionsappsmonitorquerylist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsOperationsCreate**](docs/OpenapiAppsApi.md#teamsregionsappsoperationscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsRead**](docs/OpenapiAppsApi.md#teamsregionsappsread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesDelete**](docs/OpenapiAppsApi.md#teamsregionsappsservicesdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
@@ -84,6 +85,7 @@ Class | Method | HTTP request | Description
 *OpenapiUserApi* | [**UsersList**](docs/OpenapiUserApi.md#userslist) | **Get** /users | 
 *OpenapiUserApi* | [**UsersRead**](docs/OpenapiUserApi.md#usersread) | **Get** /users/{user_id} | 
 *OpenapiUserApi* | [**UsersUpdate**](docs/OpenapiUserApi.md#usersupdate) | **Put** /users/{user_id} | 
+*TeamsApi* | [**TeamsRegionsAppsMonitorQueryRangeList**](docs/TeamsApi.md#teamsregionsappsmonitorqueryrangelist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range | 
 
 
 ## Documentation For Models
@@ -106,6 +108,9 @@ Class | Method | HTTP request | Description
  - [ChangePassWd](docs/ChangePassWd.md)
  - [ChangePassWdUser](docs/ChangePassWdUser.md)
  - [CloudMarketBaseResp](docs/CloudMarketBaseResp.md)
+ - [ComponentMonitorBaseSerializers](docs/ComponentMonitorBaseSerializers.md)
+ - [ComponentMonitorItemsSerializers](docs/ComponentMonitorItemsSerializers.md)
+ - [ComponentMonitorSerializers](docs/ComponentMonitorSerializers.md)
  - [CreateAdminUserReq](docs/CreateAdminUserReq.md)
  - [CreateTeamReq](docs/CreateTeamReq.md)
  - [CreateUser](docs/CreateUser.md)
@@ -122,6 +127,7 @@ Class | Method | HTTP request | Description
  - [ListUpgrade](docs/ListUpgrade.md)
  - [ListUsersRespView](docs/ListUsersRespView.md)
  - [MarketInstall](docs/MarketInstall.md)
+ - [MonitorDataSerializers](docs/MonitorDataSerializers.md)
  - [NewBieGuideBaseResp](docs/NewBieGuideBaseResp.md)
  - [OauthServicesBaseResp](docs/OauthServicesBaseResp.md)
  - [OauthServicesResp](docs/OauthServicesResp.md)

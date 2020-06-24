@@ -1,11 +1,12 @@
-# CreateTeamReq
+# ComponentMonitorItemsSerializers
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TenantName** | **string** | 团队名称 | 
-**Region** | **string** | 默认开通的数据中心，未指定则不开通 | [optional] 
+**Data** | [**ComponentMonitorBaseSerializers**](ComponentMonitorBaseSerializers.md) |  | 
+**MonitorItem** | **string** | 监控项 | 
+**Status** | **string** | 监控状态 | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

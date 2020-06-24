@@ -288,6 +288,14 @@ paths:
         required: true
         schema:
           type: string
+      - description: 团队名称搜索
+        in: query
+        name: force
+        schema:
+          enum:
+          - "true"
+          - "false"
+          type: string
       responses:
         "204":
           content: {}
@@ -1073,6 +1081,63 @@ paths:
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query:
+    get:
+      description: 应用下组件实时监控
+      operationId: teams_regions_apps_monitor_query_list
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ComponentMonitorSerializers'
+                type: array
+          description: ""
+      tags:
+      - openapi-apps
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range:
+    get:
+      operationId: teams_regions_apps_monitor_query_range_list
+      parameters:
+      - in: path
+        name: app_id
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content: {}
+          description: ""
+      tags:
+      - teams
   /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations:
     post:
       description: 操作应用
@@ -2619,8 +2684,6 @@ components:
     CreateTeamReq:
       example:
         tenant_name: tenant_name
-        creater: 0
-        enterprise_id: enterprise_id
         region: region
       properties:
         tenant_name:
@@ -2629,16 +2692,6 @@ components:
           minLength: 1
           title: Tenant name
           type: string
-        enterprise_id:
-          description: 团队所属企业ID,未提供时默认使用请求用户企业ID
-          maxLength: 32
-          minLength: 1
-          title: Enterprise id
-          type: string
-        creater:
-          description: 团队所属人，未提供时默认使用登录用户作为所属人
-          title: Creater
-          type: integer
         region:
           description: 默认开通的数据中心，未指定则不开通
           maxLength: 24
@@ -2646,7 +2699,6 @@ components:
           title: Region
           type: string
       required:
-      - enterprise_id
       - tenant_name
       type: object
     TeamBaseInfo:
@@ -4562,6 +4614,170 @@ components:
       - region_name
       - service_list
       - team_id
+      type: object
+    MonitorDataSerializers:
+      example:
+        metric:
+          key: metric
+        value:
+        - value
+        - value
+      properties:
+        metric:
+          additionalProperties:
+            type: string
+          title: Metric
+          type: object
+        value:
+          items:
+            type: string
+          type: array
+      required:
+      - metric
+      - value
+      type: object
+    ComponentMonitorBaseSerializers:
+      example:
+        result:
+        - metric:
+            key: metric
+          value:
+          - value
+          - value
+        - metric:
+            key: metric
+          value:
+          - value
+          - value
+        getlist:
+          key: getlist
+        resultType: resultType
+      properties:
+        resultType:
+          description: 返回类型
+          maxLength: 64
+          minLength: 1
+          title: Resulttype
+          type: string
+        result:
+          items:
+            $ref: '#/components/schemas/MonitorDataSerializers'
+          type: array
+        getlist:
+          additionalProperties:
+            type: string
+          title: Getlist
+          type: object
+      required:
+      - resultType
+      title: Data
+      type: object
+    ComponentMonitorItemsSerializers:
+      example:
+        data:
+          result:
+          - metric:
+              key: metric
+            value:
+            - value
+            - value
+          - metric:
+              key: metric
+            value:
+            - value
+            - value
+          getlist:
+            key: getlist
+          resultType: resultType
+        monitor_item: monitor_item
+        status: status
+      properties:
+        data:
+          $ref: '#/components/schemas/ComponentMonitorBaseSerializers'
+        monitor_item:
+          description: 监控项
+          maxLength: 32
+          minLength: 1
+          title: Monitor item
+          type: string
+        status:
+          description: 监控状态
+          maxLength: 32
+          minLength: 1
+          title: Status
+          type: string
+      required:
+      - data
+      - monitor_item
+      - status
+      type: object
+    ComponentMonitorSerializers:
+      example:
+        service_alias: service_alias
+        service_cname: service_cname
+        service_id: service_id
+        monitors:
+        - data:
+            result:
+            - metric:
+                key: metric
+              value:
+              - value
+              - value
+            - metric:
+                key: metric
+              value:
+              - value
+              - value
+            getlist:
+              key: getlist
+            resultType: resultType
+          monitor_item: monitor_item
+          status: status
+        - data:
+            result:
+            - metric:
+                key: metric
+              value:
+              - value
+              - value
+            - metric:
+                key: metric
+              value:
+              - value
+              - value
+            getlist:
+              key: getlist
+            resultType: resultType
+          monitor_item: monitor_item
+          status: status
+      properties:
+        monitors:
+          items:
+            $ref: '#/components/schemas/ComponentMonitorItemsSerializers'
+          type: array
+        service_id:
+          description: 组件id
+          maxLength: 32
+          minLength: 1
+          title: Service id
+          type: string
+        service_cname:
+          description: 组件名
+          maxLength: 64
+          minLength: 1
+          title: Service cname
+          type: string
+        service_alias:
+          description: 组件昵称
+          maxLength: 64
+          minLength: 1
+          title: Service alias
+          type: string
+      required:
+      - service_alias
+      - service_cname
+      - service_id
       type: object
     ServiceGroupOperations:
       example:

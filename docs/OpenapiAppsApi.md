@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsHttpdomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsHttpdomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
 [**TeamsRegionsAppsInstallCreate**](OpenapiAppsApi.md#TeamsRegionsAppsInstallCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 [**TeamsRegionsAppsList**](OpenapiAppsApi.md#TeamsRegionsAppsList) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
+[**TeamsRegionsAppsMonitorQueryList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
 [**TeamsRegionsAppsOperationsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsOperationsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
 [**TeamsRegionsAppsRead**](OpenapiAppsApi.md#TeamsRegionsAppsRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
 [**TeamsRegionsAppsServicesDelete**](OpenapiAppsApi.md#TeamsRegionsAppsServicesDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
@@ -378,6 +379,42 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]AppBaseInfo**](AppBaseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsMonitorQueryList
+
+> []ComponentMonitorSerializers TeamsRegionsAppsMonitorQueryList(ctx, regionName, teamId, appId)
+
+
+
+应用下组件实时监控
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+**appId** | **int32**| 应用组id | 
+
+### Return type
+
+[**[]ComponentMonitorSerializers**](ComponentMonitorSerializers.md)
 
 ### Authorization
 
