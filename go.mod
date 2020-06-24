@@ -1,4 +1,4 @@
-module github.com/goodarin/rainbond-sdk-go
+module github.com/goodrain/rainbond-sdk-go
 
 require (
 	github.com/antihax/optional v1.0.0
