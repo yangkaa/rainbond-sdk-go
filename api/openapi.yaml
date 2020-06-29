@@ -230,6 +230,38 @@ paths:
       tags:
       - openapi-region
       x-codegen-request-body-name: data
+  /regions/{region_id}:
+    get:
+      description: 获取指定数据中心数据
+      operationId: regions_read
+      parameters:
+      - in: path
+        name: region_id
+        required: true
+        schema:
+          type: string
+      - description: 数据中心名称、id
+        in: query
+        name: region_id
+        schema:
+          type: string
+      - description: 是否需要额外数据
+        in: query
+        name: extend_info
+        schema:
+          enum:
+          - "true"
+          - "false"
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegionInfoR'
+          description: ""
+      tags:
+      - openapi-region
   /teams:
     get:
       description: 获取用户所在团队列表
@@ -2544,6 +2576,121 @@ components:
       - url
       - wsurl
       type: object
+    RegionInfoR:
+      example:
+        tcpdomain: tcpdomain
+        httpdomain: httpdomain
+        key_file: key_file
+        cert_file: cert_file
+        used_memory: 1.4658129805029452
+        url: url
+        used_disk: 0.8008281904610115
+        region_alias: region_alias
+        wsurl: wsurl
+        total_cpu: 2.3021358869347655
+        ssl_ca_cert: ssl_ca_cert
+        total_memory: 5.962133916683182
+        total_disk: 6.027456183070403
+        scope: scope
+        region_name: region_name
+        used_cpu: 5.637376656633329
+        health_status: health_status
+        desc: desc
+        status: status
+      properties:
+        region_name:
+          description: 数据中心名
+          minLength: 1
+          title: Region name
+          type: string
+        region_alias:
+          description: 数据中心昵称
+          minLength: 1
+          title: Region alias
+          type: string
+        url:
+          minLength: 1
+          title: Url
+          type: string
+        wsurl:
+          minLength: 1
+          title: Wsurl
+          type: string
+        httpdomain:
+          minLength: 1
+          title: Httpdomain
+          type: string
+        tcpdomain:
+          minLength: 1
+          title: Tcpdomain
+          type: string
+        scope:
+          minLength: 1
+          title: Scope
+          type: string
+        ssl_ca_cert:
+          minLength: 1
+          title: Ssl ca cert
+          type: string
+        cert_file:
+          minLength: 1
+          title: Cert file
+          type: string
+        key_file:
+          minLength: 1
+          title: Key file
+          type: string
+        desc:
+          minLength: 1
+          title: Desc
+          type: string
+        used_disk:
+          description: 使用的存储
+          title: Used disk
+          type: number
+        total_disk:
+          description: 全部存储
+          title: Total disk
+          type: number
+        used_memory:
+          description: 使用内存
+          title: Used memory
+          type: number
+        total_memory:
+          description: 全部内存
+          title: Total memory
+          type: number
+        used_cpu:
+          description: 使用cpu
+          title: Used cpu
+          type: number
+        total_cpu:
+          description: 全部cpu
+          title: Total cpu
+          type: number
+        health_status:
+          description: 集群状态
+          minLength: 1
+          title: Health status
+          type: string
+        status:
+          description: 状态
+          minLength: 1
+          title: Status
+          type: string
+      required:
+      - cert_file
+      - desc
+      - httpdomain
+      - key_file
+      - region_alias
+      - region_name
+      - scope
+      - ssl_ca_cert
+      - tcpdomain
+      - url
+      - wsurl
+      type: object
     RoleInfo:
       description: 用户在团队中拥有的角色
       example:
@@ -4669,6 +4816,7 @@ components:
           title: Getlist
           type: object
       required:
+      - result
       - resultType
       title: Data
       type: object

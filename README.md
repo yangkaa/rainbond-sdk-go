@@ -63,6 +63,7 @@ Class | Method | HTTP request | Description
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsUpdate**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
 *OpenapiRegionApi* | [**RegionsCreate**](docs/OpenapiRegionApi.md#regionscreate) | **Post** /regions | 
 *OpenapiRegionApi* | [**RegionsList**](docs/OpenapiRegionApi.md#regionslist) | **Get** /regions | 
+*OpenapiRegionApi* | [**RegionsRead**](docs/OpenapiRegionApi.md#regionsread) | **Get** /regions/{region_id} | 
 *OpenapiTeamApi* | [**TeamsCertificatesCreate**](docs/OpenapiTeamApi.md#teamscertificatescreate) | **Post** /teams/{team_id}/certificates | 
 *OpenapiTeamApi* | [**TeamsCertificatesDelete**](docs/OpenapiTeamApi.md#teamscertificatesdelete) | **Delete** /teams/{team_id}/certificates/{certificate_id} | 
 *OpenapiTeamApi* | [**TeamsCertificatesList**](docs/OpenapiTeamApi.md#teamscertificateslist) | **Get** /teams/{team_id}/certificates | 
@@ -138,6 +139,7 @@ Class | Method | HTTP request | Description
  - [PostTcpGatewayRule](docs/PostTcpGatewayRule.md)
  - [PostTcpGatewayRuleExtensions](docs/PostTcpGatewayRuleExtensions.md)
  - [RegionInfo](docs/RegionInfo.md)
+ - [RegionInfoR](docs/RegionInfoR.md)
  - [RegionInfoResp](docs/RegionInfoResp.md)
  - [RoleInfo](docs/RoleInfo.md)
  - [ServiceBaseInfo](docs/ServiceBaseInfo.md)

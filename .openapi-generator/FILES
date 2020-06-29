@@ -67,6 +67,7 @@ docs/PostHttpGatewayRule.md
 docs/PostTcpGatewayRule.md
 docs/PostTcpGatewayRuleExtensions.md
 docs/RegionInfo.md
+docs/RegionInfoR.md
 docs/RegionInfoResp.md
 docs/RoleInfo.md
 docs/ServiceBaseInfo.md
@@ -140,6 +141,7 @@ model_post_http_gateway_rule.go
 model_post_tcp_gateway_rule.go
 model_post_tcp_gateway_rule_extensions.go
 model_region_info.go
+model_region_info_r.go
 model_region_info_resp.go
 model_role_info.go
 model_service_base_info.go
