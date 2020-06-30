@@ -991,7 +991,7 @@ paths:
                 $ref: '#/components/schemas/HTTPGatewayRule'
           description: ""
       tags:
-      - openapi-apps
+      - openapi-gateway
       x-codegen-request-body-name: data
   /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id}:
     delete:

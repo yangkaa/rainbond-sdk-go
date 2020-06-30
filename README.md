@@ -38,7 +38,6 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsCreate**](docs/OpenapiAppsApi.md#teamsregionsappscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsDelete**](docs/OpenapiAppsApi.md#teamsregionsappsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsDomainsCreate**](docs/OpenapiAppsApi.md#teamsregionsappsdomainscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
-*OpenapiAppsApi* | [**TeamsRegionsAppsHttpdomainsCreate**](docs/OpenapiAppsApi.md#teamsregionsappshttpdomainscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsInstallCreate**](docs/OpenapiAppsApi.md#teamsregionsappsinstallcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsList**](docs/OpenapiAppsApi.md#teamsregionsappslist) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsMonitorQueryList**](docs/OpenapiAppsApi.md#teamsregionsappsmonitorquerylist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
@@ -60,6 +59,7 @@ Class | Method | HTTP request | Description
 *OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsDelete**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsList**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsUpdate**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
+*OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsCreate**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsDelete**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsList**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsRead**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
