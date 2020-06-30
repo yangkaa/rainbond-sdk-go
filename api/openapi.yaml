@@ -1058,9 +1058,7 @@ paths:
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/HTTPGatewayRule'
-                type: array
+                $ref: '#/components/schemas/HTTPGatewayRule'
           description: ""
       tags:
       - openapi-gateway

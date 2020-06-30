@@ -723,16 +723,16 @@ TeamsRegionsAppsHttpdomainsRead Method for TeamsRegionsAppsHttpdomainsRead
  * @param teamId
  * @param appId 应用组id
  * @param ruleId 网关策略id
-@return []HttpGatewayRule
+@return HttpGatewayRule
 */
-func (a *OpenapiGatewayApiService) TeamsRegionsAppsHttpdomainsRead(ctx _context.Context, regionName string, teamId string, appId int32, ruleId string) ([]HttpGatewayRule, *_nethttp.Response, error) {
+func (a *OpenapiGatewayApiService) TeamsRegionsAppsHttpdomainsRead(ctx _context.Context, regionName string, teamId string, appId int32, ruleId string) (HttpGatewayRule, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []HttpGatewayRule
+		localVarReturnValue  HttpGatewayRule
 	)
 
 	// create path and map variables

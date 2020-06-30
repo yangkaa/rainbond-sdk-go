@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsHttpdomainsRead
 
-> []HttpGatewayRule TeamsRegionsAppsHttpdomainsRead(ctx, regionName, teamId, appId, ruleId)
+> HttpGatewayRule TeamsRegionsAppsHttpdomainsRead(ctx, regionName, teamId, appId, ruleId)
 
 
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]HttpGatewayRule**](HTTPGatewayRule.md)
+[**HttpGatewayRule**](HTTPGatewayRule.md)
 
 ### Authorization
 
