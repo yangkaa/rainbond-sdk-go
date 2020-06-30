@@ -1027,17 +1027,12 @@ paths:
           description: ""
       tags:
       - openapi-gateway
-    put:
-      description: 更新HTTP访问策略
-      operationId: teams_regions_apps_httpdomains_update
+    get:
+      description: 获取应用http访问策略详情
+      operationId: teams_regions_apps_httpdomains_read
       parameters:
       - in: path
         name: region_name
-        required: true
-        schema:
-          type: string
-      - in: path
-        name: rule_id
         required: true
         schema:
           type: string
@@ -1052,6 +1047,49 @@ paths:
         required: true
         schema:
           type: integer
+      - description: 网关策略id
+        in: path
+        name: rule_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HTTPGatewayRule'
+                type: array
+          description: ""
+      tags:
+      - openapi-gateway
+    put:
+      description: 更新HTTP访问策略
+      operationId: teams_regions_apps_httpdomains_update
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      - description: 网关策略id
+        in: path
+        name: rule_id
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -1134,6 +1172,14 @@ paths:
         required: true
         schema:
           type: integer
+      - description: 是否只获取对外组件监控
+        in: query
+        name: is_outer
+        schema:
+          enum:
+          - "false"
+          - "true"
+          type: string
       responses:
         "200":
           content:
@@ -1147,29 +1193,64 @@ paths:
       - openapi-apps
   /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range:
     get:
+      description: 应用下组件历史监控
       operationId: teams_regions_apps_monitor_query_range_list
       parameters:
-      - in: path
-        name: app_id
-        required: true
-        schema:
-          type: string
-      - in: path
-        name: region_name
-        required: true
-        schema:
-          type: string
-      - in: path
+      - description: 团队ID、名称
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+      - description: 数据中心名称
+        in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - description: 应用组id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      - description: 起始时间戳
+        in: path
+        name: start
+        required: true
+        schema:
+          type: number
+      - description: 结束时间戳
+        in: path
+        name: end
+        required: true
+        schema:
+          type: number
+      - description: 步长（默认60）
+        in: path
+        name: step
+        required: true
+        schema:
+          type: number
+      - description: 是否只获取对外组件监控
+        in: query
+        name: is_outer
+        schema:
+          enum:
+          - "false"
+          - "true"
+          type: string
       responses:
         "200":
-          content: {}
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ComponentMonitorSerializers'
+                type: array
           description: ""
       tags:
-      - teams
+      - openapi-apps
   /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations:
     post:
       description: 操作应用
@@ -1325,6 +1406,51 @@ paths:
           description: ""
       tags:
       - openapi-apps
+  /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs:
+    put:
+      description: 批量关闭应用
+      operationId: teams_regions_apps_services_envs_update
+      parameters:
+      - description: 应用id
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+      - description: 应用id
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: string
+      - description: 团队id
+        in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      - description: 集群名称
+        in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComponentEnvsSerializers'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComponentEnvsSerializers'
+          description: ""
+      tags:
+      - openapi-apps
+      x-codegen-request-body-name: data
   /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events:
     get:
       description: 查询组件事件信息
@@ -4962,6 +5088,69 @@ components:
           type: string
       required:
       - msg
+      type: object
+    ComponentEnvsBaseSerializers:
+      example:
+        note: note
+        scope: inner
+        name: name
+        is_change: true
+        value: value
+      properties:
+        note:
+          description: 备注
+          maxLength: 100
+          minLength: 1
+          title: Note
+          type: string
+        name:
+          description: 环境变量名
+          maxLength: 100
+          minLength: 1
+          title: Name
+          type: string
+        value:
+          description: 环境变量值
+          maxLength: 1024
+          minLength: 1
+          title: Value
+          type: string
+        is_change:
+          default: true
+          description: 是否可改变
+          title: Is change
+          type: boolean
+        scope:
+          default: inner
+          description: 范围
+          maxLength: 32
+          minLength: 1
+          title: Scope
+          type: string
+      required:
+      - name
+      - value
+      type: object
+    ComponentEnvsSerializers:
+      example:
+        envs:
+        - note: note
+          scope: inner
+          name: name
+          is_change: true
+          value: value
+        - note: note
+          scope: inner
+          name: name
+          is_change: true
+          value: value
+      properties:
+        envs:
+          items:
+            $ref: '#/components/schemas/ComponentEnvsBaseSerializers'
+          type: array
+      required:
+      - envs
       type: object
     AppServiceEvents:
       example:

@@ -14,9 +14,11 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsInstallCreate**](OpenapiAppsApi.md#TeamsRegionsAppsInstallCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 [**TeamsRegionsAppsList**](OpenapiAppsApi.md#TeamsRegionsAppsList) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
 [**TeamsRegionsAppsMonitorQueryList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
+[**TeamsRegionsAppsMonitorQueryRangeList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryRangeList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range | 
 [**TeamsRegionsAppsOperationsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsOperationsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
 [**TeamsRegionsAppsRead**](OpenapiAppsApi.md#TeamsRegionsAppsRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
 [**TeamsRegionsAppsServicesDelete**](OpenapiAppsApi.md#TeamsRegionsAppsServicesDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
+[**TeamsRegionsAppsServicesEnvsUpdate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEnvsUpdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs | 
 [**TeamsRegionsAppsServicesEventsList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEventsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events | 
 [**TeamsRegionsAppsServicesList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services | 
 [**TeamsRegionsAppsServicesRead**](OpenapiAppsApi.md#TeamsRegionsAppsServicesRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
@@ -396,7 +398,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsMonitorQueryList
 
-> []ComponentMonitorSerializers TeamsRegionsAppsMonitorQueryList(ctx, regionName, teamId, appId)
+> []ComponentMonitorSerializers TeamsRegionsAppsMonitorQueryList(ctx, regionName, teamId, appId, optional)
 
 
 
@@ -411,6 +413,74 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
 **appId** | **int32**| 应用组id | 
+ **optional** | ***TeamsRegionsAppsMonitorQueryListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a TeamsRegionsAppsMonitorQueryListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **isOuter** | **optional.String**| 是否只获取对外组件监控 | 
+
+### Return type
+
+[**[]ComponentMonitorSerializers**](ComponentMonitorSerializers.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsMonitorQueryRangeList
+
+> []ComponentMonitorSerializers TeamsRegionsAppsMonitorQueryRangeList(ctx, teamId, regionName, appId, start, end, step, optional)
+
+
+
+应用下组件历史监控
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**teamId** | **string**| 团队ID、名称 | 
+**regionName** | **string**| 数据中心名称 | 
+**appId** | **int32**| 应用组id | 
+**start** | **float32**| 起始时间戳 | 
+**end** | **float32**| 结束时间戳 | 
+**step** | **float32**| 步长（默认60） | 
+ **optional** | ***TeamsRegionsAppsMonitorQueryRangeListOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+
+Optional parameters are passed through a pointer to a TeamsRegionsAppsMonitorQueryRangeListOpts struct
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+
+
+ **isOuter** | **optional.String**| 是否只获取对外组件监控 | 
 
 ### Return type
 
@@ -548,6 +618,44 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsServicesEnvsUpdate
+
+> ComponentEnvsSerializers TeamsRegionsAppsServicesEnvsUpdate(ctx, appId, serviceId, teamId, regionName, data)
+
+
+
+批量关闭应用
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**appId** | **int32**| 应用id | 
+**serviceId** | **string**| 应用id | 
+**teamId** | **string**| 团队id | 
+**regionName** | **string**| 集群名称 | 
+**data** | [**ComponentEnvsSerializers**](ComponentEnvsSerializers.md)|  | 
+
+### Return type
+
+[**ComponentEnvsSerializers**](ComponentEnvsSerializers.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

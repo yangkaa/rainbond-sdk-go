@@ -9,7 +9,6 @@ api_openapi_region.go
 api_openapi_team.go
 api_openapi_team_region.go
 api_openapi_user.go
-api_teams.go
 client.go
 configuration.go
 docs/AddRegionRequest.md
@@ -30,6 +29,8 @@ docs/CertificatesR.md
 docs/ChangePassWd.md
 docs/ChangePassWdUser.md
 docs/CloudMarketBaseResp.md
+docs/ComponentEnvsBaseSerializers.md
+docs/ComponentEnvsSerializers.md
 docs/ComponentMonitorBaseSerializers.md
 docs/ComponentMonitorItemsSerializers.md
 docs/ComponentMonitorSerializers.md
@@ -83,7 +84,6 @@ docs/TeamCertificatesR.md
 docs/TeamInfo.md
 docs/TeamRegionReq.md
 docs/TeamRegionsResp.md
-docs/TeamsApi.md
 docs/UpdatePostHttpGatewayRule.md
 docs/UpdateTeamInfoReq.md
 docs/UpdateUser.md
@@ -111,6 +111,8 @@ model_certificates_r.go
 model_change_pass_wd.go
 model_change_pass_wd_user.go
 model_cloud_market_base_resp.go
+model_component_envs_base_serializers.go
+model_component_envs_serializers.go
 model_component_monitor_base_serializers.go
 model_component_monitor_items_serializers.go
 model_component_monitor_serializers.go

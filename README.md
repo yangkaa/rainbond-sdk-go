@@ -42,9 +42,11 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsInstallCreate**](docs/OpenapiAppsApi.md#teamsregionsappsinstallcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsList**](docs/OpenapiAppsApi.md#teamsregionsappslist) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsMonitorQueryList**](docs/OpenapiAppsApi.md#teamsregionsappsmonitorquerylist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsMonitorQueryRangeList**](docs/OpenapiAppsApi.md#teamsregionsappsmonitorqueryrangelist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsOperationsCreate**](docs/OpenapiAppsApi.md#teamsregionsappsoperationscreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsRead**](docs/OpenapiAppsApi.md#teamsregionsappsread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesDelete**](docs/OpenapiAppsApi.md#teamsregionsappsservicesdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
+*OpenapiAppsApi* | [**TeamsRegionsAppsServicesEnvsUpdate**](docs/OpenapiAppsApi.md#teamsregionsappsservicesenvsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesEventsList**](docs/OpenapiAppsApi.md#teamsregionsappsserviceseventslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesList**](docs/OpenapiAppsApi.md#teamsregionsappsserviceslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesRead**](docs/OpenapiAppsApi.md#teamsregionsappsservicesread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
@@ -60,6 +62,7 @@ Class | Method | HTTP request | Description
 *OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsUpdate**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsDelete**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsList**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainslist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
+*OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsRead**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsread) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsHttpdomainsUpdate**](docs/OpenapiGatewayApi.md#teamsregionsappshttpdomainsupdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
 *OpenapiRegionApi* | [**RegionsCreate**](docs/OpenapiRegionApi.md#regionscreate) | **Post** /regions | 
 *OpenapiRegionApi* | [**RegionsList**](docs/OpenapiRegionApi.md#regionslist) | **Get** /regions | 
@@ -86,7 +89,6 @@ Class | Method | HTTP request | Description
 *OpenapiUserApi* | [**UsersList**](docs/OpenapiUserApi.md#userslist) | **Get** /users | 
 *OpenapiUserApi* | [**UsersRead**](docs/OpenapiUserApi.md#usersread) | **Get** /users/{user_id} | 
 *OpenapiUserApi* | [**UsersUpdate**](docs/OpenapiUserApi.md#usersupdate) | **Put** /users/{user_id} | 
-*TeamsApi* | [**TeamsRegionsAppsMonitorQueryRangeList**](docs/TeamsApi.md#teamsregionsappsmonitorqueryrangelist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range | 
 
 
 ## Documentation For Models
@@ -109,6 +111,8 @@ Class | Method | HTTP request | Description
  - [ChangePassWd](docs/ChangePassWd.md)
  - [ChangePassWdUser](docs/ChangePassWdUser.md)
  - [CloudMarketBaseResp](docs/CloudMarketBaseResp.md)
+ - [ComponentEnvsBaseSerializers](docs/ComponentEnvsBaseSerializers.md)
+ - [ComponentEnvsSerializers](docs/ComponentEnvsSerializers.md)
  - [ComponentMonitorBaseSerializers](docs/ComponentMonitorBaseSerializers.md)
  - [ComponentMonitorItemsSerializers](docs/ComponentMonitorItemsSerializers.md)
  - [ComponentMonitorSerializers](docs/ComponentMonitorSerializers.md)
