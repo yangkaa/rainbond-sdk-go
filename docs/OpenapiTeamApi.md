@@ -13,6 +13,8 @@ Method | HTTP request | Description
 [**TeamsDelete**](OpenapiTeamApi.md#TeamsDelete) | **Delete** /teams/{team_id} | 
 [**TeamsList**](OpenapiTeamApi.md#TeamsList) | **Get** /teams | 
 [**TeamsRead**](OpenapiTeamApi.md#TeamsRead) | **Get** /teams/{team_id} | 
+[**TeamsRegionsResourceList**](OpenapiTeamApi.md#TeamsRegionsResourceList) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
+[**TeamsResourceCreate**](OpenapiTeamApi.md#TeamsResourceCreate) | **Post** /teams/resource | 
 [**TeamsUpdate**](OpenapiTeamApi.md#TeamsUpdate) | **Put** /teams/{team_id} | 
 
 
@@ -355,6 +357,75 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsResourceList
+
+> TeamAppsResource TeamsRegionsResourceList(ctx, regionName, teamId)
+
+
+
+获取团队资源统计
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+
+### Return type
+
+[**TeamAppsResource**](TeamAppsResource.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsResourceCreate
+
+> []TeamAppsResource TeamsResourceCreate(ctx, data)
+
+
+
+批量获取团队资源统计列表
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**data** | [**[]TenantRegionList**](TenantRegionList.md)|  | 
+
+### Return type
+
+[**[]TeamAppsResource**](TeamAppsResource.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

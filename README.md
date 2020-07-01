@@ -53,7 +53,6 @@ Class | Method | HTTP request | Description
 *OpenapiAppsApi* | [**TeamsRegionsAppsServicesTelescopicVerticalCreate**](docs/OpenapiAppsApi.md#teamsregionsappsservicestelescopicverticalcreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsUpgradeCreate**](docs/OpenapiAppsApi.md#teamsregionsappsupgradecreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
 *OpenapiAppsApi* | [**TeamsRegionsAppsUpgradeList**](docs/OpenapiAppsApi.md#teamsregionsappsupgradelist) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
-*OpenapiAppsApi* | [**TeamsRegionsResourceList**](docs/OpenapiAppsApi.md#teamsregionsresourcelist) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 *OpenapiEntrepriseApi* | [**ConfigsList**](docs/OpenapiEntrepriseApi.md#configslist) | **Get** /configs | 
 *OpenapiGatewayApi* | [**HttpdomainsList**](docs/OpenapiGatewayApi.md#httpdomainslist) | **Get** /httpdomains | 
 *OpenapiGatewayApi* | [**TeamsRegionsAppsDomainsDelete**](docs/OpenapiGatewayApi.md#teamsregionsappsdomainsdelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
@@ -76,6 +75,8 @@ Class | Method | HTTP request | Description
 *OpenapiTeamApi* | [**TeamsDelete**](docs/OpenapiTeamApi.md#teamsdelete) | **Delete** /teams/{team_id} | 
 *OpenapiTeamApi* | [**TeamsList**](docs/OpenapiTeamApi.md#teamslist) | **Get** /teams | 
 *OpenapiTeamApi* | [**TeamsRead**](docs/OpenapiTeamApi.md#teamsread) | **Get** /teams/{team_id} | 
+*OpenapiTeamApi* | [**TeamsRegionsResourceList**](docs/OpenapiTeamApi.md#teamsregionsresourcelist) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
+*OpenapiTeamApi* | [**TeamsResourceCreate**](docs/OpenapiTeamApi.md#teamsresourcecreate) | **Post** /teams/resource | 
 *OpenapiTeamApi* | [**TeamsUpdate**](docs/OpenapiTeamApi.md#teamsupdate) | **Put** /teams/{team_id} | 
 *OpenapiTeamRegionApi* | [**TeamsRegionsCreate**](docs/OpenapiTeamRegionApi.md#teamsregionscreate) | **Post** /teams/{team_id}/regions | 
 *OpenapiTeamRegionApi* | [**TeamsRegionsList**](docs/OpenapiTeamRegionApi.md#teamsregionslist) | **Get** /teams/{team_id}/regions | 
@@ -159,6 +160,7 @@ Class | Method | HTTP request | Description
  - [TeamInfo](docs/TeamInfo.md)
  - [TeamRegionReq](docs/TeamRegionReq.md)
  - [TeamRegionsResp](docs/TeamRegionsResp.md)
+ - [TenantRegionList](docs/TenantRegionList.md)
  - [UpdatePostHttpGatewayRule](docs/UpdatePostHttpGatewayRule.md)
  - [UpdateTeamInfoReq](docs/UpdateTeamInfoReq.md)
  - [UpdateUser](docs/UpdateUser.md)

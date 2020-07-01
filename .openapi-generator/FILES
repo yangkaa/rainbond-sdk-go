@@ -84,6 +84,7 @@ docs/TeamCertificatesR.md
 docs/TeamInfo.md
 docs/TeamRegionReq.md
 docs/TeamRegionsResp.md
+docs/TenantRegionList.md
 docs/UpdatePostHttpGatewayRule.md
 docs/UpdateTeamInfoReq.md
 docs/UpdateUser.md
@@ -159,6 +160,7 @@ model_team_certificates_r.go
 model_team_info.go
 model_team_region_req.go
 model_team_regions_resp.go
+model_tenant_region_list.go
 model_update_post_http_gateway_rule.go
 model_update_team_info_req.go
 model_update_user.go

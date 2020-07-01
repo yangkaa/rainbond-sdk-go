@@ -9,8 +9,10 @@
  */
 
 package openapi
-// AutoSsl struct for AutoSsl
-type AutoSsl struct {
-	Enable bool `json:"enable,omitempty"`
-	Value map[string]interface{} `json:"value"`
+// TenantRegionList struct for TenantRegionList
+type TenantRegionList struct {
+	// 租户id
+	TenantId string `json:"tenant_id"`
+	// 数据中心名称
+	RegionName string `json:"region_name"`
 }

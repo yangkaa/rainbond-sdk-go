@@ -12,6 +12,7 @@ package openapi
 // HttpGatewayRule struct for HttpGatewayRule
 type HttpGatewayRule struct {
 	ID int32 `json:"ID,omitempty"`
+	RuleExtensions []string `json:"rule_extensions,omitempty"`
 	// http_rule_id
 	HttpRuleId string `json:"http_rule_id"`
 	// region id
@@ -46,8 +47,6 @@ type HttpGatewayRule struct {
 	Type int32 `json:"type,omitempty"`
 	// 权重
 	TheWeight int32 `json:"the_weight,omitempty"`
-	// 扩展功能
-	RuleExtensions string `json:"rule_extensions,omitempty"`
 	// 是否已开启对外端口
 	IsOuterService bool `json:"is_outer_service,omitempty"`
 	// 是否自动匹配证书，升级为https，如果开启，由外部服务完成升级

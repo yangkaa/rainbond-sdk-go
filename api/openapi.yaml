@@ -310,6 +310,30 @@ paths:
       tags:
       - openapi-team
       x-codegen-request-body-name: data
+  /teams/resource:
+    post:
+      description: 批量获取团队资源统计列表
+      operationId: teams_resource_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/TenantRegionList'
+              type: array
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/TeamAppsResource'
+                type: array
+          description: ""
+      tags:
+      - openapi-team
+      x-codegen-request-body-name: data
   /teams/{team_id}:
     delete:
       description: 删除团队
@@ -1667,7 +1691,7 @@ paths:
                 $ref: '#/components/schemas/TeamAppsResource'
           description: ""
       tags:
-      - openapi-apps
+      - openapi-team
   /users:
     get:
       description: 获取用户列表
@@ -1979,15 +2003,16 @@ components:
     AutoSSL:
       example:
         enable: false
-        value: value
+        value: '{}'
       properties:
         enable:
           default: false
           title: Enable
           type: boolean
         value:
+          properties: {}
           title: Value
-          type: string
+          type: object
       required:
       - value
       title: Auto ssl
@@ -2284,7 +2309,7 @@ components:
           value: value
         auto_ssl:
           enable: false
-          value: value
+          value: '{}'
         newbie_guide:
           enable: false
           value: value
@@ -3058,6 +3083,84 @@ components:
       - tenant_id
       - tenant_name
       - update_time
+      type: object
+    TenantRegionList:
+      example:
+        tenant_id: tenant_id
+        region_name: region_name
+      properties:
+        tenant_id:
+          description: 租户id
+          minLength: 1
+          title: Tenant id
+          type: string
+        region_name:
+          description: 数据中心名称
+          minLength: 1
+          title: Region name
+          type: string
+      required:
+      - region_name
+      - tenant_id
+      type: object
+    TeamAppsResource:
+      example:
+        total_cpu: 0
+        total_memory: 6
+        used_cpu_percentage: 5.637376656633329
+        used_memory_percentage: 2.3021358869347655
+        used_memory: 5
+        team_alias: team_alias
+        used_cpu: 1
+        team_id: team_id
+        team_name: team_name
+      properties:
+        total_cpu:
+          description: cpu总额
+          title: Total cpu
+          type: integer
+        total_memory:
+          description: 内存总额
+          title: Total memory
+          type: integer
+        used_cpu:
+          description: 占用cpu
+          title: Used cpu
+          type: integer
+        used_memory:
+          description: 占用内存
+          title: Used memory
+          type: integer
+        used_cpu_percentage:
+          description: 占用cpu百分比
+          title: Used cpu percentage
+          type: number
+        used_memory_percentage:
+          description: 占用内存百分比
+          title: Used memory percentage
+          type: number
+        team_id:
+          description: 团队ID
+          maxLength: 64
+          minLength: 1
+          title: Team id
+          type: string
+        team_name:
+          description: 团队名称
+          maxLength: 64
+          minLength: 1
+          title: Team name
+          type: string
+        team_alias:
+          description: 团队昵称
+          maxLength: 64
+          minLength: 1
+          title: Team alias
+          type: string
+      required:
+      - team_alias
+      - team_id
+      - team_name
       type: object
     UpdateTeamInfoReq:
       example:
@@ -4130,8 +4233,10 @@ components:
         tenant_id: tenant_id
         container_port: 441289069
         domain_type: domain_type
+        rule_extensions:
+        - rule_extensions
+        - rule_extensions
         service_alias: service_alias
-        rule_extensions: rule_extensions
         http_rule_id: http_rule_id
         service_name: service_name
         is_outer_service: true
@@ -4154,6 +4259,11 @@ components:
           readOnly: true
           title: ID
           type: integer
+        rule_extensions:
+          items:
+            type: string
+          readOnly: true
+          type: array
         http_rule_id:
           description: http_rule_id
           maxLength: 128
@@ -4248,10 +4358,6 @@ components:
           minimum: -2147483648
           title: The weight
           type: integer
-        rule_extensions:
-          description: 扩展功能
-          title: Rule extensions
-          type: string
         is_outer_service:
           description: 是否已开启对外端口
           title: Is outer service
@@ -4403,8 +4509,10 @@ components:
         - tenant_id: tenant_id
           container_port: 441289069
           domain_type: domain_type
+          rule_extensions:
+          - rule_extensions
+          - rule_extensions
           service_alias: service_alias
-          rule_extensions: rule_extensions
           http_rule_id: http_rule_id
           service_name: service_name
           is_outer_service: true
@@ -4425,8 +4533,10 @@ components:
         - tenant_id: tenant_id
           container_port: 441289069
           domain_type: domain_type
+          rule_extensions:
+          - rule_extensions
+          - rule_extensions
           service_alias: service_alias
-          rule_extensions: rule_extensions
           http_rule_id: http_rule_id
           service_name: service_name
           is_outer_service: true
@@ -4541,7 +4651,7 @@ components:
         the_weight: 5
         auto_ssl: false
         whether_open: false
-        auto_ssl_config: true
+        auto_ssl_config: auto_ssl_config
       properties:
         service_id:
           description: 应用组件id
@@ -4598,8 +4708,9 @@ components:
           type: boolean
         auto_ssl_config:
           description: 自动分发证书配置
+          minLength: 1
           title: Auto ssl config
-          type: boolean
+          type: string
       required:
       - container_port
       - domain_name
@@ -4634,7 +4745,7 @@ components:
           the_weight: 5
           auto_ssl: false
           whether_open: false
-          auto_ssl_config: true
+          auto_ssl_config: auto_ssl_config
       properties:
         protocol:
           description: 协议
@@ -4703,8 +4814,9 @@ components:
           type: boolean
         auto_ssl_config:
           description: 自动分发证书配置
+          minLength: 1
           title: Auto ssl config
-          type: boolean
+          type: string
       required:
       - service_id
       type: object
@@ -5479,65 +5591,6 @@ components:
           type: array
       required:
       - update_versions
-      type: object
-    TeamAppsResource:
-      example:
-        total_cpu: 0
-        total_memory: 6
-        used_cpu_percentage: 5.637376656633329
-        used_memory_percentage: 2.3021358869347655
-        used_memory: 5
-        team_alias: team_alias
-        used_cpu: 1
-        team_id: team_id
-        team_name: team_name
-      properties:
-        total_cpu:
-          description: cpu总额
-          title: Total cpu
-          type: integer
-        total_memory:
-          description: 内存总额
-          title: Total memory
-          type: integer
-        used_cpu:
-          description: 占用cpu
-          title: Used cpu
-          type: integer
-        used_memory:
-          description: 占用内存
-          title: Used memory
-          type: integer
-        used_cpu_percentage:
-          description: 占用cpu百分比
-          title: Used cpu percentage
-          type: number
-        used_memory_percentage:
-          description: 占用内存百分比
-          title: Used memory percentage
-          type: number
-        team_id:
-          description: 团队ID
-          maxLength: 64
-          minLength: 1
-          title: Team id
-          type: string
-        team_name:
-          description: 团队名称
-          maxLength: 64
-          minLength: 1
-          title: Team name
-          type: string
-        team_alias:
-          description: 团队昵称
-          maxLength: 64
-          minLength: 1
-          title: Team alias
-          type: string
-      required:
-      - team_alias
-      - team_id
-      - team_name
       type: object
     CreateUser:
       example:

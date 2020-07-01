@@ -25,7 +25,6 @@ Method | HTTP request | Description
 [**TeamsRegionsAppsServicesTelescopicVerticalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicVerticalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
 [**TeamsRegionsAppsUpgradeCreate**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
 [**TeamsRegionsAppsUpgradeList**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
-[**TeamsRegionsResourceList**](OpenapiAppsApi.md#TeamsRegionsResourceList) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
 
 
 
@@ -883,41 +882,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListUpgrade**](ListUpgrade.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## TeamsRegionsResourceList
-
-> TeamAppsResource TeamsRegionsResourceList(ctx, regionName, teamId)
-
-
-
-获取团队资源统计
-
-### Required Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**regionName** | **string**|  | 
-**teamId** | **string**|  | 
-
-### Return type
-
-[**TeamAppsResource**](TeamAppsResource.md)
 
 ### Authorization
 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **RuleExtensions** | **[]string** | 规则扩展 | [optional] 
 **WhetherOpen** | **bool** | 是否开放 | [optional] 
 **AutoSsl** | **bool** | 是否自动匹配证书，升级为https，如果开启，由外部服务完成升级 | [optional] 
-**AutoSslConfig** | **bool** | 自动分发证书配置 | [optional] 
+**AutoSslConfig** | **string** | 自动分发证书配置 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

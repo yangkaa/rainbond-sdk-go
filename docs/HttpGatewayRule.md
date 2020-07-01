@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ID** | **int32** |  | [optional] [readonly] 
+**RuleExtensions** | **[]string** |  | [optional] [readonly] 
 **HttpRuleId** | **string** | http_rule_id | 
 **RegionId** | **string** | region id | 
 **TenantId** | **string** | 租户id | 
@@ -22,7 +23,6 @@ Name | Type | Description | Notes
 **DomainHeander** | **string** | 域名heander | [optional] 
 **Type** | **int32** | 类型（默认：0， 自定义：1） | [optional] 
 **TheWeight** | **int32** | 权重 | [optional] 
-**RuleExtensions** | **string** | 扩展功能 | [optional] 
 **IsOuterService** | **bool** | 是否已开启对外端口 | [optional] 
 **AutoSsl** | **bool** | 是否自动匹配证书，升级为https，如果开启，由外部服务完成升级 | [optional] 
 **AutoSslConfig** | Pointer to **string** | 自动分发证书配置 | [optional] 

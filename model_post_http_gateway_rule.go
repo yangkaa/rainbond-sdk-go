@@ -33,5 +33,5 @@ type PostHttpGatewayRule struct {
 	// 是否自动匹配证书，升级为https，如果开启，由外部服务完成升级
 	AutoSsl bool `json:"auto_ssl,omitempty"`
 	// 自动分发证书配置
-	AutoSslConfig bool `json:"auto_ssl_config,omitempty"`
+	AutoSslConfig string `json:"auto_ssl_config,omitempty"`
 }
