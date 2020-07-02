@@ -4998,40 +4998,11 @@ components:
       - service_list
       - team_id
       type: object
-    MonitorDataSerializers:
-      example:
-        metric:
-          key: metric
-        value:
-        - value
-        - value
-      properties:
-        metric:
-          additionalProperties:
-            type: string
-          title: Metric
-          type: object
-        value:
-          items:
-            type: string
-          type: array
-      required:
-      - metric
-      - value
-      type: object
     ComponentMonitorBaseSerializers:
       example:
         result:
-        - metric:
-            key: metric
-          value:
-          - value
-          - value
-        - metric:
-            key: metric
-          value:
-          - value
-          - value
+        - result
+        - result
         getlist:
           key: getlist
         resultType: resultType
@@ -5044,32 +5015,21 @@ components:
           type: string
         result:
           items:
-            $ref: '#/components/schemas/MonitorDataSerializers'
+            type: string
           type: array
         getlist:
           additionalProperties:
             type: string
           title: Getlist
           type: object
-      required:
-      - result
-      - resultType
       title: Data
       type: object
     ComponentMonitorItemsSerializers:
       example:
         data:
           result:
-          - metric:
-              key: metric
-            value:
-            - value
-            - value
-          - metric:
-              key: metric
-            value:
-            - value
-            - value
+          - result
+          - result
           getlist:
             key: getlist
           resultType: resultType
@@ -5103,16 +5063,8 @@ components:
         monitors:
         - data:
             result:
-            - metric:
-                key: metric
-              value:
-              - value
-              - value
-            - metric:
-                key: metric
-              value:
-              - value
-              - value
+            - result
+            - result
             getlist:
               key: getlist
             resultType: resultType
@@ -5120,16 +5072,8 @@ components:
           status: status
         - data:
             result:
-            - metric:
-                key: metric
-              value:
-              - value
-              - value
-            - metric:
-                key: metric
-              value:
-              - value
-              - value
+            - result
+            - result
             getlist:
               key: getlist
             resultType: resultType
