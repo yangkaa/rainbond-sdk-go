@@ -11,6 +11,5 @@
 package openapi
 // MonitorDataSerializers struct for MonitorDataSerializers
 type MonitorDataSerializers struct {
-	Metric map[string]string `json:"metric"`
 	Value []string `json:"value"`
 }

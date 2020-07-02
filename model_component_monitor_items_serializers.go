@@ -11,9 +11,9 @@
 package openapi
 // ComponentMonitorItemsSerializers struct for ComponentMonitorItemsSerializers
 type ComponentMonitorItemsSerializers struct {
-	Data ComponentMonitorBaseSerializers `json:"data"`
+	Data ComponentMonitorBaseSerializers `json:"data,omitempty"`
 	// 监控项
 	MonitorItem string `json:"monitor_item"`
 	// 监控状态
-	Status string `json:"status"`
+	Status string `json:"status,omitempty"`
 }

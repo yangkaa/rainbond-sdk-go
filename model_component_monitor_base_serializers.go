@@ -13,6 +13,5 @@ package openapi
 type ComponentMonitorBaseSerializers struct {
 	// 返回类型
 	ResultType string `json:"resultType,omitempty"`
-	Result []string `json:"result,omitempty"`
-	Getlist map[string]string `json:"getlist,omitempty"`
+	Result []MonitorDataSerializers `json:"result"`
 }

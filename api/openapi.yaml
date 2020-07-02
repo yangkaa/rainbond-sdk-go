@@ -4998,13 +4998,28 @@ components:
       - service_list
       - team_id
       type: object
+    MonitorDataSerializers:
+      example:
+        value:
+        - value
+        - value
+      properties:
+        value:
+          items:
+            type: string
+          type: array
+      required:
+      - value
+      type: object
     ComponentMonitorBaseSerializers:
       example:
         result:
-        - result
-        - result
-        getlist:
-          key: getlist
+        - value:
+          - value
+          - value
+        - value:
+          - value
+          - value
         resultType: resultType
       properties:
         resultType:
@@ -5015,23 +5030,22 @@ components:
           type: string
         result:
           items:
-            type: string
+            $ref: '#/components/schemas/MonitorDataSerializers'
           type: array
-        getlist:
-          additionalProperties:
-            type: string
-          title: Getlist
-          type: object
+      required:
+      - result
       title: Data
       type: object
     ComponentMonitorItemsSerializers:
       example:
         data:
           result:
-          - result
-          - result
-          getlist:
-            key: getlist
+          - value:
+            - value
+            - value
+          - value:
+            - value
+            - value
           resultType: resultType
         monitor_item: monitor_item
         status: status
@@ -5051,9 +5065,7 @@ components:
           title: Status
           type: string
       required:
-      - data
       - monitor_item
-      - status
       type: object
     ComponentMonitorSerializers:
       example:
@@ -5063,19 +5075,23 @@ components:
         monitors:
         - data:
             result:
-            - result
-            - result
-            getlist:
-              key: getlist
+            - value:
+              - value
+              - value
+            - value:
+              - value
+              - value
             resultType: resultType
           monitor_item: monitor_item
           status: status
         - data:
             result:
-            - result
-            - result
-            getlist:
-              key: getlist
+            - value:
+              - value
+              - value
+            - value:
+              - value
+              - value
             resultType: resultType
           monitor_item: monitor_item
           status: status
@@ -5083,6 +5099,7 @@ components:
         monitors:
           items:
             $ref: '#/components/schemas/ComponentMonitorItemsSerializers'
+          nullable: true
           type: array
         service_id:
           description: 组件id

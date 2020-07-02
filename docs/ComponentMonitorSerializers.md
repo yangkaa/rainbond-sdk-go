@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Monitors** | [**[]ComponentMonitorItemsSerializers**](ComponentMonitorItemsSerializers.md) |  | [optional] 
+**Monitors** | Pointer to [**[]ComponentMonitorItemsSerializers**](ComponentMonitorItemsSerializers.md) |  | [optional] 
 **ServiceId** | **string** | 组件id | 
 **ServiceCname** | **string** | 组件名 | 
 **ServiceAlias** | **string** | 组件昵称 | 

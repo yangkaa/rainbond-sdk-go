@@ -133,6 +133,7 @@ Class | Method | HTTP request | Description
  - [ListUpgrade](docs/ListUpgrade.md)
  - [ListUsersRespView](docs/ListUsersRespView.md)
  - [MarketInstall](docs/MarketInstall.md)
+ - [MonitorDataSerializers](docs/MonitorDataSerializers.md)
  - [NewBieGuideBaseResp](docs/NewBieGuideBaseResp.md)
  - [OauthServicesBaseResp](docs/OauthServicesBaseResp.md)
  - [OauthServicesResp](docs/OauthServicesResp.md)
