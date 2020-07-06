@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsUpgradeList
 
-> ListUpgrade TeamsRegionsAppsUpgradeList(ctx, regionName, teamId, appId)
+> []ListUpgrade TeamsRegionsAppsUpgradeList(ctx, regionName, teamId, appId)
 
 
 
@@ -881,7 +881,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListUpgrade**](ListUpgrade.md)
+[**[]ListUpgrade**](ListUpgrade.md)
 
 ### Authorization
 

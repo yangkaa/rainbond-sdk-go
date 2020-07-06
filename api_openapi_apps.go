@@ -2074,16 +2074,16 @@ TeamsRegionsAppsUpgradeList Method for TeamsRegionsAppsUpgradeList
  * @param regionName
  * @param teamId
  * @param appId 应用组id
-@return ListUpgrade
+@return []ListUpgrade
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsUpgradeList(ctx _context.Context, regionName string, teamId string, appId int32) (ListUpgrade, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsUpgradeList(ctx _context.Context, regionName string, teamId string, appId int32) ([]ListUpgrade, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  ListUpgrade
+		localVarReturnValue  []ListUpgrade
 	)
 
 	// create path and map variables
