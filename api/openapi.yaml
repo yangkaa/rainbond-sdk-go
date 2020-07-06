@@ -1665,7 +1665,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListUpgrade'
+                items:
+                  $ref: '#/components/schemas/ListUpgrade'
+                type: array
           description: ""
       tags:
       - openapi-apps

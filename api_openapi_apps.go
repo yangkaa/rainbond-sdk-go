@@ -1976,16 +1976,16 @@ TeamsRegionsAppsUpgradeCreate Method for TeamsRegionsAppsUpgradeCreate
  * @param teamId
  * @param appId 应用组id
  * @param data
-@return ListUpgrade
+@return []ListUpgrade
 */
-func (a *OpenapiAppsApiService) TeamsRegionsAppsUpgradeCreate(ctx _context.Context, regionName string, teamId string, appId int32, data Upgrade) (ListUpgrade, *_nethttp.Response, error) {
+func (a *OpenapiAppsApiService) TeamsRegionsAppsUpgradeCreate(ctx _context.Context, regionName string, teamId string, appId int32, data Upgrade) ([]ListUpgrade, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  ListUpgrade
+		localVarReturnValue  []ListUpgrade
 	)
 
 	// create path and map variables
