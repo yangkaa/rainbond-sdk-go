@@ -42,7 +42,7 @@ func (a *OpenapiEntrepriseApiService) ConfigsList(ctx _context.Context) (Enterpr
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/configs"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/configs"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}

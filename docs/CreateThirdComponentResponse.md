@@ -1,9 +1,10 @@
-# ServiceBaseInfo
+# CreateThirdComponentResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApiServiceKey** | **string** | API 授权Key, 类型为api时有效 | 
 **BuildUpgrade** | **bool** | 组件构建后是否升级 | [optional] 
 **Category** | **string** | 组件分类：application,cache,store | 
 **CheckEventId** | Pointer to **string** | 组件检测事件ID | [optional] 
@@ -41,6 +42,7 @@ Name | Type | Description | Notes
 **TenantServiceGroupId** | **int32** | 组件归属的组件组id | [optional] 
 **TotalMemory** | **int32** | 内存使用M | [optional] 
 **UpdateVersion** | **int32** | 内部发布次数 | [optional] 
+**Url** | **string** | API地址, 类型为api时有效 | 
 **Version** | **string** | 版本 | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

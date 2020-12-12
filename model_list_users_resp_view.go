@@ -11,6 +11,6 @@
 package openapi
 // ListUsersRespView struct for ListUsersRespView
 type ListUsersRespView struct {
-	Users []UserInfo `json:"users"`
 	Total int32 `json:"total"`
+	Users []UserInfo `json:"users"`
 }

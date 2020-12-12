@@ -11,18 +11,18 @@
 package openapi
 // CreateUser struct for CreateUser
 type CreateUser struct {
-	// 用户昵称
-	NickName string `json:"nick_name"`
-	// 用户昵称
-	Password string `json:"password"`
-	// enterprise_id
-	EnterpriseId string `json:"enterprise_id"`
 	// 邮件地址
 	Email string `json:"email,omitempty"`
-	// 手机号码
-	Phone string `json:"phone,omitempty"`
+	// enterprise_id
+	EnterpriseId string `json:"enterprise_id"`
 	// 激活状态
 	IsActive bool `json:"is_active,omitempty"`
+	// 用户昵称
+	NickName string `json:"nick_name"`
 	// 用户来源
 	Origion string `json:"origion,omitempty"`
+	// 密码
+	Password string `json:"password"`
+	// 手机号码
+	Phone string `json:"phone,omitempty"`
 }

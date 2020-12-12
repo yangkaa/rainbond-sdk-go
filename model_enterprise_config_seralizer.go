@@ -11,11 +11,11 @@
 package openapi
 // EnterpriseConfigSeralizer struct for EnterpriseConfigSeralizer
 type EnterpriseConfigSeralizer struct {
-	ExportApp ExportAppBaseResp `json:"export_app,omitempty"`
-	AutoSsl AutoSsl `json:"auto_ssl,omitempty"`
-	OauthServices OauthServicesBaseResp `json:"oauth_services,omitempty"`
-	CloudMarket CloudMarketBaseResp `json:"cloud_market,omitempty"`
-	ObjectStorage ObjectStorageBaseResp `json:"object_storage,omitempty"`
 	AppstoreImageHub AppStoreImageHubBaseResp `json:"appstore_image_hub,omitempty"`
+	AutoSsl AutoSsl `json:"auto_ssl,omitempty"`
+	CloudMarket CloudMarketBaseResp `json:"cloud_market,omitempty"`
+	ExportApp ExportAppBaseResp `json:"export_app,omitempty"`
 	NewbieGuide NewBieGuideBaseResp `json:"newbie_guide,omitempty"`
+	OauthServices OauthServicesBaseResp `json:"oauth_services,omitempty"`
+	ObjectStorage ObjectStorageBaseResp `json:"object_storage,omitempty"`
 }

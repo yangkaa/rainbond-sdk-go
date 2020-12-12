@@ -11,26 +11,26 @@
 package openapi
 // TeamBaseInfo struct for TeamBaseInfo
 type TeamBaseInfo struct {
-	// 租户id
-	TenantId string `json:"tenant_id"`
-	// 租户名称
-	TenantName string `json:"tenant_name"`
-	// 区域中心,弃用
-	Region string `json:"region,omitempty"`
-	// 激活状态
-	IsActive bool `json:"is_active,omitempty"`
 	// 创建时间
 	CreateTime string `json:"create_time"`
 	// 租户创建者
 	Creater int32 `json:"creater,omitempty"`
-	// 内存大小单位（M）
-	LimitMemory int32 `json:"limit_memory,omitempty"`
-	// 更新时间
-	UpdateTime string `json:"update_time"`
-	// 过期时间
-	ExpiredTime string `json:"expired_time"`
-	// 团队别名
-	TenantAlias *string `json:"tenant_alias,omitempty"`
 	// 企业id
 	EnterpriseId *string `json:"enterprise_id,omitempty"`
+	// 过期时间
+	ExpiredTime string `json:"expired_time"`
+	// 激活状态
+	IsActive bool `json:"is_active,omitempty"`
+	// 内存大小单位（M）
+	LimitMemory int32 `json:"limit_memory,omitempty"`
+	// 区域中心,弃用
+	Region string `json:"region,omitempty"`
+	// 团队别名
+	TenantAlias *string `json:"tenant_alias,omitempty"`
+	// 租户id
+	TenantId string `json:"tenant_id"`
+	// 租户名称
+	TenantName string `json:"tenant_name"`
+	// 更新时间
+	UpdateTime string `json:"update_time"`
 }

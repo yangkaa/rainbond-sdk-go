@@ -11,11 +11,11 @@
 package openapi
 // ListServiceEventsResponse struct for ListServiceEventsResponse
 type ListServiceEventsResponse struct {
+	Events []AppServiceEvents `json:"events"`
 	// 当前页数
 	Page int32 `json:"page"`
 	// 每页数量
 	PageSize int32 `json:"page_size"`
 	// 数据总数
 	Total int32 `json:"total"`
-	Events []AppServiceEvents `json:"events"`
 }

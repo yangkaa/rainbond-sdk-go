@@ -11,20 +11,20 @@
 package openapi
 // ListUpgrade struct for ListUpgrade
 type ListUpgrade struct {
-	// 应用商店名称
-	MarketName string `json:"market_name"`
 	// 应用模型id
 	AppModelId string `json:"app_model_id"`
 	// 应用模型名称
 	AppModelName string `json:"app_model_name"`
+	// 可升级
+	CanUpgrade bool `json:"can_upgrade"`
 	// 当前版本
 	CurrentVersion string `json:"current_version"`
 	// 企业id
 	EnterpriseId string `json:"enterprise_id"`
-	// 可升级
-	CanUpgrade bool `json:"can_upgrade"`
-	// 可升级的版本列表
-	UpgradeVersions []string `json:"upgrade_versions"`
+	// 应用商店名称
+	MarketName string `json:"market_name"`
 	// 应用模型来源
 	Source string `json:"source"`
+	// 可升级的版本列表
+	UpgradeVersions []string `json:"upgrade_versions"`
 }

@@ -11,8 +11,8 @@
 package openapi
 // TenantRegionList struct for TenantRegionList
 type TenantRegionList struct {
-	// 租户id
-	TenantId string `json:"tenant_id"`
 	// 数据中心名称
 	RegionName string `json:"region_name"`
+	// 租户id
+	TenantId string `json:"tenant_id"`
 }

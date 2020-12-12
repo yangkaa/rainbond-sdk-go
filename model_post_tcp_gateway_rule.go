@@ -13,14 +13,14 @@ package openapi
 type PostTcpGatewayRule struct {
 	// 组件端口
 	ContainerPort int32 `json:"container_port"`
-	// 组件id
-	ServiceId string `json:"service_id"`
+	// 映射id地址
+	DefaultIp string `json:"default_ip"`
+	// 映射端口
+	DefaultPort int32 `json:"default_port"`
 	// ip地址:端口
 	EndPoint string `json:"end_point"`
 	// 规则扩展
 	RuleExtensions []PostTcpGatewayRuleExtensions `json:"rule_extensions,omitempty"`
-	// 映射端口
-	DefaultPort int32 `json:"default_port"`
-	// 映射id地址
-	DefaultIp string `json:"default_ip"`
+	// 组件id
+	ServiceId string `json:"service_id"`
 }

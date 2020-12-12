@@ -11,33 +11,33 @@
 package openapi
 // RegionInfoR struct for RegionInfoR
 type RegionInfoR struct {
-	// 数据中心名
-	RegionName string `json:"region_name"`
-	// 数据中心昵称
-	RegionAlias string `json:"region_alias"`
-	Url string `json:"url"`
-	Wsurl string `json:"wsurl"`
-	Httpdomain string `json:"httpdomain"`
-	Tcpdomain string `json:"tcpdomain"`
-	Scope string `json:"scope"`
-	SslCaCert string `json:"ssl_ca_cert"`
 	CertFile string `json:"cert_file"`
-	KeyFile string `json:"key_file"`
 	Desc string `json:"desc"`
-	// 使用的存储
-	UsedDisk float32 `json:"used_disk,omitempty"`
-	// 全部存储
-	TotalDisk float32 `json:"total_disk,omitempty"`
-	// 使用内存
-	UsedMemory float32 `json:"used_memory,omitempty"`
-	// 全部内存
-	TotalMemory float32 `json:"total_memory,omitempty"`
-	// 使用cpu
-	UsedCpu float32 `json:"used_cpu,omitempty"`
-	// 全部cpu
-	TotalCpu float32 `json:"total_cpu,omitempty"`
 	// 集群状态
 	HealthStatus string `json:"health_status,omitempty"`
+	Httpdomain string `json:"httpdomain"`
+	KeyFile string `json:"key_file"`
+	// 数据中心昵称
+	RegionAlias string `json:"region_alias"`
+	// 数据中心名
+	RegionName string `json:"region_name"`
+	Scope string `json:"scope"`
+	SslCaCert string `json:"ssl_ca_cert"`
 	// 状态
 	Status string `json:"status,omitempty"`
+	Tcpdomain string `json:"tcpdomain"`
+	// 全部cpu
+	TotalCpu float32 `json:"total_cpu,omitempty"`
+	// 全部存储
+	TotalDisk float32 `json:"total_disk,omitempty"`
+	// 全部内存
+	TotalMemory float32 `json:"total_memory,omitempty"`
+	Url string `json:"url"`
+	// 使用cpu
+	UsedCpu float32 `json:"used_cpu,omitempty"`
+	// 使用的存储
+	UsedDisk float32 `json:"used_disk,omitempty"`
+	// 使用内存
+	UsedMemory float32 `json:"used_memory,omitempty"`
+	Wsurl string `json:"wsurl"`
 }

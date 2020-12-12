@@ -11,15 +11,15 @@
 package openapi
 // MarketInstall struct for MarketInstall
 type MarketInstall struct {
-	// 企业ID(联合云ID)
-	EnterpriseId string `json:"enterprise_id"`
-	// 团队id
-	TeamId string `json:"team_id"`
-	// 备注
-	Note string `json:"note"`
 	// 应用id
 	ID int32 `json:"ID"`
+	// 企业ID(联合云ID)
+	EnterpriseId string `json:"enterprise_id"`
+	// 备注
+	Note string `json:"note"`
 	// 数据中心名
 	RegionName string `json:"region_name"`
 	ServiceList []ServiceBaseInfo `json:"service_list"`
+	// 团队id
+	TeamId string `json:"team_id"`
 }

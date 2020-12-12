@@ -11,14 +11,14 @@
 package openapi
 // UpdateUser struct for UpdateUser
 type UpdateUser struct {
-	// 用户昵称
-	Password string `json:"password,omitempty"`
-	// enterprise_id
-	EnterpriseId string `json:"enterprise_id,omitempty"`
 	// 邮件地址
 	Email string `json:"email,omitempty"`
-	// 手机号码
-	Phone string `json:"phone,omitempty"`
+	// enterprise_id
+	EnterpriseId string `json:"enterprise_id,omitempty"`
 	// 激活状态
 	IsActive *bool `json:"is_active,omitempty"`
+	// 密码
+	Password string `json:"password,omitempty"`
+	// 手机号码
+	Phone string `json:"phone,omitempty"`
 }

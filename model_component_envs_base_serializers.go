@@ -11,14 +11,14 @@
 package openapi
 // ComponentEnvsBaseSerializers struct for ComponentEnvsBaseSerializers
 type ComponentEnvsBaseSerializers struct {
-	// 备注
-	Note string `json:"note,omitempty"`
-	// 环境变量名
-	Name string `json:"name"`
-	// 环境变量值
-	Value string `json:"value"`
 	// 是否可改变
 	IsChange bool `json:"is_change,omitempty"`
+	// 环境变量名
+	Name string `json:"name"`
+	// 备注
+	Note string `json:"note,omitempty"`
 	// 范围
 	Scope string `json:"scope,omitempty"`
+	// 环境变量值
+	Value string `json:"value"`
 }

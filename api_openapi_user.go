@@ -45,7 +45,7 @@ func (a *OpenapiUserApiService) AdministratorsCreate(ctx _context.Context, data 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/administrators"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/administrators"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -133,8 +133,8 @@ func (a *OpenapiUserApiService) AdministratorsDelete(ctx _context.Context, userI
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/administrators/{user_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.PathEscape(parameterToString(userId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/administrators/{user_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(userId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -243,7 +243,7 @@ func (a *OpenapiUserApiService) AdministratorsList(ctx _context.Context, localVa
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/administrators"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/administrators"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -340,7 +340,7 @@ func (a *OpenapiUserApiService) ChangepwdUpdate(ctx _context.Context, data Chang
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/changepwd"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/changepwd"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -431,8 +431,8 @@ func (a *OpenapiUserApiService) UsersChangepwdUpdate(ctx _context.Context, userI
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/users/{user_id}/changepwd"
-	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.PathEscape(parameterToString(userId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/users/{user_id}/changepwd"
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(userId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -523,7 +523,7 @@ func (a *OpenapiUserApiService) UsersCreate(ctx _context.Context, data CreateUse
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/users"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/users"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -611,8 +611,8 @@ func (a *OpenapiUserApiService) UsersDelete(ctx _context.Context, userId string)
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/users/{user_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.PathEscape(parameterToString(userId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/users/{user_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(userId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -702,7 +702,7 @@ func (a *OpenapiUserApiService) UsersList(ctx _context.Context, localVarOptional
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/users"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/users"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -799,8 +799,8 @@ func (a *OpenapiUserApiService) UsersRead(ctx _context.Context, userId string) (
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/users/{user_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.PathEscape(parameterToString(userId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/users/{user_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(userId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -890,8 +890,8 @@ func (a *OpenapiUserApiService) UsersUpdate(ctx _context.Context, userId string,
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/users/{user_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.PathEscape(parameterToString(userId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/users/{user_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", _neturl.QueryEscape(parameterToString(userId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

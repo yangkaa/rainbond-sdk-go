@@ -11,14 +11,14 @@
 package openapi
 // UpdateTeamInfoReq struct for UpdateTeamInfoReq
 type UpdateTeamInfoReq struct {
-	// 数据中心名称
-	Region string `json:"region,omitempty"`
-	// 是否激活
-	IsActive bool `json:"is_active,omitempty"`
 	// 团队拥有者用户ID
 	Creater int32 `json:"creater,omitempty"`
-	// 团队别名
-	TenantAlias string `json:"tenant_alias,omitempty"`
 	// 企业ID
 	EnterpriseId string `json:"enterprise_id,omitempty"`
+	// 是否激活
+	IsActive bool `json:"is_active,omitempty"`
+	// 数据中心名称
+	Region string `json:"region,omitempty"`
+	// 团队别名
+	TenantAlias string `json:"tenant_alias,omitempty"`
 }

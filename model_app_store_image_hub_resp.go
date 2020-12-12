@@ -11,8 +11,8 @@
 package openapi
 // AppStoreImageHubResp struct for AppStoreImageHubResp
 type AppStoreImageHubResp struct {
-	Namespace *string `json:"namespace,omitempty"`
 	HubPassword *string `json:"hub_password,omitempty"`
 	HubUrl *string `json:"hub_url,omitempty"`
 	HubUser *string `json:"hub_user,omitempty"`
+	Namespace *string `json:"namespace,omitempty"`
 }

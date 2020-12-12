@@ -9,8 +9,8 @@
  */
 
 package openapi
-// AutoSsl struct for AutoSsl
-type AutoSsl struct {
-	Enable bool `json:"enable,omitempty"`
-	Value string `json:"value"`
+// CustomJwt struct for CustomJwt
+type CustomJwt struct {
+	NickName string `json:"nick_name"`
+	Password string `json:"password"`
 }

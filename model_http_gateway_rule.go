@@ -12,45 +12,45 @@ package openapi
 // HttpGatewayRule struct for HttpGatewayRule
 type HttpGatewayRule struct {
 	ID int32 `json:"ID,omitempty"`
-	RuleExtensions []string `json:"rule_extensions,omitempty"`
-	// http_rule_id
-	HttpRuleId string `json:"http_rule_id"`
-	// region id
-	RegionId string `json:"region_id"`
-	// 租户id
-	TenantId string `json:"tenant_id"`
-	// 组件id
-	ServiceId string `json:"service_id"`
-	// 组件名
-	ServiceName string `json:"service_name"`
-	// 域名
-	DomainName string `json:"domain_name"`
-	// 容器端口
-	ContainerPort int32 `json:"container_port,omitempty"`
-	// 域名类型 http https httptphttps httpandhttps
-	Protocol string `json:"protocol,omitempty"`
-	// 证书ID
-	CertificateId int32 `json:"certificate_id,omitempty"`
-	// 组件域名类型
-	DomainType string `json:"domain_type,omitempty"`
-	// 组件别名
-	ServiceAlias string `json:"service_alias,omitempty"`
-	// 是否有高级路由
-	IsSenior bool `json:"is_senior,omitempty"`
-	// 域名path
-	DomainPath string `json:"domain_path,omitempty"`
-	// 域名cookie
-	DomainCookie string `json:"domain_cookie,omitempty"`
-	// 域名heander
-	DomainHeander string `json:"domain_heander,omitempty"`
-	// 类型（默认：0， 自定义：1）
-	Type int32 `json:"type,omitempty"`
-	// 权重
-	TheWeight int32 `json:"the_weight,omitempty"`
-	// 是否已开启对外端口
-	IsOuterService bool `json:"is_outer_service,omitempty"`
 	// 是否自动匹配证书，升级为https，如果开启，由外部服务完成升级
 	AutoSsl bool `json:"auto_ssl,omitempty"`
 	// 自动分发证书配置
 	AutoSslConfig *string `json:"auto_ssl_config,omitempty"`
+	// 证书ID
+	CertificateId int32 `json:"certificate_id,omitempty"`
+	// 容器端口
+	ContainerPort int32 `json:"container_port,omitempty"`
+	// 域名cookie
+	DomainCookie string `json:"domain_cookie,omitempty"`
+	// 域名heander
+	DomainHeander string `json:"domain_heander,omitempty"`
+	// 域名
+	DomainName string `json:"domain_name"`
+	// 域名path
+	DomainPath string `json:"domain_path,omitempty"`
+	// 组件域名类型
+	DomainType string `json:"domain_type,omitempty"`
+	// http_rule_id
+	HttpRuleId string `json:"http_rule_id"`
+	// 是否已开启对外端口
+	IsOuterService bool `json:"is_outer_service,omitempty"`
+	// 是否有高级路由
+	IsSenior bool `json:"is_senior,omitempty"`
+	// 域名类型 http https httptphttps httpandhttps
+	Protocol string `json:"protocol,omitempty"`
+	// region id
+	RegionId string `json:"region_id"`
+	RuleExtensions []string `json:"rule_extensions,omitempty"`
+	// 组件别名
+	ServiceAlias string `json:"service_alias,omitempty"`
+	// 组件id
+	ServiceId string `json:"service_id"`
+	// 组件名
+	ServiceName string `json:"service_name"`
+	// 租户id
+	TenantId string `json:"tenant_id"`
+	// 权重
+	TheWeight int32 `json:"the_weight,omitempty"`
+	// 类型（默认：0， 自定义：1）
+	Type int32 `json:"type,omitempty"`
 }

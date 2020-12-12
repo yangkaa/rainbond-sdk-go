@@ -11,8 +11,8 @@
 package openapi
 // PostGatewayRule struct for PostGatewayRule
 type PostGatewayRule struct {
+	Http PostHttpGatewayRule `json:"http,omitempty"`
 	// 协议
 	Protocol string `json:"protocol"`
 	Tcp PostTcpGatewayRule `json:"tcp,omitempty"`
-	Http PostHttpGatewayRule `json:"http,omitempty"`
 }

@@ -11,10 +11,10 @@
 package openapi
 // ChangePassWdUser struct for ChangePassWdUser
 type ChangePassWdUser struct {
-	// user_id
-	UserId int32 `json:"user_id"`
 	// 新密码
 	Password string `json:"password"`
 	// 再次确认新密码
 	Password1 string `json:"password1"`
+	// user_id
+	UserId int32 `json:"user_id"`
 }

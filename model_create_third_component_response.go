@@ -9,8 +9,10 @@
  */
 
 package openapi
-// ServiceBaseInfo struct for ServiceBaseInfo
-type ServiceBaseInfo struct {
+// CreateThirdComponentResponse struct for CreateThirdComponentResponse
+type CreateThirdComponentResponse struct {
+	// API 授权Key, 类型为api时有效
+	ApiServiceKey string `json:"api_service_key"`
 	// 组件构建后是否升级
 	BuildUpgrade bool `json:"build_upgrade,omitempty"`
 	// 组件分类：application,cache,store
@@ -85,6 +87,8 @@ type ServiceBaseInfo struct {
 	TotalMemory int32 `json:"total_memory,omitempty"`
 	// 内部发布次数
 	UpdateVersion int32 `json:"update_version,omitempty"`
+	// API地址, 类型为api时有效
+	Url string `json:"url"`
 	// 版本
 	Version string `json:"version"`
 }

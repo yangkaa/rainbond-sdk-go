@@ -1,19 +1,19 @@
 # \OpenapiUserApi
 
-All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
+All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AdministratorsCreate**](OpenapiUserApi.md#AdministratorsCreate) | **Post** /administrators | 
-[**AdministratorsDelete**](OpenapiUserApi.md#AdministratorsDelete) | **Delete** /administrators/{user_id} | 
-[**AdministratorsList**](OpenapiUserApi.md#AdministratorsList) | **Get** /administrators | 
-[**ChangepwdUpdate**](OpenapiUserApi.md#ChangepwdUpdate) | **Put** /changepwd | 
-[**UsersChangepwdUpdate**](OpenapiUserApi.md#UsersChangepwdUpdate) | **Put** /users/{user_id}/changepwd | 
-[**UsersCreate**](OpenapiUserApi.md#UsersCreate) | **Post** /users | 
-[**UsersDelete**](OpenapiUserApi.md#UsersDelete) | **Delete** /users/{user_id} | 
-[**UsersList**](OpenapiUserApi.md#UsersList) | **Get** /users | 
-[**UsersRead**](OpenapiUserApi.md#UsersRead) | **Get** /users/{user_id} | 
-[**UsersUpdate**](OpenapiUserApi.md#UsersUpdate) | **Put** /users/{user_id} | 
+[**AdministratorsCreate**](OpenapiUserApi.md#AdministratorsCreate) | **Post** /openapi/v1/administrators | 
+[**AdministratorsDelete**](OpenapiUserApi.md#AdministratorsDelete) | **Delete** /openapi/v1/administrators/{user_id} | 
+[**AdministratorsList**](OpenapiUserApi.md#AdministratorsList) | **Get** /openapi/v1/administrators | 
+[**ChangepwdUpdate**](OpenapiUserApi.md#ChangepwdUpdate) | **Put** /openapi/v1/changepwd | 
+[**UsersChangepwdUpdate**](OpenapiUserApi.md#UsersChangepwdUpdate) | **Put** /openapi/v1/users/{user_id}/changepwd | 
+[**UsersCreate**](OpenapiUserApi.md#UsersCreate) | **Post** /openapi/v1/users | 
+[**UsersDelete**](OpenapiUserApi.md#UsersDelete) | **Delete** /openapi/v1/users/{user_id} | 
+[**UsersList**](OpenapiUserApi.md#UsersList) | **Get** /openapi/v1/users | 
+[**UsersRead**](OpenapiUserApi.md#UsersRead) | **Get** /openapi/v1/users/{user_id} | 
+[**UsersUpdate**](OpenapiUserApi.md#UsersUpdate) | **Put** /openapi/v1/users/{user_id} | 
 
 
 

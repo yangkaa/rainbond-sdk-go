@@ -47,10 +47,10 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsCloseCreate(ctx _context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/close"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/close"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -144,12 +144,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsCopyCreate(ctx _context.Context,
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy"
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -242,12 +242,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsCopyList(ctx _context.Context, a
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy"
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -338,10 +338,10 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsCreate(ctx _context.Context, reg
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -425,7 +425,7 @@ TeamsRegionsAppsDelete Method for TeamsRegionsAppsDelete
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param optional nil or *TeamsRegionsAppsDeleteOpts - Optional Parameters:
  * @param "Force" (optional.Int32) -  强制删除
 */
@@ -439,12 +439,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsDelete(ctx _context.Context, reg
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -530,12 +530,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsDomainsCreate(ctx _context.Conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/domains"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/domains"
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -636,12 +636,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsInstallCreate(ctx _context.Conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/install"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/install"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -743,10 +743,10 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsList(ctx _context.Context, regio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -831,7 +831,7 @@ TeamsRegionsAppsMonitorQueryList Method for TeamsRegionsAppsMonitorQueryList
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param optional nil or *TeamsRegionsAppsMonitorQueryListOpts - Optional Parameters:
  * @param "IsOuter" (optional.String) -  是否只获取对外组件监控
 @return []ComponentMonitorSerializers
@@ -847,12 +847,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsMonitorQueryList(ctx _context.Co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -937,7 +937,7 @@ TeamsRegionsAppsMonitorQueryRangeList Method for TeamsRegionsAppsMonitorQueryRan
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param teamId 团队ID、名称
  * @param regionName 数据中心名称
- * @param appId 应用组id
+ * @param appId 应用id
  * @param start 起始时间戳
  * @param end 结束时间戳
  * @param step 步长（默认60）
@@ -956,18 +956,18 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsMonitorQueryRangeList(ctx _conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range"
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range"
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"start"+"}", _neturl.PathEscape(parameterToString(start, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"start"+"}", _neturl.QueryEscape(parameterToString(start, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"end"+"}", _neturl.PathEscape(parameterToString(end, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"end"+"}", _neturl.QueryEscape(parameterToString(end, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"step"+"}", _neturl.PathEscape(parameterToString(step, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"step"+"}", _neturl.QueryEscape(parameterToString(step, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1047,7 +1047,7 @@ TeamsRegionsAppsOperationsCreate Method for TeamsRegionsAppsOperationsCreate
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param data
 @return Success
 */
@@ -1062,12 +1062,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsOperationsCreate(ctx _context.Co
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/operations"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/operations"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1165,7 +1165,7 @@ TeamsRegionsAppsRead Method for TeamsRegionsAppsRead
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
 @return AppInfo
 */
 func (a *OpenapiAppsApiService) TeamsRegionsAppsRead(ctx _context.Context, regionName string, teamId string, appId int32) (AppInfo, *_nethttp.Response, error) {
@@ -1179,12 +1179,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsRead(ctx _context.Context, regio
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1267,7 +1267,7 @@ TeamsRegionsAppsServicesDelete Method for TeamsRegionsAppsServicesDelete
  * @param regionName
  * @param serviceId
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param optional nil or *TeamsRegionsAppsServicesDeleteOpts - Optional Parameters:
  * @param "Force" (optional.Int32) -  强制删除
 */
@@ -1281,14 +1281,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesDelete(ctx _context.Cont
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.QueryEscape(parameterToString(serviceId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1375,14 +1375,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesEnvsUpdate(ctx _context.
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs"
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.QueryEscape(parameterToString(serviceId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1468,7 +1468,7 @@ TeamsRegionsAppsServicesEventsList Method for TeamsRegionsAppsServicesEventsList
  * @param regionName
  * @param serviceId
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param optional nil or *TeamsRegionsAppsServicesEventsListOpts - Optional Parameters:
  * @param "Page" (optional.Int32) -  页码
  * @param "PageSize" (optional.Int32) -  每页数量
@@ -1485,14 +1485,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesEventsList(ctx _context.
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.QueryEscape(parameterToString(serviceId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1575,7 +1575,7 @@ TeamsRegionsAppsServicesList Method for TeamsRegionsAppsServicesList
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
 @return []ServiceBaseInfo
 */
 func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesList(ctx _context.Context, regionName string, teamId string, appId int32) ([]ServiceBaseInfo, *_nethttp.Response, error) {
@@ -1589,12 +1589,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesList(ctx _context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1672,7 +1672,7 @@ TeamsRegionsAppsServicesRead Method for TeamsRegionsAppsServicesRead
  * @param regionName
  * @param serviceId
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
 @return ServiceBaseInfo
 */
 func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesRead(ctx _context.Context, regionName string, serviceId string, teamId string, appId int32) (ServiceBaseInfo, *_nethttp.Response, error) {
@@ -1686,14 +1686,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesRead(ctx _context.Contex
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.QueryEscape(parameterToString(serviceId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1771,7 +1771,7 @@ TeamsRegionsAppsServicesTelescopicHorizontalCreate Method for TeamsRegionsAppsSe
  * @param regionName
  * @param serviceId
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param data
 @return AppServiceTelescopicHorizontal
 */
@@ -1786,14 +1786,14 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicHorizontalCrea
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.QueryEscape(parameterToString(serviceId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1873,7 +1873,7 @@ TeamsRegionsAppsServicesTelescopicVerticalCreate Method for TeamsRegionsAppsServ
  * @param regionName
  * @param serviceId
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用id
  * @param data
 @return AppServiceTelescopicVertical
 */
@@ -1888,14 +1888,113 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsServicesTelescopicVerticalCreate
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.PathEscape(parameterToString(serviceId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"service_id"+"}", _neturl.QueryEscape(parameterToString(serviceId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = &data
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["Authorization"] = key
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+/*
+TeamsRegionsAppsThirdComponentsCreate Method for TeamsRegionsAppsThirdComponentsCreate
+创建第三方组件
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param regionName
+ * @param teamId
+ * @param appId 应用id
+ * @param data
+@return CreateThirdComponentResponse
+*/
+func (a *OpenapiAppsApiService) TeamsRegionsAppsThirdComponentsCreate(ctx _context.Context, regionName string, teamId string, appId int32, data CreateThirdComponent) (CreateThirdComponentResponse, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodPost
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  CreateThirdComponentResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/third-components"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -1989,12 +2088,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsUpgradeCreate(ctx _context.Conte
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -2087,12 +2186,12 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsUpgradeList(ctx _context.Context
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.PathEscape(parameterToString(regionName, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.PathEscape(parameterToString(teamId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
 
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.PathEscape(parameterToString(appId, "")) , -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

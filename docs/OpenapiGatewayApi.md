@@ -1,18 +1,18 @@
 # \OpenapiGatewayApi
 
-All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
+All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**HttpdomainsList**](OpenapiGatewayApi.md#HttpdomainsList) | **Get** /httpdomains | 
-[**TeamsRegionsAppsDomainsDelete**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
-[**TeamsRegionsAppsDomainsList**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
-[**TeamsRegionsAppsDomainsUpdate**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsUpdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
-[**TeamsRegionsAppsHttpdomainsCreate**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
-[**TeamsRegionsAppsHttpdomainsDelete**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
-[**TeamsRegionsAppsHttpdomainsList**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
-[**TeamsRegionsAppsHttpdomainsRead**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
-[**TeamsRegionsAppsHttpdomainsUpdate**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsUpdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
+[**HttpdomainsList**](OpenapiGatewayApi.md#HttpdomainsList) | **Get** /openapi/v1/httpdomains | 
+[**TeamsRegionsAppsDomainsDelete**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsDelete) | **Delete** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
+[**TeamsRegionsAppsDomainsList**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
+[**TeamsRegionsAppsDomainsUpdate**](OpenapiGatewayApi.md#TeamsRegionsAppsDomainsUpdate) | **Put** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/domains/{rule_id} | 
+[**TeamsRegionsAppsHttpdomainsCreate**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
+[**TeamsRegionsAppsHttpdomainsDelete**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsDelete) | **Delete** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
+[**TeamsRegionsAppsHttpdomainsList**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains | 
+[**TeamsRegionsAppsHttpdomainsRead**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsRead) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
+[**TeamsRegionsAppsHttpdomainsUpdate**](OpenapiGatewayApi.md#TeamsRegionsAppsHttpdomainsUpdate) | **Put** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains/{rule_id} | 
 
 
 

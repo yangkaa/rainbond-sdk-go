@@ -11,7 +11,7 @@
 package openapi
 // ComponentMonitorBaseSerializers struct for ComponentMonitorBaseSerializers
 type ComponentMonitorBaseSerializers struct {
+	Result []MonitorDataSerializers `json:"result"`
 	// 返回类型
 	ResultType string `json:"resultType,omitempty"`
-	Result []MonitorDataSerializers `json:"result"`
 }

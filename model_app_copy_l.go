@@ -11,25 +11,25 @@
 package openapi
 // AppCopyL struct for AppCopyL
 type AppCopyL struct {
+	// 应用名称
+	AppName string `json:"app_name"`
 	BuildSource string `json:"build_source,omitempty"`
-	// 更新日期
-	UpdateTime string `json:"update_time"`
-	// 构建版本
-	DeployVersion string `json:"deploy_version"`
 	// 创建状态
 	CreateStatus string `json:"create_status"`
+	// 构建版本
+	DeployVersion string `json:"deploy_version"`
+	// 组件运行内存
+	MinMemory string `json:"min_memory"`
 	// 组件昵称
 	ServiceAlias string `json:"service_alias"`
 	// 组件中文名称
 	ServiceCname string `json:"service_cname"`
-	// 版本
-	Version string `json:"version"`
-	// 组件类型
-	ServiceType string `json:"service_type"`
 	// id
 	ServiceId string `json:"service_id"`
-	// 应用名称
-	AppName string `json:"app_name"`
-	// 组件运行内存
-	MinMemory string `json:"min_memory"`
+	// 组件类型
+	ServiceType string `json:"service_type"`
+	// 更新日期
+	UpdateTime string `json:"update_time"`
+	// 版本
+	Version string `json:"version"`
 }

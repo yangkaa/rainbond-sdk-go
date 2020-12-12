@@ -12,10 +12,10 @@ package openapi
 // AppCopyC struct for AppCopyC
 type AppCopyC struct {
 	Services []AppCopyModify `json:"services"`
-	// 团队名称
-	TargetTeamName string `json:"target_team_name"`
-	// 数据中心名称
-	TargetRegionName string `json:"target_region_name"`
 	// 应用id
 	TargetAppId int32 `json:"target_app_id"`
+	// 数据中心名称
+	TargetRegionName string `json:"target_region_name"`
+	// 团队名称
+	TargetTeamName string `json:"target_team_name"`
 }

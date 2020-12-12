@@ -11,8 +11,8 @@
 package openapi
 // CreateTeamReq struct for CreateTeamReq
 type CreateTeamReq struct {
-	// 团队名称
-	TenantName string `json:"tenant_name"`
 	// 默认开通的数据中心，未指定则不开通
 	Region string `json:"region,omitempty"`
+	// 团队名称
+	TenantName string `json:"tenant_name"`
 }

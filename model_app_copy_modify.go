@@ -11,7 +11,7 @@
 package openapi
 // AppCopyModify struct for AppCopyModify
 type AppCopyModify struct {
+	Change string `json:"change,omitempty"`
 	// id
 	ServiceId string `json:"service_id"`
-	Change string `json:"change,omitempty"`
 }

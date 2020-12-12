@@ -11,8 +11,8 @@
 package openapi
 // CreateAdminUserReq struct for CreateAdminUserReq
 type CreateAdminUserReq struct {
-	// 用户ID
-	UserId string `json:"user_id"`
 	// 企业ID
 	Eid string `json:"eid"`
+	// 用户ID
+	UserId string `json:"user_id"`
 }

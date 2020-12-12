@@ -12,10 +12,10 @@ package openapi
 // ComponentMonitorSerializers struct for ComponentMonitorSerializers
 type ComponentMonitorSerializers struct {
 	Monitors *[]ComponentMonitorItemsSerializers `json:"monitors,omitempty"`
-	// 组件id
-	ServiceId string `json:"service_id"`
-	// 组件名
-	ServiceCname string `json:"service_cname"`
 	// 组件昵称
 	ServiceAlias string `json:"service_alias"`
+	// 组件名
+	ServiceCname string `json:"service_cname"`
+	// 组件id
+	ServiceId string `json:"service_id"`
 }

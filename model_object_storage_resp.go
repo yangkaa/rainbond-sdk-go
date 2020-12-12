@@ -11,9 +11,9 @@
 package openapi
 // ObjectStorageResp struct for ObjectStorageResp
 type ObjectStorageResp struct {
-	Provider string `json:"provider"`
-	Endpoint string `json:"endpoint"`
 	AccessKey string `json:"access_key"`
-	SecretKey string `json:"secret_key"`
 	BucketName string `json:"bucket_name"`
+	Endpoint string `json:"endpoint"`
+	Provider string `json:"provider"`
+	SecretKey string `json:"secret_key"`
 }

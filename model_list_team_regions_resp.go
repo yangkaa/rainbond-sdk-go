@@ -11,6 +11,6 @@
 package openapi
 // ListTeamRegionsResp struct for ListTeamRegionsResp
 type ListTeamRegionsResp struct {
-	Total int32 `json:"total"`
 	Regions []TeamRegionsResp `json:"regions"`
+	Total int32 `json:"total"`
 }

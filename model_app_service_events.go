@@ -11,36 +11,36 @@
 package openapi
 // AppServiceEvents struct for AppServiceEvents
 type AppServiceEvents struct {
-	// 事件id
-	EventID string `json:"EventID"`
-	// 操作人
-	UserName string `json:"UserName"`
 	// 结束事件
 	EndTime string `json:"EndTime"`
-	// 操作目标类型
-	Target string `json:"Target"`
-	// 事件类型
-	OptType string `json:"OptType"`
-	// 操作目标id
-	TargetID string `json:"TargetID"`
-	// 服务id
-	ServiceID string `json:"ServiceID"`
-	// 状态
-	Status string `json:"Status"`
-	// 请求参数
-	RequestBody string `json:"RequestBody"`
-	// 创建时间
-	CreateTime string `json:"create_time"`
+	// 事件id
+	EventID string `json:"EventID"`
 	// 最终状态
 	FinalStatus string `json:"FinalStatus"`
-	// 开始时间
-	StartTime string `json:"StartTime"`
-	// 同步状态
-	SynType string `json:"SynType"`
-	// 日志
-	Message string `json:"Message"`
-	// 团队id
-	TenantID string `json:"TenantID"`
 	// 记录id
 	ID string `json:"ID"`
+	// 日志
+	Message string `json:"Message"`
+	// 事件类型
+	OptType string `json:"OptType"`
+	// 请求参数
+	RequestBody string `json:"RequestBody"`
+	// 服务id
+	ServiceID string `json:"ServiceID"`
+	// 开始时间
+	StartTime string `json:"StartTime"`
+	// 状态
+	Status string `json:"Status"`
+	// 同步状态
+	SynType string `json:"SynType"`
+	// 操作目标类型
+	Target string `json:"Target"`
+	// 操作目标id
+	TargetID string `json:"TargetID"`
+	// 团队id
+	TenantID string `json:"TenantID"`
+	// 操作人
+	UserName string `json:"UserName"`
+	// 创建时间
+	CreateTime string `json:"create_time"`
 }

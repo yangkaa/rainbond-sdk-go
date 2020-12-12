@@ -1,21 +1,21 @@
 # \OpenapiTeamApi
 
-All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
+All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TeamsCertificatesCreate**](OpenapiTeamApi.md#TeamsCertificatesCreate) | **Post** /teams/{team_id}/certificates | 
-[**TeamsCertificatesDelete**](OpenapiTeamApi.md#TeamsCertificatesDelete) | **Delete** /teams/{team_id}/certificates/{certificate_id} | 
-[**TeamsCertificatesList**](OpenapiTeamApi.md#TeamsCertificatesList) | **Get** /teams/{team_id}/certificates | 
-[**TeamsCertificatesRead**](OpenapiTeamApi.md#TeamsCertificatesRead) | **Get** /teams/{team_id}/certificates/{certificate_id} | 
-[**TeamsCertificatesUpdate**](OpenapiTeamApi.md#TeamsCertificatesUpdate) | **Put** /teams/{team_id}/certificates/{certificate_id} | 
-[**TeamsCreate**](OpenapiTeamApi.md#TeamsCreate) | **Post** /teams | 
-[**TeamsDelete**](OpenapiTeamApi.md#TeamsDelete) | **Delete** /teams/{team_id} | 
-[**TeamsList**](OpenapiTeamApi.md#TeamsList) | **Get** /teams | 
-[**TeamsRead**](OpenapiTeamApi.md#TeamsRead) | **Get** /teams/{team_id} | 
-[**TeamsRegionsResourceList**](OpenapiTeamApi.md#TeamsRegionsResourceList) | **Get** /teams/{team_id}/regions/{region_name}/resource | 
-[**TeamsResourceCreate**](OpenapiTeamApi.md#TeamsResourceCreate) | **Post** /teams/resource | 
-[**TeamsUpdate**](OpenapiTeamApi.md#TeamsUpdate) | **Put** /teams/{team_id} | 
+[**TeamsCertificatesCreate**](OpenapiTeamApi.md#TeamsCertificatesCreate) | **Post** /openapi/v1/teams/{team_id}/certificates | 
+[**TeamsCertificatesDelete**](OpenapiTeamApi.md#TeamsCertificatesDelete) | **Delete** /openapi/v1/teams/{team_id}/certificates/{certificate_id} | 
+[**TeamsCertificatesList**](OpenapiTeamApi.md#TeamsCertificatesList) | **Get** /openapi/v1/teams/{team_id}/certificates | 
+[**TeamsCertificatesRead**](OpenapiTeamApi.md#TeamsCertificatesRead) | **Get** /openapi/v1/teams/{team_id}/certificates/{certificate_id} | 
+[**TeamsCertificatesUpdate**](OpenapiTeamApi.md#TeamsCertificatesUpdate) | **Put** /openapi/v1/teams/{team_id}/certificates/{certificate_id} | 
+[**TeamsCreate**](OpenapiTeamApi.md#TeamsCreate) | **Post** /openapi/v1/teams | 
+[**TeamsDelete**](OpenapiTeamApi.md#TeamsDelete) | **Delete** /openapi/v1/teams/{team_id} | 
+[**TeamsList**](OpenapiTeamApi.md#TeamsList) | **Get** /openapi/v1/teams | 
+[**TeamsRead**](OpenapiTeamApi.md#TeamsRead) | **Get** /openapi/v1/teams/{team_id} | 
+[**TeamsRegionsResourceList**](OpenapiTeamApi.md#TeamsRegionsResourceList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/resource | 
+[**TeamsResourceCreate**](OpenapiTeamApi.md#TeamsResourceCreate) | **Post** /openapi/v1/teams/resource | 
+[**TeamsUpdate**](OpenapiTeamApi.md#TeamsUpdate) | **Put** /openapi/v1/teams/{team_id} | 
 
 
 

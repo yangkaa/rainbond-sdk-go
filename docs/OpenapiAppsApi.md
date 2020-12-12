@@ -1,30 +1,31 @@
 # \OpenapiAppsApi
 
-All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
+All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TeamsRegionsAppsCloseCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCloseCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/close | 
-[**TeamsRegionsAppsCopyCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCopyCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/copy | 
-[**TeamsRegionsAppsCopyList**](OpenapiAppsApi.md#TeamsRegionsAppsCopyList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/copy | 
-[**TeamsRegionsAppsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps | 
-[**TeamsRegionsAppsDelete**](OpenapiAppsApi.md#TeamsRegionsAppsDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
-[**TeamsRegionsAppsDomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsDomainsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
-[**TeamsRegionsAppsInstallCreate**](OpenapiAppsApi.md#TeamsRegionsAppsInstallCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
-[**TeamsRegionsAppsList**](OpenapiAppsApi.md#TeamsRegionsAppsList) | **Get** /teams/{team_id}/regions/{region_name}/apps | 
-[**TeamsRegionsAppsMonitorQueryList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
-[**TeamsRegionsAppsMonitorQueryRangeList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryRangeList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range | 
-[**TeamsRegionsAppsOperationsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsOperationsCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
-[**TeamsRegionsAppsRead**](OpenapiAppsApi.md#TeamsRegionsAppsRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id} | 
-[**TeamsRegionsAppsServicesDelete**](OpenapiAppsApi.md#TeamsRegionsAppsServicesDelete) | **Delete** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
-[**TeamsRegionsAppsServicesEnvsUpdate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEnvsUpdate) | **Put** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs | 
-[**TeamsRegionsAppsServicesEventsList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEventsList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events | 
-[**TeamsRegionsAppsServicesList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services | 
-[**TeamsRegionsAppsServicesRead**](OpenapiAppsApi.md#TeamsRegionsAppsServicesRead) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
-[**TeamsRegionsAppsServicesTelescopicHorizontalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicHorizontalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal | 
-[**TeamsRegionsAppsServicesTelescopicVerticalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicVerticalCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
-[**TeamsRegionsAppsUpgradeCreate**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeCreate) | **Post** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
-[**TeamsRegionsAppsUpgradeList**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeList) | **Get** /teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
+[**TeamsRegionsAppsCloseCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCloseCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/close | 
+[**TeamsRegionsAppsCopyCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCopyCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy | 
+[**TeamsRegionsAppsCopyList**](OpenapiAppsApi.md#TeamsRegionsAppsCopyList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy | 
+[**TeamsRegionsAppsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps | 
+[**TeamsRegionsAppsDelete**](OpenapiAppsApi.md#TeamsRegionsAppsDelete) | **Delete** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id} | 
+[**TeamsRegionsAppsDomainsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsDomainsCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/domains | 
+[**TeamsRegionsAppsInstallCreate**](OpenapiAppsApi.md#TeamsRegionsAppsInstallCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/install | 
+[**TeamsRegionsAppsList**](OpenapiAppsApi.md#TeamsRegionsAppsList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps | 
+[**TeamsRegionsAppsMonitorQueryList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query | 
+[**TeamsRegionsAppsMonitorQueryRangeList**](OpenapiAppsApi.md#TeamsRegionsAppsMonitorQueryRangeList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range | 
+[**TeamsRegionsAppsOperationsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsOperationsCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/operations | 
+[**TeamsRegionsAppsRead**](OpenapiAppsApi.md#TeamsRegionsAppsRead) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id} | 
+[**TeamsRegionsAppsServicesDelete**](OpenapiAppsApi.md#TeamsRegionsAppsServicesDelete) | **Delete** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
+[**TeamsRegionsAppsServicesEnvsUpdate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEnvsUpdate) | **Put** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs | 
+[**TeamsRegionsAppsServicesEventsList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesEventsList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/events | 
+[**TeamsRegionsAppsServicesList**](OpenapiAppsApi.md#TeamsRegionsAppsServicesList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services | 
+[**TeamsRegionsAppsServicesRead**](OpenapiAppsApi.md#TeamsRegionsAppsServicesRead) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id} | 
+[**TeamsRegionsAppsServicesTelescopicHorizontalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicHorizontalCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal | 
+[**TeamsRegionsAppsServicesTelescopicVerticalCreate**](OpenapiAppsApi.md#TeamsRegionsAppsServicesTelescopicVerticalCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/vertical | 
+[**TeamsRegionsAppsThirdComponentsCreate**](OpenapiAppsApi.md#TeamsRegionsAppsThirdComponentsCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/third-components | 
+[**TeamsRegionsAppsUpgradeCreate**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeCreate) | **Post** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
+[**TeamsRegionsAppsUpgradeList**](OpenapiAppsApi.md#TeamsRegionsAppsUpgradeList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/upgrade | 
 
 
 
@@ -189,7 +190,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
  **optional** | ***TeamsRegionsAppsDeleteOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -373,7 +374,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
  **optional** | ***TeamsRegionsAppsMonitorQueryListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -422,7 +423,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **teamId** | **string**| 团队ID、名称 | 
 **regionName** | **string**| 数据中心名称 | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 **start** | **float32**| 起始时间戳 | 
 **end** | **float32**| 结束时间戳 | 
 **step** | **float32**| 步长（默认60） | 
@@ -477,7 +478,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 **data** | [**ServiceGroupOperations**](ServiceGroupOperations.md)|  | 
 
 ### Return type
@@ -514,7 +515,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 
 ### Return type
 
@@ -551,7 +552,7 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
  **optional** | ***TeamsRegionsAppsServicesDeleteOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -640,7 +641,7 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
  **optional** | ***TeamsRegionsAppsServicesEventsListOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -691,7 +692,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 
 ### Return type
 
@@ -728,7 +729,7 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 
 ### Return type
 
@@ -765,7 +766,7 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 **data** | [**AppServiceTelescopicHorizontal**](AppServiceTelescopicHorizontal.md)|  | 
 
 ### Return type
@@ -803,12 +804,49 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **serviceId** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用id | 
 **data** | [**AppServiceTelescopicVertical**](AppServiceTelescopicVertical.md)|  | 
 
 ### Return type
 
 [**AppServiceTelescopicVertical**](AppServiceTelescopicVertical.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsAppsThirdComponentsCreate
+
+> CreateThirdComponentResponse TeamsRegionsAppsThirdComponentsCreate(ctx, regionName, teamId, appId, data)
+
+
+
+创建第三方组件
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+**appId** | **int32**| 应用id | 
+**data** | [**CreateThirdComponent**](CreateThirdComponent.md)|  | 
+
+### Return type
+
+[**CreateThirdComponentResponse**](CreateThirdComponentResponse.md)
 
 ### Authorization
 

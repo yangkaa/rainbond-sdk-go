@@ -1,11 +1,11 @@
 # \OpenapiTeamRegionApi
 
-All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
+All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TeamsRegionsCreate**](OpenapiTeamRegionApi.md#TeamsRegionsCreate) | **Post** /teams/{team_id}/regions | 
-[**TeamsRegionsList**](OpenapiTeamRegionApi.md#TeamsRegionsList) | **Get** /teams/{team_id}/regions | 
+[**TeamsRegionsCreate**](OpenapiTeamRegionApi.md#TeamsRegionsCreate) | **Post** /openapi/v1/teams/{team_id}/regions | 
+[**TeamsRegionsList**](OpenapiTeamRegionApi.md#TeamsRegionsList) | **Get** /openapi/v1/teams/{team_id}/regions | 
 
 
 

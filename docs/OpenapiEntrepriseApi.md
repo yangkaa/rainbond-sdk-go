@@ -1,10 +1,10 @@
 # \OpenapiEntrepriseApi
 
-All URIs are relative to *http://0.0.0.0:7070/openapi/v1*
+All URIs are relative to *http://127.0.0.1:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ConfigsList**](OpenapiEntrepriseApi.md#ConfigsList) | **Get** /configs | 
+[**ConfigsList**](OpenapiEntrepriseApi.md#ConfigsList) | **Get** /openapi/v1/configs | 
 
 
 

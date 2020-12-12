@@ -45,7 +45,7 @@ func (a *OpenapiRegionApiService) RegionsCreate(ctx _context.Context, data AddRe
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/regions"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/regions"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -143,7 +143,7 @@ func (a *OpenapiRegionApiService) RegionsList(ctx _context.Context) ([]RegionInf
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/regions"
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/regions"
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
 	localVarFormParams := _neturl.Values{}
@@ -240,8 +240,8 @@ func (a *OpenapiRegionApiService) RegionsRead(ctx _context.Context, regionId str
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/regions/{region_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"region_id"+"}", _neturl.PathEscape(parameterToString(regionId, "")) , -1)
+	localVarPath := a.client.cfg.BasePath + "/openapi/v1/regions/{region_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"region_id"+"}", _neturl.QueryEscape(parameterToString(regionId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
