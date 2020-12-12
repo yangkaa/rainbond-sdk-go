@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用ID | 
 
 ### Return type
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 **regionName** | **string**|  | 
 **ruleId** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用ID | 
 **data** | [**UpdatePostHttpGatewayRule**](UpdatePostHttpGatewayRule.md)|  | 
 
 ### Return type
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## TeamsRegionsAppsHttpdomainsCreate
 
-> HttpGatewayRule TeamsRegionsAppsHttpdomainsCreate(ctx, appId, regionName, teamId, data)
+> HttpGatewayRule TeamsRegionsAppsHttpdomainsCreate(ctx, regionName, teamId, appId, data)
 
 
 
@@ -184,9 +184,9 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**appId** | **string**|  | 
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
+**appId** | **int32**| 应用ID | 
 **data** | [**PostHttpGatewayRule**](PostHttpGatewayRule.md)|  | 
 
 ### Return type
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用ID | 
 
 ### Return type
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用ID | 
 **ruleId** | **string**| 网关策略id | 
 
 ### Return type
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **regionName** | **string**|  | 
 **teamId** | **string**|  | 
-**appId** | **int32**| 应用组id | 
+**appId** | **int32**| 应用ID | 
 **ruleId** | **string**| 网关策略id | 
 **data** | [**UpdatePostHttpGatewayRule**](UpdatePostHttpGatewayRule.md)|  | 
 

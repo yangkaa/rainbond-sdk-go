@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 
 
-创建HTTP网关策略
+创建网关策略
 
 ### Required Parameters
 

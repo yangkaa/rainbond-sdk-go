@@ -229,7 +229,7 @@ TeamsRegionsAppsDomainsList Method for TeamsRegionsAppsDomainsList
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用ID
 @return GatewayRule
 */
 func (a *OpenapiGatewayApiService) TeamsRegionsAppsDomainsList(ctx _context.Context, regionName string, teamId string, appId int32) (GatewayRule, *_nethttp.Response, error) {
@@ -326,7 +326,7 @@ TeamsRegionsAppsDomainsUpdate Method for TeamsRegionsAppsDomainsUpdate
  * @param regionName
  * @param ruleId
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用ID
  * @param data
 @return HttpGatewayRule
 */
@@ -425,13 +425,13 @@ func (a *OpenapiGatewayApiService) TeamsRegionsAppsDomainsUpdate(ctx _context.Co
 TeamsRegionsAppsHttpdomainsCreate Method for TeamsRegionsAppsHttpdomainsCreate
 创建HTTP网关策略
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param appId
  * @param regionName
  * @param teamId
+ * @param appId 应用ID
  * @param data
 @return HttpGatewayRule
 */
-func (a *OpenapiGatewayApiService) TeamsRegionsAppsHttpdomainsCreate(ctx _context.Context, appId string, regionName string, teamId string, data PostHttpGatewayRule) (HttpGatewayRule, *_nethttp.Response, error) {
+func (a *OpenapiGatewayApiService) TeamsRegionsAppsHttpdomainsCreate(ctx _context.Context, regionName string, teamId string, appId int32, data PostHttpGatewayRule) (HttpGatewayRule, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -443,11 +443,11 @@ func (a *OpenapiGatewayApiService) TeamsRegionsAppsHttpdomainsCreate(ctx _contex
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/httpdomains"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
-
 	localVarPath = strings.Replace(localVarPath, "{"+"region_name"+"}", _neturl.QueryEscape(parameterToString(regionName, "")) , -1)
 
 	localVarPath = strings.Replace(localVarPath, "{"+"team_id"+"}", _neturl.QueryEscape(parameterToString(teamId, "")) , -1)
+
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", _neturl.QueryEscape(parameterToString(appId, "")) , -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -625,7 +625,7 @@ TeamsRegionsAppsHttpdomainsList Method for TeamsRegionsAppsHttpdomainsList
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用ID
 @return []HttpGatewayRule
 */
 func (a *OpenapiGatewayApiService) TeamsRegionsAppsHttpdomainsList(ctx _context.Context, regionName string, teamId string, appId int32) ([]HttpGatewayRule, *_nethttp.Response, error) {
@@ -721,7 +721,7 @@ TeamsRegionsAppsHttpdomainsRead Method for TeamsRegionsAppsHttpdomainsRead
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用ID
  * @param ruleId 网关策略id
 @return HttpGatewayRule
 */
@@ -820,7 +820,7 @@ TeamsRegionsAppsHttpdomainsUpdate Method for TeamsRegionsAppsHttpdomainsUpdate
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param regionName
  * @param teamId
- * @param appId 应用组id
+ * @param appId 应用ID
  * @param ruleId 网关策略id
  * @param data
 @return HttpGatewayRule

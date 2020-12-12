@@ -511,7 +511,7 @@ func (a *OpenapiAppsApiService) TeamsRegionsAppsDelete(ctx _context.Context, reg
 
 /*
 TeamsRegionsAppsDomainsCreate Method for TeamsRegionsAppsDomainsCreate
-创建HTTP网关策略
+创建网关策略
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param appId
  * @param regionName
