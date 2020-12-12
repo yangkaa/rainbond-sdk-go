@@ -3649,6 +3649,60 @@ components:
             $ref: '#/components/schemas/TCPGatewayRule'
           type: array
       type: object
+    HTTPConfiguration:
+      description: 高级参数配置
+      example:
+        proxy_read_timeout: 2
+        set_headers:
+        - value: value
+          key: key
+        - value: value
+          key: key
+        proxy_connect_timeout: 5
+        proxy_buffering: "off"
+        proxy_body_size: 6
+        proxy_buffer_numbers: 1
+        proxy_buffer_size: 5
+        proxy_send_timeout: 7
+      properties:
+        proxy_body_size:
+          description: 请求主体大小
+          title: Proxy body size
+          type: integer
+        proxy_buffer_numbers:
+          description: 缓冲区数量
+          title: Proxy buffer numbers
+          type: integer
+        proxy_buffer_size:
+          description: 缓冲区大小
+          title: Proxy buffer size
+          type: integer
+        proxy_buffering:
+          default: "off"
+          description: 是否开启ProxyBuffer
+          minLength: 1
+          title: Proxy buffering
+          type: string
+        proxy_connect_timeout:
+          description: 连接超时时间
+          title: Proxy connect timeout
+          type: integer
+        proxy_read_timeout:
+          description: 读超时时间
+          title: Proxy read timeout
+          type: integer
+        proxy_send_timeout:
+          description: 发送超时时间
+          title: Proxy send timeout
+          type: integer
+        set_headers:
+          items:
+            $ref: '#/components/schemas/HTTPHeader'
+          type: array
+      required:
+      - set_headers
+      title: Configuration
+      type: object
     HTTPGatewayRule:
       example:
         tenant_id: tenant_id
@@ -3800,6 +3854,25 @@ components:
       - service_id
       - service_name
       - tenant_id
+      type: object
+    HTTPHeader:
+      example:
+        value: value
+        key: key
+      properties:
+        key:
+          description: 请求头Key
+          minLength: 1
+          title: Key
+          type: string
+        value:
+          description: 请求头Value
+          minLength: 1
+          title: Value
+          type: string
+      required:
+      - key
+      - value
       type: object
     Install:
       example:
@@ -4432,8 +4505,8 @@ components:
     PostGatewayRule:
       example:
         tcp:
-          container_port: 5
-          default_port: 5
+          container_port: 2
+          default_port: 4
           rule_extensions:
           - value: value
             key: key
@@ -4444,20 +4517,33 @@ components:
           service_id: service_id
         protocol: protocol
         http:
-          certificate_id: 0
-          container_port: 6
-          domain_name: domain_name
-          domain_cookie: domain_cookie
+          container_port: 9
           rule_extensions:
           - rule_extensions
           - rule_extensions
-          domain_path: /
-          service_id: service_id
+          configuration:
+            proxy_read_timeout: 2
+            set_headers:
+            - value: value
+              key: key
+            - value: value
+              key: key
+            proxy_connect_timeout: 5
+            proxy_buffering: "off"
+            proxy_body_size: 6
+            proxy_buffer_numbers: 1
+            proxy_buffer_size: 5
+            proxy_send_timeout: 7
           domain_header: domain_header
-          auto_ssl: false
-          the_weight: 1
+          the_weight: 3
           auto_ssl_config: auto_ssl_config
           whether_open: false
+          certificate_id: 0
+          domain_name: domain_name
+          domain_cookie: domain_cookie
+          domain_path: /
+          service_id: service_id
+          auto_ssl: false
       properties:
         http:
           $ref: '#/components/schemas/PostHTTPGatewayRule'
@@ -4474,20 +4560,33 @@ components:
       type: object
     PostHTTPGatewayRule:
       example:
-        certificate_id: 0
-        container_port: 6
-        domain_name: domain_name
-        domain_cookie: domain_cookie
+        container_port: 9
         rule_extensions:
         - rule_extensions
         - rule_extensions
-        domain_path: /
-        service_id: service_id
+        configuration:
+          proxy_read_timeout: 2
+          set_headers:
+          - value: value
+            key: key
+          - value: value
+            key: key
+          proxy_connect_timeout: 5
+          proxy_buffering: "off"
+          proxy_body_size: 6
+          proxy_buffer_numbers: 1
+          proxy_buffer_size: 5
+          proxy_send_timeout: 7
         domain_header: domain_header
-        auto_ssl: false
-        the_weight: 1
+        the_weight: 3
         auto_ssl_config: auto_ssl_config
         whether_open: false
+        certificate_id: 0
+        domain_name: domain_name
+        domain_cookie: domain_cookie
+        domain_path: /
+        service_id: service_id
+        auto_ssl: false
       properties:
         auto_ssl:
           default: false
@@ -4503,6 +4602,8 @@ components:
           description: 证书id
           title: Certificate id
           type: integer
+        configuration:
+          $ref: '#/components/schemas/HTTPConfiguration'
         container_port:
           description: 绑定端口
           title: Container port
@@ -4555,8 +4656,8 @@ components:
       type: object
     PostTCPGatewayRule:
       example:
-        container_port: 5
-        default_port: 5
+        container_port: 2
+        default_port: 4
         rule_extensions:
         - value: value
           key: key

@@ -17,6 +17,7 @@ type PostHttpGatewayRule struct {
 	AutoSslConfig string `json:"auto_ssl_config,omitempty"`
 	// 证书id
 	CertificateId int32 `json:"certificate_id,omitempty"`
+	Configuration HttpConfiguration `json:"configuration,omitempty"`
 	// 绑定端口
 	ContainerPort int32 `json:"container_port"`
 	// 域名cookie
