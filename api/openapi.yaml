@@ -1710,6 +1710,30 @@ paths:
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
+  /openapi/v1/teams/{team_id}/regions/{region_name}/overview:
+    get:
+      description: 团队统计
+      operationId: teams_regions_overview_list
+      parameters:
+      - in: path
+        name: region_name
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: team_id
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamOverview'
+          description: ""
+      tags:
+      - openapi-team
   /openapi/v1/teams/{team_id}/regions/{region_name}/resource:
     get:
       description: 获取团队资源统计
@@ -1881,50 +1905,40 @@ components:
         tenant_id: tenant_id
         note: note
         update_time: 2000-01-23T04:56:07.000+00:00
-        governance_mode: governance_mode
         create_time: 2000-01-23T04:56:07.000+00:00
         group_name: group_name
         region_name: region_name
         ID: 0
-        is_default: true
-        order_index: 441289069
+        is_default: false
+        order_index: 6
         username: username
       properties:
         ID:
-          readOnly: true
-          title: ID
+          title: Id
           type: integer
         create_time:
           description: 创建时间
           format: date-time
           title: Create time
           type: string
-        governance_mode:
-          description: governance mode
-          maxLength: 255
-          nullable: true
-          title: Governance mode
-          type: string
         group_name:
-          description: 组名
+          description: 应用名
           maxLength: 128
           minLength: 1
           title: Group name
           type: string
         is_default:
+          default: false
           description: 默认组件
           title: Is default
           type: boolean
         note:
           description: 备注
           maxLength: 2048
-          nullable: true
           title: Note
           type: string
         order_index:
           description: 应用排序
-          maximum: 2147483647
-          minimum: -2147483648
           title: Order index
           type: integer
         region_name:
@@ -1947,15 +1961,17 @@ components:
         username:
           description: the username of principal
           maxLength: 255
-          nullable: true
           title: Username
           type: string
       required:
+      - ID
       - create_time
       - group_name
+      - note
       - region_name
       - tenant_id
       - update_time
+      - username
       type: object
     AppCopyC:
       example:
@@ -2197,12 +2213,11 @@ components:
         group_name: group_name
         service_count: 5
         enterprise_id: enterprise_id
-        is_default: true
-        order_index: -1517921766
+        is_default: false
+        order_index: 1
         running_service_count: 5
         team_name: team_name
         update_time: 2000-01-23T04:56:07.000+00:00
-        governance_mode: governance_mode
         used_momory: 7
         region_name: region_name
         ID: 0
@@ -2212,8 +2227,7 @@ components:
         username: username
       properties:
         ID:
-          readOnly: true
-          title: ID
+          title: Id
           type: integer
         app_id:
           description: 应用id
@@ -2230,32 +2244,24 @@ components:
           minLength: 1
           title: Enterprise id
           type: string
-        governance_mode:
-          description: governance mode
-          maxLength: 255
-          nullable: true
-          title: Governance mode
-          type: string
         group_name:
-          description: 组名
+          description: 应用名
           maxLength: 128
           minLength: 1
           title: Group name
           type: string
         is_default:
+          default: false
           description: 默认组件
           title: Is default
           type: boolean
         note:
           description: 备注
           maxLength: 2048
-          nullable: true
           title: Note
           type: string
         order_index:
           description: 应用排序
-          maximum: 2147483647
-          minimum: -2147483648
           title: Order index
           type: integer
         region_name:
@@ -2308,14 +2314,15 @@ components:
         username:
           description: the username of principal
           maxLength: 255
-          nullable: true
           title: Username
           type: string
       required:
+      - ID
       - app_id
       - create_time
       - enterprise_id
       - group_name
+      - note
       - region_name
       - running_service_count
       - service_count
@@ -2325,6 +2332,7 @@ components:
       - update_time
       - used_cpu
       - used_momory
+      - username
       type: object
     AppPostInfo:
       example:
@@ -5837,6 +5845,40 @@ components:
       - tenant_alias
       - tenant_id
       - tenant_name
+      type: object
+    TeamOverview:
+      example:
+        total_cpu: 1
+        app_nums: 0
+        total_memory: 5
+        component_nums: 6
+        used_memory: 2
+        used_cpu: 5
+      properties:
+        app_nums:
+          description: 应用总数
+          title: App nums
+          type: integer
+        component_nums:
+          description: 组件总数
+          title: Component nums
+          type: integer
+        total_cpu:
+          description: cpu总额
+          title: Total cpu
+          type: integer
+        total_memory:
+          description: 内存总额
+          title: Total memory
+          type: integer
+        used_cpu:
+          description: 占用cpu
+          title: Used cpu
+          type: integer
+        used_memory:
+          description: 占用内存
+          title: Used memory
+          type: integer
       type: object
     TeamRegionReq:
       example:

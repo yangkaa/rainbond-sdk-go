@@ -76,6 +76,7 @@ Class | Method | HTTP request | Description
 *OpenapiTeamApi* | [**TeamsDelete**](docs/OpenapiTeamApi.md#teamsdelete) | **Delete** /openapi/v1/teams/{team_id} | 
 *OpenapiTeamApi* | [**TeamsList**](docs/OpenapiTeamApi.md#teamslist) | **Get** /openapi/v1/teams | 
 *OpenapiTeamApi* | [**TeamsRead**](docs/OpenapiTeamApi.md#teamsread) | **Get** /openapi/v1/teams/{team_id} | 
+*OpenapiTeamApi* | [**TeamsRegionsOverviewList**](docs/OpenapiTeamApi.md#teamsregionsoverviewlist) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/overview | 
 *OpenapiTeamApi* | [**TeamsRegionsResourceList**](docs/OpenapiTeamApi.md#teamsregionsresourcelist) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/resource | 
 *OpenapiTeamApi* | [**TeamsResourceCreate**](docs/OpenapiTeamApi.md#teamsresourcecreate) | **Post** /openapi/v1/teams/resource | 
 *OpenapiTeamApi* | [**TeamsUpdate**](docs/OpenapiTeamApi.md#teamsupdate) | **Put** /openapi/v1/teams/{team_id} | 
@@ -164,6 +165,7 @@ Class | Method | HTTP request | Description
  - [TeamCertificatesL](docs/TeamCertificatesL.md)
  - [TeamCertificatesR](docs/TeamCertificatesR.md)
  - [TeamInfo](docs/TeamInfo.md)
+ - [TeamOverview](docs/TeamOverview.md)
  - [TeamRegionReq](docs/TeamRegionReq.md)
  - [TeamRegionsResp](docs/TeamRegionsResp.md)
  - [TenantRegionList](docs/TenantRegionList.md)

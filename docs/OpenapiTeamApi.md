@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**TeamsDelete**](OpenapiTeamApi.md#TeamsDelete) | **Delete** /openapi/v1/teams/{team_id} | 
 [**TeamsList**](OpenapiTeamApi.md#TeamsList) | **Get** /openapi/v1/teams | 
 [**TeamsRead**](OpenapiTeamApi.md#TeamsRead) | **Get** /openapi/v1/teams/{team_id} | 
+[**TeamsRegionsOverviewList**](OpenapiTeamApi.md#TeamsRegionsOverviewList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/overview | 
 [**TeamsRegionsResourceList**](OpenapiTeamApi.md#TeamsRegionsResourceList) | **Get** /openapi/v1/teams/{team_id}/regions/{region_name}/resource | 
 [**TeamsResourceCreate**](OpenapiTeamApi.md#TeamsResourceCreate) | **Post** /openapi/v1/teams/resource | 
 [**TeamsUpdate**](OpenapiTeamApi.md#TeamsUpdate) | **Put** /openapi/v1/teams/{team_id} | 
@@ -349,6 +350,41 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TeamInfo**](TeamInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TeamsRegionsOverviewList
+
+> TeamOverview TeamsRegionsOverviewList(ctx, regionName, teamId)
+
+
+
+团队统计
+
+### Required Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**regionName** | **string**|  | 
+**teamId** | **string**|  | 
+
+### Return type
+
+[**TeamOverview**](TeamOverview.md)
 
 ### Authorization
 
