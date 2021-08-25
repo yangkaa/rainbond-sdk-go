@@ -19,27 +19,35 @@ paths:
       operationId: administrators_list
       parameters:
       - description: 企业ID
+        explode: true
         in: query
         name: eid
+        required: false
         schema:
           type: string
+        style: form
       - description: 页码
+        explode: true
         in: query
         name: page
+        required: false
         schema:
           type: string
+        style: form
       - description: 每页数量
+        explode: true
         in: query
         name: page_size
+        required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListUsersRespView'
-          description: ""
       tags:
       - openapi-user
     post:
@@ -57,7 +65,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateAdminUserReq'
-          description: ""
       tags:
       - openapi-user
       x-codegen-request-body-name: data
@@ -66,27 +73,26 @@ paths:
       description: 删除企业管理员
       operationId: administrators_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: user_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "204":
           content: {}
-          description: ""
         "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Fail'
-          description: ""
         "404":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Fail'
-          description: ""
       tags:
       - openapi-user
   /openapi/v1/changepwd:
@@ -105,7 +111,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChangePassWd'
-          description: ""
       tags:
       - openapi-user
       x-codegen-request-body-name: data
@@ -119,7 +124,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EnterpriseConfigSeralizer'
-          description: ""
       tags:
       - openapi-entreprise
   /openapi/v1/httpdomains:
@@ -128,10 +132,13 @@ paths:
       operationId: httpdomains_list
       parameters:
       - description: 查询条件，是否为需要自动匹配证书的策略
+        explode: true
         in: query
         name: auto_ssl
+        required: false
         schema:
           type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -140,7 +147,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/EnterpriseHTTPGatewayRule'
                 type: array
-          description: ""
       tags:
       - openapi-gateway
   /openapi/v1/regions:
@@ -155,7 +161,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/RegionInfoResp'
                 type: array
-          description: ""
       tags:
       - openapi-region
     post:
@@ -163,70 +168,17 @@ paths:
       operationId: regions_create
       requestBody:
         $ref: '#/components/requestBodies/AddRegionRequest'
-        content:
-          application/json:
-            schema:
-              example:
-                tcpdomain: tcpdomain
-                wsurl: wsurl
-                httpdomain: httpdomain
-                ssl_ca_cert: ssl_ca_cert
-                key_file: key_file
-                cert_file: cert_file
-                scope: scope
-                region_name: region_name
-                url: url
-                desc: desc
-                region_alias: region_alias
-                status: 0
-              properties:
-                cert_file:
-                  type: string
-                desc:
-                  type: string
-                httpdomain:
-                  type: string
-                key_file:
-                  type: string
-                region_alias:
-                  type: string
-                region_name:
-                  type: string
-                scope:
-                  type: string
-                ssl_ca_cert:
-                  type: string
-                status:
-                  type: integer
-                tcpdomain:
-                  type: string
-                url:
-                  type: string
-                wsurl:
-                  type: string
-              required:
-              - httpdomain
-              - region_alias
-              - region_name
-              - tcpdomain
-              - url
-              - wsurl
-              title: AddRegionRequest
-              type: object
-        required: true
       responses:
         "201":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RegionInfo'
-          description: ""
         "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Fail'
-          description: ""
       tags:
       - openapi-region
       x-codegen-request-body-name: data
@@ -235,31 +187,38 @@ paths:
       description: 获取指定数据中心数据
       operationId: regions_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 数据中心名称、id
+        explode: true
         in: query
         name: region_id
+        required: false
         schema:
           type: string
+        style: form
       - description: 是否需要额外数据
+        explode: true
         in: query
         name: extend_info
+        required: false
         schema:
           enum:
           - "true"
           - "false"
           type: string
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RegionInfoR'
-          description: ""
       tags:
       - openapi-region
   /openapi/v1/teams:
@@ -268,27 +227,35 @@ paths:
       operationId: teams_list
       parameters:
       - description: 团队名称搜索
+        explode: true
         in: query
         name: query
+        required: false
         schema:
           type: string
+        style: form
       - description: 页码
+        explode: true
         in: query
         name: page
+        required: false
         schema:
           type: string
+        style: form
       - description: 每页数量
+        explode: true
         in: query
         name: page_size
+        required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListTeamResp'
-          description: ""
       tags:
       - openapi-team
     post:
@@ -306,7 +273,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamBaseInfo'
-          description: ""
       tags:
       - openapi-team
       x-codegen-request-body-name: data
@@ -330,7 +296,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/TeamAppsResource'
                 type: array
-          description: ""
       tags:
       - openapi-team
       x-codegen-request-body-name: data
@@ -339,52 +304,59 @@ paths:
       description: 删除团队
       operationId: teams_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 团队名称搜索
+        explode: true
         in: query
         name: force
+        required: false
         schema:
           enum:
           - "true"
           - "false"
           type: string
+        style: form
       responses:
         "204":
           content: {}
-          description: ""
       tags:
       - openapi-team
     get:
       description: 获取团队
       operationId: teams_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamInfo'
-          description: ""
       tags:
       - openapi-team
     put:
       description: 更新团队信息
       operationId: teams_update
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -397,7 +369,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateTeamInfoReq'
-          description: ""
       tags:
       - openapi-team
       x-codegen-request-body-name: data
@@ -406,39 +377,48 @@ paths:
       description: 获取团队下证书列表
       operationId: teams_certificates_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 页码
+        explode: true
         in: query
         name: page
+        required: false
         schema:
           type: number
+        style: form
       - description: 每页数量
+        explode: true
         in: query
         name: page_size
+        required: false
         schema:
           type: number
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamCertificatesL'
-          description: ""
       tags:
       - openapi-team
     post:
       description: 添加证书
       operationId: teams_certificates_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -451,7 +431,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamCertificatesR'
-          description: ""
       tags:
       - openapi-team
       x-codegen-request-body-name: data
@@ -460,59 +439,69 @@ paths:
       description: 删除证书
       operationId: teams_certificates_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: certificate_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "204":
           content: {}
-          description: ""
       tags:
       - openapi-team
     get:
       description: 获取团队下证书列表
       operationId: teams_certificates_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: certificate_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamCertificatesR'
-          description: ""
       tags:
       - openapi-team
     put:
       description: 更新证书
       operationId: teams_certificates_update
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: certificate_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -525,7 +514,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamCertificatesR'
-          description: ""
       tags:
       - openapi-team
       x-codegen-request-body-name: data
@@ -534,44 +522,56 @@ paths:
       description: 获取团队开通的数据中心列表
       operationId: teams_regions_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 根据数据中心名称搜索
+        explode: true
         in: query
         name: query
+        required: false
         schema:
           type: string
+        style: form
       - description: 页码
+        explode: true
         in: query
         name: page
+        required: false
         schema:
           type: string
+        style: form
       - description: 每页数量
+        explode: true
         in: query
         name: page_size
+        required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListTeamRegionsResp'
-          description: ""
       tags:
       - openapi-team-region
     post:
       description: 开通数据中心
       operationId: teams_regions_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -584,7 +584,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamBaseInfo'
-          description: ""
       tags:
       - openapi-team-region
       x-codegen-request-body-name: data
@@ -593,21 +592,28 @@ paths:
       description: 团队应用列表
       operationId: teams_regions_apps_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 搜索查询应用名称，团队名称
+        explode: true
         in: query
         name: query
+        required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -616,23 +622,26 @@ paths:
                 items:
                   $ref: '#/components/schemas/AppBaseInfo'
                 type: array
-          description: ""
       tags:
       - openapi-apps
     post:
       description: 创建应用
       operationId: teams_regions_apps_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -645,7 +654,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppBaseInfo'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -654,16 +662,20 @@ paths:
       description: 批量关闭应用
       operationId: teams_regions_apps_close_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -676,7 +688,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamAppsCloseSerializers'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -685,63 +696,76 @@ paths:
       description: 删除应用
       operationId: teams_regions_apps_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 强制删除
+        explode: true
         in: query
         name: force
+        required: false
         schema:
           enum:
           - 0
           - 1
           type: integer
+        style: form
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "204":
           content: {}
-          description: ""
       tags:
       - openapi-apps
     get:
       description: 应用详情
       operationId: teams_regions_apps_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppInfo'
-          description: ""
       tags:
       - openapi-apps
   /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/copy:
@@ -749,21 +773,27 @@ paths:
       description: 获取需要复制的应用组件信息
       operationId: teams_regions_apps_copy_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: app_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
@@ -772,28 +802,33 @@ paths:
                 items:
                   $ref: '#/components/schemas/AppCopyL'
                 type: array
-          description: ""
       tags:
       - openapi-apps
     post:
       description: 复制应用
       operationId: teams_regions_apps_copy_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: app_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -806,7 +841,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppCopyCRes'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -815,50 +849,61 @@ paths:
       description: 获取应用访问策略列表
       operationId: teams_regions_apps_domains_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用ID
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GatewayRule'
-          description: ""
       tags:
       - openapi-gateway
     post:
       description: 创建网关策略
       operationId: teams_regions_apps_domains_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: app_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -871,7 +916,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GatewayRule'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -880,60 +924,75 @@ paths:
       description: 删除HTTP访问策略
       operationId: teams_regions_apps_domains_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: app_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: rule_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPGatewayRule'
-          description: ""
       tags:
       - openapi-gateway
     put:
       description: 更新访问策略
       operationId: teams_regions_apps_domains_update
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: rule_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用ID
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -946,7 +1005,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPGatewayRule'
-          description: ""
       tags:
       - openapi-gateway
       x-codegen-request-body-name: data
@@ -955,22 +1013,28 @@ paths:
       description: 获取应用http访问策略列表
       operationId: teams_regions_apps_httpdomains_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用ID
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
@@ -979,29 +1043,34 @@ paths:
                 items:
                   $ref: '#/components/schemas/HTTPGatewayRule'
                 type: array
-          description: ""
       tags:
       - openapi-gateway
     post:
       description: 创建HTTP网关策略
       operationId: teams_regions_apps_httpdomains_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用ID
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1014,7 +1083,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPGatewayRule'
-          description: ""
       tags:
       - openapi-gateway
       x-codegen-request-body-name: data
@@ -1023,96 +1091,118 @@ paths:
       description: 删除HTTP访问策略
       operationId: teams_regions_apps_httpdomains_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: app_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: rule_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPGatewayRule'
-          description: ""
       tags:
       - openapi-gateway
     get:
       description: 获取应用http访问策略详情
       operationId: teams_regions_apps_httpdomains_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用ID
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       - description: 网关策略id
+        explode: false
         in: path
         name: rule_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPGatewayRule'
-          description: ""
       tags:
       - openapi-gateway
     put:
       description: 更新HTTP访问策略
       operationId: teams_regions_apps_httpdomains_update
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用ID
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       - description: 网关策略id
+        explode: false
         in: path
         name: rule_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1125,7 +1215,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPGatewayRule'
-          description: ""
       tags:
       - openapi-gateway
       x-codegen-request-body-name: data
@@ -1134,30 +1223,39 @@ paths:
       description: 安装云市应用
       operationId: teams_regions_apps_install_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用组id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       - description: 是否构建
+        explode: true
         in: query
         name: is_deploy
+        required: false
         schema:
           enum:
           - "true"
           - "false"
           type: string
+        style: form
       requestBody:
         content:
           application/json:
@@ -1170,7 +1268,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MarketInstall'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1179,30 +1276,39 @@ paths:
       description: 应用下组件实时监控
       operationId: teams_regions_apps_monitor_query_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       - description: 是否只获取对外组件监控
+        explode: true
         in: query
         name: is_outer
+        required: false
         schema:
           enum:
           - "false"
           - "true"
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -1211,7 +1317,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/ComponentMonitorSerializers'
                 type: array
-          description: ""
       tags:
       - openapi-apps
   /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/monitor/query_range:
@@ -1220,49 +1325,64 @@ paths:
       operationId: teams_regions_apps_monitor_query_range_list
       parameters:
       - description: 团队ID、名称
+        explode: false
         in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 数据中心名称
+        explode: false
         in: path
         name: region_name
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       - description: 起始时间戳
+        explode: false
         in: path
         name: start
         required: true
         schema:
           type: number
+        style: simple
       - description: 结束时间戳
+        explode: false
         in: path
         name: end
         required: true
         schema:
           type: number
+        style: simple
       - description: 步长（默认60）
+        explode: false
         in: path
         name: step
         required: true
         schema:
           type: number
+        style: simple
       - description: 是否只获取对外组件监控
+        explode: true
         in: query
         name: is_outer
+        required: false
         schema:
           enum:
           - "false"
           - "true"
           type: string
+        style: form
       responses:
         "200":
           content:
@@ -1271,7 +1391,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/ComponentMonitorSerializers'
                 type: array
-          description: ""
       tags:
       - openapi-apps
   /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/operations:
@@ -1279,22 +1398,28 @@ paths:
       description: 操作应用
       operationId: teams_regions_apps_operations_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1307,19 +1432,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Success'
-          description: ""
         "400":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Fail'
-          description: ""
         "404":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Fail'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1328,22 +1450,28 @@ paths:
       description: 查询应用下组件列表
       operationId: teams_regions_apps_services_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
@@ -1352,7 +1480,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/ServiceBaseInfo'
                 type: array
-          description: ""
       tags:
       - openapi-apps
   /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}:
@@ -1360,73 +1487,90 @@ paths:
       description: 删除组件
       operationId: teams_regions_apps_services_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: service_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 强制删除
+        explode: true
         in: query
         name: force
+        required: false
         schema:
           enum:
           - 0
           - 1
           type: integer
+        style: form
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "204":
           content: {}
-          description: ""
       tags:
       - openapi-apps
     get:
       description: 查询组件信息
       operationId: teams_regions_apps_services_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: service_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceBaseInfo'
-          description: ""
       tags:
       - openapi-apps
   /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/envs:
@@ -1435,29 +1579,37 @@ paths:
       operationId: teams_regions_apps_services_envs_update
       parameters:
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: service_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 团队id
+        explode: false
         in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 集群名称
+        explode: false
         in: path
         name: region_name
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1470,7 +1622,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ComponentEnvsSerializers'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1479,44 +1630,57 @@ paths:
       description: 查询组件事件信息
       operationId: teams_regions_apps_services_events_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: service_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 页码
+        explode: true
         in: query
         name: page
+        required: false
         schema:
           type: integer
+        style: form
       - description: 每页数量
+        explode: true
         in: query
         name: page_size
+        required: false
         schema:
           type: integer
+        style: form
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListServiceEventsResponse'
-          description: ""
       tags:
       - openapi-apps
   /openapi/v1/teams/{team_id}/regions/{region_name}/apps/{app_id}/services/{service_id}/telescopic/horizontal:
@@ -1524,27 +1688,35 @@ paths:
       description: 组件水平伸缩
       operationId: teams_regions_apps_services_telescopic_horizontal_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: service_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1557,7 +1729,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppServiceTelescopicHorizontal'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1566,27 +1737,35 @@ paths:
       description: 组件垂直伸缩
       operationId: teams_regions_apps_services_telescopic_vertical_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: service_id
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1599,7 +1778,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AppServiceTelescopicVertical'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1608,22 +1786,28 @@ paths:
       description: 创建第三方组件
       operationId: teams_regions_apps_third-components_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1636,7 +1820,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateThirdComponentResponse'
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1645,22 +1828,28 @@ paths:
       description: 升级应用
       operationId: teams_regions_apps_upgrade_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用组id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       responses:
         "200":
           content:
@@ -1669,29 +1858,34 @@ paths:
                 items:
                   $ref: '#/components/schemas/ListUpgrade'
                 type: array
-          description: ""
       tags:
       - openapi-apps
     post:
       description: 升级应用
       operationId: teams_regions_apps_upgrade_create
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       - description: 应用组id
+        explode: false
         in: path
         name: app_id
         required: true
         schema:
           type: integer
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1706,7 +1900,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/ListUpgrade'
                 type: array
-          description: ""
       tags:
       - openapi-apps
       x-codegen-request-body-name: data
@@ -1715,23 +1908,26 @@ paths:
       description: 团队统计
       operationId: teams_regions_overview_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamOverview'
-          description: ""
       tags:
       - openapi-team
   /openapi/v1/teams/{team_id}/regions/{region_name}/resource:
@@ -1739,23 +1935,26 @@ paths:
       description: 获取团队资源统计
       operationId: teams_regions_resource_list
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: region_name
         required: true
         schema:
           type: string
-      - in: path
+        style: simple
+      - explode: false
+        in: path
         name: team_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TeamAppsResource'
-          description: ""
       tags:
       - openapi-team
   /openapi/v1/users:
@@ -1764,27 +1963,35 @@ paths:
       operationId: users_list
       parameters:
       - description: 用户名、邮箱、手机号搜索
+        explode: true
         in: query
         name: query
+        required: false
         schema:
           type: string
+        style: form
       - description: 页码
+        explode: true
         in: query
         name: page
+        required: false
         schema:
           type: string
+        style: form
       - description: 每页数量
+        explode: true
         in: query
         name: page_size
+        required: false
         schema:
           type: string
+        style: form
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListUsersRespView'
-          description: ""
       tags:
       - openapi-user
     post:
@@ -1802,7 +2009,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreateUser'
-          description: ""
       tags:
       - openapi-user
       x-codegen-request-body-name: data
@@ -1811,44 +2017,48 @@ paths:
       description: 删除用户
       operationId: users_delete
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: user_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "204":
           content: {}
-          description: ""
       tags:
       - openapi-user
     get:
       description: 根据用户ID获取用户信息
       operationId: users_read
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: user_id
         required: true
         schema:
           type: string
+        style: simple
       responses:
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserInfo'
-          description: ""
       tags:
       - openapi-user
     put:
       description: 更新用户信息
       operationId: users_update
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: user_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1861,7 +2071,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateUser'
-          description: ""
       tags:
       - openapi-user
       x-codegen-request-body-name: data
@@ -1870,11 +2079,13 @@ paths:
       description: 修改用户密码
       operationId: users_changepwd_update
       parameters:
-      - in: path
+      - explode: false
+        in: path
         name: user_id
         required: true
         schema:
           type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -1887,7 +2098,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChangePassWdUser'
-          description: ""
       tags:
       - openapi-user
       x-codegen-request-body-name: data
