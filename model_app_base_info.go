@@ -14,17 +14,15 @@ import (
 )
 // AppBaseInfo struct for AppBaseInfo
 type AppBaseInfo struct {
-	ID int32 `json:"ID,omitempty"`
+	ID int32 `json:"ID"`
 	// 创建时间
 	CreateTime time.Time `json:"create_time"`
-	// governance mode
-	GovernanceMode *string `json:"governance_mode,omitempty"`
-	// 组名
+	// 应用名
 	GroupName string `json:"group_name"`
 	// 默认组件
 	IsDefault bool `json:"is_default,omitempty"`
 	// 备注
-	Note *string `json:"note,omitempty"`
+	Note string `json:"note"`
 	// 应用排序
 	OrderIndex int32 `json:"order_index,omitempty"`
 	// 区域中心名称
@@ -34,5 +32,5 @@ type AppBaseInfo struct {
 	// 更新时间
 	UpdateTime time.Time `json:"update_time"`
 	// the username of principal
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
